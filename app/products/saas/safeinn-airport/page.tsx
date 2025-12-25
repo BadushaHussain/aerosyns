@@ -572,7 +572,7 @@ export default function SafeInnAirportPage() {
                         <p className="text-lg text-blue-100 mb-10 max-w-3xl mx-auto">
                             ICAO SMS-compliant platform covering airside operations, passenger safety, emergency response, regulatory compliance, and aviation-specific risk management.
                         </p>
-                        <div className="flex flex-wrap gap-4 justify-center">
+                        <div className="flex flex-col md:flex-row gap-4 justify-center">
                             <Link href="/contact?product=safeinn-airport" className="btn-primary bg-white text-blue-600 hover:bg-gray-100">
                                 Request Demo
                             </Link>
@@ -757,7 +757,7 @@ export default function SafeInnAirportPage() {
                     <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
                         Join leading airports worldwide in achieving ICAO compliance and operational excellence.
                     </p>
-                    <div className="flex flex-wrap gap-4 justify-center">
+                    <div className="flex flex-col md:flex-row gap-4 justify-center">
                         <Link href="/contact?product=safeinn-airport" className="btn-primary bg-white text-blue-600 hover:bg-gray-100">
                             Schedule Demo
                         </Link>

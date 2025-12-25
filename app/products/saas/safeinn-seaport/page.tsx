@@ -614,7 +614,7 @@ export default function SafeInnSeaportPage() {
                         <p className="text-lg text-cyan-100 mb-10 max-w-3xl mx-auto">
                             IMO & ISPS-compliant platform covering vessel operations, cargo handling, port security, emergency response, environmental compliance, and maritime-specific risk management.
                         </p>
-                        <div className="flex flex-wrap gap-4 justify-center">
+                        <div className="flex flex-col md:flex-row gap-4 justify-center">
                             <Link href="/contact?product=safeinn-seaport" className="btn-primary bg-white text-cyan-600 hover:bg-gray-100">
                                 Request Demo
                             </Link>
@@ -799,7 +799,7 @@ export default function SafeInnSeaportPage() {
                     <p className="text-xl text-cyan-100 mb-10 max-w-3xl mx-auto">
                         Join leading ports worldwide in achieving IMO compliance and operational excellence.
                     </p>
-                    <div className="flex flex-wrap gap-4 justify-center">
+                    <div className="flex flex-col md:flex-row gap-4 justify-center">
                         <Link href="/contact?product=safeinn-seaport" className="btn-primary bg-white text-cyan-600 hover:bg-gray-100">
                             Schedule Demo
                         </Link>

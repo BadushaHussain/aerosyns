@@ -35,7 +35,7 @@ import {
 } from 'react-icons/fa'
 
 export const metadata: Metadata = {
-    title: 'SafeInn - Railway Safety Management Platform | AEROSYNS',
+    title: 'SafeInn Rail - Railway Safety Management Platform | AEROSYNS',
     description: 'Comprehensive railway safety management software with 32 integrated modules covering incident management, risk assessment, compliance, asset monitoring, and advanced analytics for rail operations.',
     keywords: 'railway safety software, rail safety management, incident management, risk assessment, compliance management, predictive maintenance, safety analytics',
 }
@@ -467,8 +467,8 @@ export default function SafeInnPage() {
                             <FaShieldAlt className="w-5 h-5" />
                             <span className="text-sm font-semibold">Railway Safety Management Platform</span>
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                            SafeInn
+                        <h1 className="text-3xl md:text-5xl font-bold mb-6">
+                            SafeInn Rail
                         </h1>
                         <p className="text-xl md:text-2xl text-red-100 mb-8">
                             Comprehensive Safety Management System with 32 Integrated Modules
@@ -476,8 +476,8 @@ export default function SafeInnPage() {
                         <p className="text-lg text-red-100 mb-10 max-w-3xl mx-auto">
                             End-to-end railway safety platform covering incident management, risk assessment, compliance, operational monitoring, predictive maintenance, and advanced analytics.
                         </p>
-                        <div className="flex flex-wrap gap-4 justify-center">
-                            <Link href="/contact?product=safeinn" className="btn-primary bg-white text-red-600 hover:bg-gray-100">
+                        <div className="flex flex-col md:flex-row gap-4 justify-center">
+                            <Link href="/contact?product=safeinn-rail" className="btn-primary bg-white text-red-600 hover:bg-gray-100">
                                 Request Demo
                             </Link>
                             <Link href="#modules" className="btn-secondary border-white text-white hover:bg-white/10">
@@ -493,7 +493,7 @@ export default function SafeInnPage() {
                 <div className="container-custom">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Why SafeInn?
+                            Why SafeInn Rail?
                         </h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                             A unified platform designed specifically for railway safety operations
@@ -656,10 +656,10 @@ export default function SafeInnPage() {
                         Ready to Transform Your Railway Safety Management?
                     </h2>
                     <p className="text-xl text-red-100 mb-10 max-w-3xl mx-auto">
-                        Schedule a demo to see how SafeInn can help you achieve zero incidents and regulatory excellence.
+                        Schedule a demo to see how SafeInn Rail can help you achieve zero incidents and regulatory excellence.
                     </p>
-                    <div className="flex flex-wrap gap-4 justify-center">
-                        <Link href="/contact?product=safeinn" className="btn-primary bg-white text-red-600 hover:bg-gray-100">
+                    <div className="flex flex-col md:flex-row gap-4 justify-center">
+                        <Link href="/contact?product=safeinn-rail" className="btn-primary bg-white text-red-600 hover:bg-gray-100">
                             Schedule Demo
                         </Link>
                         <Link href="/contact" className="btn-secondary border-white text-white hover:bg-white/10">
