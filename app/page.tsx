@@ -334,12 +334,12 @@ export default function HomePage() {
                                 url: '/products'
                             },
                             {
-                                name: 'SafeInn',
+                                name: 'SafeInn Rail',
                                 tagline: 'Railway Safety Management',
                                 description: 'Comprehensive railway safety platform with 32 integrated modules for incident management, compliance, and analytics',
                                 features: ['Incident & accident management', 'Risk assessment & CAPA', 'Real-time track monitoring', 'Predictive maintenance'],
                                 color: 'from-red-500 to-red-600',
-                                url: '/products/saas/safeinn'
+                                url: '/products/saas/safeinn-rail'
                             },
                             {
                                 name: 'SafeInn Airport',
