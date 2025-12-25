@@ -226,7 +226,7 @@ export default function SaaSOverviewPage() {
                             Our SaaS Product Portfolio
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Enterprise-ready applications for insurance, HR, CRM, and compliance
+                            Enterprise-ready applications for insurance, HR, CRM, compliance, and safety management
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

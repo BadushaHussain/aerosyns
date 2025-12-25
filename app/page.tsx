@@ -278,8 +278,8 @@ export default function HomePage() {
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                             Our SaaS Product Portfolio
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            Enterprise-ready applications for insurance, HR, CRM, and compliance
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Enterprise-ready applications for insurance, HR, CRM, compliance, and safety management
                         </p>
                     </div>
 
