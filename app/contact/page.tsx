@@ -56,8 +56,8 @@ export default function ContactPage() {
                                             </div>
                                         </div>
                                         <div className="ml-4">
-                                            <h4 className="text-lg font-semibold text-gray-900">Address</h4>
-                                            <p className="text-gray-600">Dubai, United Arab Emirates</p>
+                                            <h4 className="text-lg font-semibold text-gray-900">Headquarters</h4>
+                                            <p className="text-gray-600">Abu Dhabi, UAE</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start">
@@ -70,7 +70,7 @@ export default function ContactPage() {
                                         </div>
                                         <div className="ml-4">
                                             <h4 className="text-lg font-semibold text-gray-900">Phone</h4>
-                                            <p className="text-gray-600">+971 XX XXX XXXX</p>
+                                            <p className="text-gray-600">+971 556725264</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start">
@@ -83,7 +83,8 @@ export default function ContactPage() {
                                         </div>
                                         <div className="ml-4">
                                             <h4 className="text-lg font-semibold text-gray-900">Email</h4>
-                                            <p className="text-gray-600">info@aerosyns.com</p>
+                                            <p className="text-gray-600">General: info@aerosyns.com</p>
+                                            <p className="text-gray-600">Sales: sales@aerosyns.com</p>
                                         </div>
                                     </div>
                                 </div>

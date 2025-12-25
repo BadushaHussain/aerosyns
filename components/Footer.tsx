@@ -28,9 +28,9 @@ const navigation = {
         { name: 'Partners', href: '/company/partners' },
     ],
     legal: [
-        { name: 'Privacy Policy', href: '/legal/privacy' },
-        { name: 'Terms of Service', href: '/legal/terms' },
-        { name: 'SLA Agreement', href: '/legal/sla' },
+        { name: 'Privacy Policy', href: '/privacy' },
+        { name: 'Terms of Service', href: '/terms' },
+        { name: 'SLA Agreement', href: '/sla' },
     ],
     social: [
         {
@@ -92,18 +92,24 @@ export default function Footer() {
                             Enterprise IT and AI infrastructure solutions for mission-critical operations.
                             Delivering 99.99% uptime with sovereign cloud options across UAE and MENA.
                         </p>
-                        <div className="space-y-3">
-                            <div className="flex items-center text-gray-400">
-                                <MapPinIcon className="h-5 w-5 mr-3 text-primary-500" />
-                                <span className="text-sm">Dubai, United Arab Emirates</span>
+                        <div className="space-y-4">
+                            <div className="flex items-start text-gray-400">
+                                <MapPinIcon className="h-5 w-5 mr-3 text-primary-500 mt-0.5 flex-shrink-0" />
+                                <div className="text-sm">
+                                    <div className="font-semibold text-white mb-1">Headquarters</div>
+                                    <div>Abu Dhabi, UAE</div>
+                                </div>
                             </div>
                             <div className="flex items-center text-gray-400">
-                                <PhoneIcon className="h-5 w-5 mr-3 text-primary-500" />
-                                <span className="text-sm">+971 XX XXX XXXX</span>
+                                <PhoneIcon className="h-5 w-5 mr-3 text-primary-500 flex-shrink-0" />
+                                <span className="text-sm">+971 556725264</span>
                             </div>
-                            <div className="flex items-center text-gray-400">
-                                <EnvelopeIcon className="h-5 w-5 mr-3 text-primary-500" />
-                                <span className="text-sm">info@aerosyns.com</span>
+                            <div className="flex items-start text-gray-400">
+                                <EnvelopeIcon className="h-5 w-5 mr-3 text-primary-500 mt-0.5 flex-shrink-0" />
+                                <div className="text-sm space-y-1">
+                                    <div><span className="font-semibold text-white">General:</span> info@aerosyns.com</div>
+                                    <div><span className="font-semibold text-white">Sales:</span> sales@aerosyns.com</div>
+                                </div>
                             </div>
                         </div>
                     </div>

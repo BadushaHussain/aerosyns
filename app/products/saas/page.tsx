@@ -6,7 +6,8 @@ import {
     UserGroupIcon,
     FingerPrintIcon,
     ChartBarIcon,
-    GlobeAltIcon
+    GlobeAltIcon,
+    ShieldCheckIcon
 } from '@heroicons/react/24/solid'
 
 export const metadata = genMeta({
@@ -105,22 +106,6 @@ const products = [
         color: 'from-indigo-500 to-purple-500',
     },
     {
-        name: 'Airport Device Management',
-        tagline: 'IoT & Asset Tracking',
-        description: 'Comprehensive airport equipment and device management with real-time tracking',
-        icon: <GlobeAltIcon className="w-8 h-8" />,
-        href: '/products/saas/airport',
-        features: [
-            'Real-time asset tracking',
-            'Maintenance scheduling',
-            'IoT device monitoring',
-            'Equipment lifecycle',
-            'Compliance & reporting',
-            'Mobile operations',
-        ],
-        color: 'from-cyan-500 to-blue-500',
-    },
-    {
         name: 'Banking Solutions',
         tagline: 'Core Banking & Digital Banking',
         description: 'Complete banking platform with accounts, loans, deposits, and digital banking channels',
@@ -135,6 +120,54 @@ const products = [
             'Regulatory compliance',
         ],
         color: 'from-indigo-500 to-purple-500',
+    },
+    {
+        name: 'SafeInn',
+        tagline: 'Railway Safety Management',
+        description: 'Comprehensive railway safety platform with 32 integrated modules for incident management, compliance, and analytics',
+        icon: <ShieldCheckIcon className="w-8 h-8" />,
+        href: '/products/saas/safeinn',
+        features: [
+            'Incident & accident management',
+            'Risk assessment & CAPA',
+            'Real-time track monitoring',
+            'Predictive maintenance',
+            'Compliance & regulatory',
+            'Advanced AI analytics',
+        ],
+        color: 'from-red-500 to-red-600',
+    },
+    {
+        name: 'SafeInn Airport',
+        tagline: 'Airport Safety Management',
+        description: 'ICAO SMS-compliant aviation safety platform with 35+ modules for airside operations, emergency response, and compliance',
+        icon: <ShieldCheckIcon className="w-8 h-8" />,
+        href: '/products/saas/safeinn-airport',
+        features: [
+            'Airside operations safety',
+            'ICAO Annex 14 compliance',
+            'Emergency response management',
+            'Wildlife hazard tracking',
+            'Runway & taxiway safety',
+            'Aviation analytics & AI',
+        ],
+        color: 'from-blue-500 to-blue-600',
+    },
+    {
+        name: 'SafeInn Seaport',
+        tagline: 'Maritime Safety Management',
+        description: 'IMO & ISPS-compliant maritime safety platform with 38+ modules for vessel operations, cargo handling, and port security',
+        icon: <ShieldCheckIcon className="w-8 h-8" />,
+        href: '/products/saas/safeinn-seaport',
+        features: [
+            'Vessel & marine operations',
+            'IMO & ISPS compliance',
+            'Cargo handling safety',
+            'Port security management',
+            'Oil spill response',
+            'Maritime analytics & AI',
+        ],
+        color: 'from-cyan-500 to-cyan-600',
     },
 ]
 

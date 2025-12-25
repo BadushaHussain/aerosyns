@@ -326,20 +326,36 @@ export default function HomePage() {
                                 url: '/products'
                             },
                             {
-                                name: 'Airport Device Management',
-                                tagline: 'IoT & Asset Tracking',
-                                description: 'Comprehensive airport equipment and device management with real-time tracking',
-                                features: ['Real-time asset tracking', 'Maintenance scheduling', 'IoT device monitoring', 'Equipment lifecycle'],
-                                color: 'from-cyan-500 to-cyan-600',
-                                url: '/products'
-                            },
-                            {
                                 name: 'Banking Solutions',
                                 tagline: 'Core Banking & Digital Banking',
                                 description: 'Complete banking platform with accounts, loans, deposits, and digital banking channels',
                                 features: ['Account management', 'Loan processing', 'Digital banking', 'Payment gateway'],
                                 color: 'from-indigo-500 to-indigo-600',
                                 url: '/products'
+                            },
+                            {
+                                name: 'SafeInn',
+                                tagline: 'Railway Safety Management',
+                                description: 'Comprehensive railway safety platform with 32 integrated modules for incident management, compliance, and analytics',
+                                features: ['Incident & accident management', 'Risk assessment & CAPA', 'Real-time track monitoring', 'Predictive maintenance'],
+                                color: 'from-red-500 to-red-600',
+                                url: '/products/saas/safeinn'
+                            },
+                            {
+                                name: 'SafeInn Airport',
+                                tagline: 'Airport Safety Management',
+                                description: 'ICAO SMS-compliant aviation safety platform with 35+ modules for airside operations, emergency response, and compliance',
+                                features: ['Airside operations safety', 'ICAO Annex 14 compliance', 'Emergency response management', 'Wildlife hazard tracking'],
+                                color: 'from-blue-500 to-blue-600',
+                                url: '/products/saas/safeinn-airport'
+                            },
+                            {
+                                name: 'SafeInn Seaport',
+                                tagline: 'Maritime Safety Management',
+                                description: 'IMO & ISPS-compliant maritime safety platform with 38+ modules for vessel operations, cargo handling, and port security',
+                                features: ['Vessel & marine operations', 'IMO & ISPS compliance', 'Cargo handling safety', 'Port security management'],
+                                color: 'from-cyan-500 to-cyan-600',
+                                url: '/products/saas/safeinn-seaport'
                             },
                         ].map((product, index) => (
                             <div
