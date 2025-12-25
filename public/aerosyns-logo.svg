@@ -1,0 +1,39 @@
+<svg width="280" height="80" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Modern geometric icon with aviation/tech theme -->
+  <g transform="translate(20, 15)">
+    <!-- Outer hexagon frame -->
+    <path d="M 25 5 L 35 10 L 35 20 L 25 25 L 15 20 L 15 10 Z" stroke="url(#gradient1)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+    
+    <!-- Inner dynamic arrow/wing shape -->
+    <path d="M 20 12 L 25 10 L 30 12 L 28 15 L 25 20 L 22 15 Z" fill="url(#gradient2)"/>
+    
+    <!-- Accent lines for motion -->
+    <line x1="18" y1="15" x2="22" y2="15" stroke="url(#gradient1)" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="28" y1="15" x2="32" y2="15" stroke="url(#gradient1)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- "AEROSYNS" text with modern styling -->
+  <text x="75" y="35" font-family="'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="800" fill="#111827" letter-spacing="-0.5">
+    AEROSYNS
+  </text>
+  
+  <!-- Tagline with refined typography -->
+  <text x="75" y="52" font-family="'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="8" font-weight="500" fill="#6b7280" letter-spacing="2.5">
+    ENGINEERING TOMORROW'S INFRASTRUCTURE
+  </text>
+  
+  <!-- Subtle accent line under tagline -->
+  <line x1="75" y1="56" x2="145" y2="56" stroke="url(#gradient1)" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+</svg>
