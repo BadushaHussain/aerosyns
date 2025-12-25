@@ -358,9 +358,12 @@ export default function HomePage() {
                                 url: '/products/saas/safeinn-seaport'
                             },
                         ].map((product, index) => (
-                            <div
+                            <Link
                                 key={index}
-                                className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-300 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden"
+                                href={product.url}
+                                target={product.url.startsWith('http') ? '_blank' : undefined}
+                                rel={product.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-300 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden cursor-pointer block"
                             >
                                 <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${product.color} opacity-10 rounded-bl-full group-hover:opacity-20 transition-opacity`}></div>
 
@@ -375,7 +378,7 @@ export default function HomePage() {
                                                                 <FaUniversity className="w-6 h-6 text-white" />}
                                     </div>
 
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
                                         {product.name}
                                     </h3>
 
@@ -396,17 +399,12 @@ export default function HomePage() {
                                         ))}
                                     </div>
 
-                                    <Link
-                                        href={product.url}
-                                        target={product.url.startsWith('http') ? '_blank' : undefined}
-                                        rel={product.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                        className={`inline-flex items-center gap-2 text-sm font-semibold bg-gradient-to-r ${product.color} bg-clip-text text-transparent group-hover:gap-3 transition-all`}
-                                    >
+                                    <div className={`inline-flex items-center gap-2 text-sm font-semibold bg-gradient-to-r ${product.color} bg-clip-text text-transparent group-hover:gap-3 transition-all`}>
                                         Learn more
                                         <FaArrowRight className={`w-3 h-3 bg-gradient-to-r ${product.color} bg-clip-text`} />
-                                    </Link>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
