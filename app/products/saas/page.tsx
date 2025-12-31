@@ -8,7 +8,8 @@ import {
     ChartBarIcon,
     GlobeAltIcon,
     ShieldCheckIcon,
-    TruckIcon
+    TruckIcon,
+    PhoneIcon
 } from '@heroicons/react/24/solid'
 
 export const metadata = genMeta({
@@ -185,6 +186,22 @@ const products = [
             'Maritime analytics & AI',
         ],
         color: 'from-cyan-500 to-cyan-600',
+    },
+    {
+        name: 'Booth',
+        tagline: 'Call Center Platform',
+        description: 'Cloud-based call center solution with IVR, intelligent routing, call recording, and real-time analytics for customer support teams',
+        icon: <PhoneIcon className="w-8 h-8" />,
+        href: '/products/saas/booth',
+        features: [
+            'IVR & call routing',
+            'Call recording & monitoring',
+            'Real-time analytics',
+            'CRM integration',
+            'Omnichannel support',
+            'Agent performance tracking',
+        ],
+        color: 'from-green-500 to-emerald-600',
     },
 ]
 

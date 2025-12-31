@@ -7,7 +7,7 @@ import { FaTrophy, FaCheckCircle, FaTools, FaArrowRight } from 'react-icons/fa'
 import { MdCheckCircle } from 'react-icons/md'
 import { Shield, Lock, Globe, TrendingUp, Handshake, Settings } from 'lucide-react'
 import { HiCpuChip, HiCloudArrowUp, HiShieldExclamation, HiCircleStack, HiLifebuoy, HiCodeBracketSquare } from 'react-icons/hi2'
-import { FaPlane, FaNetworkWired, FaDatabase, FaChartLine, FaUsers, FaSuitcase, FaBrain, FaLock, FaFileAlt, FaBriefcase, FaFingerprint, FaUserTie, FaWarehouse, FaUniversity, FaBell, FaTruck, FaShieldAlt } from 'react-icons/fa'
+import { FaPlane, FaNetworkWired, FaDatabase, FaChartLine, FaUsers, FaSuitcase, FaBrain, FaLock, FaFileAlt, FaBriefcase, FaFingerprint, FaUserTie, FaWarehouse, FaUniversity, FaBell, FaTruck, FaShieldAlt, FaPhone } from 'react-icons/fa'
 
 export default function HomePage() {
     const services = [
@@ -344,6 +344,14 @@ export default function HomePage() {
                                 color: 'from-red-500 to-orange-600',
                                 url: '/products/saas/safety-prevention'
                             },
+                            {
+                                name: 'Booth',
+                                tagline: 'Call Center Platform',
+                                description: 'Cloud-based call center solution with IVR, intelligent routing, call recording, and real-time analytics for customer support teams',
+                                features: ['IVR & call routing', 'Call recording & monitoring', 'Real-time analytics', 'CRM integration'],
+                                color: 'from-green-500 to-emerald-600',
+                                url: '/products/saas/booth'
+                            },
                         ].map((product, index) => (
                             <Link
                                 key={index}
@@ -363,7 +371,8 @@ export default function HomePage() {
                                                         index === 4 ? <FaUserTie className="w-6 h-6 text-white" /> :
                                                             index === 5 ? <FaUniversity className="w-6 h-6 text-white" /> :
                                                                 index === 6 ? <FaTruck className="w-6 h-6 text-white" /> :
-                                                                    <FaShieldAlt className="w-6 h-6 text-white" />}
+                                                                    index === 7 ? <FaShieldAlt className="w-6 h-6 text-white" /> :
+                                                                        <FaPhone className="w-6 h-6 text-white" />}
                                     </div>
 
                                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
