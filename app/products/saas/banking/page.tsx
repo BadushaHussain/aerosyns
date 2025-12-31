@@ -1,188 +1,161 @@
 import { generateMetadata as genMeta } from '@/lib/seo'
 import Link from 'next/link'
-import { BuildingLibraryIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
+import { GlobeAltIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
 
 export const metadata = genMeta({
     title: 'Banking Solutions - Core Banking & Digital Banking Platform',
     description:
-        'Complete banking platform with account management, loan processing, digital banking channels, and payment gateway. Cloud-native, secure, and compliance-ready.',
+        'Complete banking platform with core banking, digital banking channels, loan processing, and payment gateway integration. Built for banks, microfinance, and financial institutions.',
     keywords: [
         'core banking software',
-        'digital banking platform',
-        'banking solution UAE',
+        'digital banking',
+        'banking platform',
         'loan management system',
         'payment gateway',
+        'banking software UAE',
     ],
 })
 
 const modules = [
     {
-        title: 'Account Management',
-        description: 'Complete customer account lifecycle management',
-        features: [
-            'Savings & current accounts',
-            'Account opening & KYC',
-            'Balance & transaction history',
-            'Account statements',
-            'Multi-currency support',
-            'Account closure workflows',
-        ],
+        title: 'Core Banking',
+        description: 'Complete account and transaction management',
+        capabilities: ['Account management', 'Transaction processing', 'GL accounting', 'Multi-currency support'],
     },
     {
-        title: 'Loan Processing',
-        description: 'End-to-end loan origination and management',
-        features: [
-            'Loan application & approval',
-            'Credit scoring & assessment',
-            'Disbursement processing',
-            'EMI calculation & scheduling',
-            'Loan tracking & monitoring',
-            'Collections management',
-        ],
+        title: 'Loan Management',
+        description: 'End-to-end loan lifecycle management',
+        capabilities: ['Loan origination', 'Credit scoring', 'Repayment schedules', 'Collections management'],
     },
     {
         title: 'Digital Banking',
-        description: 'Modern digital banking channels for customers',
-        features: [
-            'Internet banking portal',
-            'Mobile banking apps',
-            'Fund transfers',
-            'Bill payments',
-            'Card management',
-            'Digital wallet integration',
-        ],
+        description: 'Omnichannel digital banking experience',
+        capabilities: ['Internet banking', 'Mobile banking', 'ATM integration', 'Card management'],
     },
     {
         title: 'Payment Gateway',
-        description: 'Secure payment processing and settlement',
-        features: [
-            'Multiple payment methods',
-            'Real-time transaction processing',
-            'Payment reconciliation',
-            'Refund management',
-            'Fraud detection',
-            'PCI-DSS compliance',
-        ],
-    },
-    {
-        title: 'Transaction Monitoring',
-        description: 'Real-time transaction tracking and alerts',
-        features: [
-            'Real-time monitoring',
-            'Suspicious activity detection',
-            'AML/CFT compliance',
-            'Transaction alerts',
-            'Audit trail',
-            'Reporting dashboards',
-        ],
-    },
-    {
-        title: 'Regulatory Compliance',
-        description: 'Built-in compliance and reporting tools',
-        features: [
-            'Central bank reporting',
-            'AML/KYC compliance',
-            'FATCA & CRS reporting',
-            'Audit logs',
-            'Regulatory updates',
-            'Compliance dashboards',
-        ],
+        description: 'Secure payment processing and integration',
+        capabilities: ['Online payments', 'Bill payments', 'Fund transfers', 'Payment reconciliation'],
     },
 ]
 
-const integrations = [
-    'Payment gateways (Visa, Mastercard, local switches)',
-    'SMS & email providers',
-    'Credit bureaus',
-    'Accounting systems',
-    'Core banking systems',
-    'Third-party APIs',
+const features = [
+    {
+        title: 'Account Management',
+        description: 'Comprehensive account operations and services',
+        items: ['Savings accounts', 'Current accounts', 'Fixed deposits', 'Recurring deposits'],
+    },
+    {
+        title: 'Loan Processing',
+        description: 'Streamlined loan origination and servicing',
+        items: ['Personal loans', 'Business loans', 'Auto approval', 'EMI calculations'],
+    },
+    {
+        title: 'Digital Banking Channels',
+        description: 'Multi-channel banking experience',
+        items: ['Web banking', 'Mobile apps', 'USSD banking', 'WhatsApp banking'],
+    },
+    {
+        title: 'Payment Gateway Integration',
+        description: 'Secure and compliant payment processing',
+        items: ['Card payments', 'UPI integration', 'Wallet integration', 'QR code payments'],
+    },
+    {
+        title: 'Transaction Monitoring',
+        description: 'Real-time fraud detection and compliance',
+        items: ['AML screening', 'Fraud detection', 'Transaction alerts', 'Suspicious activity reports'],
+    },
+    {
+        title: 'Regulatory Compliance',
+        description: 'Built-in compliance and reporting',
+        items: ['KYC management', 'AML compliance', 'Regulatory reports', 'Audit trails'],
+    },
 ]
 
 export default function BankingPage() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 section-padding">
+            <section className="relative bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 section-padding">
                 <div className="container-custom">
                     <div className="max-w-4xl">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
-                            <BuildingLibraryIcon className="w-5 h-5 text-indigo-400 mr-2" />
-                            <span className="text-indigo-400 text-sm font-semibold">Banking Platform</span>
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+                            <GlobeAltIcon className="w-5 h-5 text-purple-400 mr-2" />
+                            <span className="text-purple-400 text-sm font-semibold">Banking Solutions</span>
                         </div>
                         <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
-                            Banking Solutions Platform
+                            Core Banking & Digital Banking Platform
                         </h1>
                         <p className="text-xl text-gray-300 mb-8">
-                            Modern, cloud-native banking platform covering core banking, digital channels, loan management,
-                            and payment processing. Built for banks, microfinance institutions, and fintech companies.
+                            Complete banking solution for banks, microfinance institutions, and credit unions.
+                            Manage accounts, loans, deposits, and digital banking channels with our enterprise-grade platform.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link href="/contact?type=banking-demo" className="btn-primary">
                                 Request Demo
                             </Link>
-                            <Link href="#modules" className="btn-secondary">
-                                View Modules
+                            <Link href="#features" className="btn-secondary">
+                                View Features
                             </Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Key Benefits */}
+            {/* Modules */}
             <section className="section-padding bg-gray-50">
                 <div className="container-custom">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
-                            Why Choose Our Banking Solutions?
+                            Comprehensive Banking Modules
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Built specifically for modern banking with security and compliance at its core
+                            Everything you need to run a modern banking operation
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {[
-                            { title: 'API-First Design', desc: 'RESTful APIs for all operations' },
-                            { title: 'Multi-Currency', desc: 'Support for multiple currencies' },
-                            { title: 'Compliance Ready', desc: 'AML, KYC, FATCA compliant' },
-                            { title: 'Cloud-Native', desc: 'Scalable microservices architecture' },
-                            { title: 'Mobile Banking', desc: 'iOS & Android native apps' },
-                            { title: 'White-Label', desc: 'Fully customizable branding' },
-                            { title: 'Real-Time', desc: 'Instant transactions & updates' },
-                            { title: '99.9% Uptime', desc: 'Enterprise SLA guarantee' },
-                        ].map((benefit, index) => (
-                            <div key={index} className="card-enterprise p-6 text-center">
-                                <h3 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h3>
-                                <p className="text-sm text-gray-600">{benefit.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Modules */}
-            <section id="modules" className="section-padding bg-white">
-                <div className="container-custom">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
-                            Platform Modules
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Comprehensive modules covering every aspect of banking operations
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {modules.map((module, index) => (
                             <div key={index} className="card-enterprise p-8">
                                 <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">
                                     {module.title}
                                 </h3>
                                 <p className="text-gray-600 mb-6">{module.description}</p>
+                                <div className="space-y-2">
+                                    <div className="text-sm font-semibold text-gray-900 mb-3">Key Capabilities:</div>
+                                    {module.capabilities.map((capability, idx) => (
+                                        <div key={idx} className="flex items-center text-sm text-gray-600">
+                                            <CheckCircleIcon className="w-5 h-5 text-purple-500 mr-2" />
+                                            {capability}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Features */}
+            <section id="features" className="section-padding bg-white">
+                <div className="container-custom">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
+                            Powerful Features
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Enterprise-grade banking features for modern financial institutions
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {features.map((feature, index) => (
+                            <div key={index} className="card-enterprise p-8">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                                <p className="text-sm text-gray-600 mb-4">{feature.description}</p>
                                 <ul className="space-y-2">
-                                    {module.features.map((feature, idx) => (
+                                    {feature.items.map((item, idx) => (
                                         <li key={idx} className="flex items-start text-sm text-gray-600">
-                                            <CheckCircleIcon className="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" />
-                                            {feature}
+                                            <CheckCircleIcon className="w-4 h-4 text-purple-500 mr-2 flex-shrink-0 mt-0.5" />
+                                            {item}
                                         </li>
                                     ))}
                                 </ul>
@@ -192,45 +165,32 @@ export default function BankingPage() {
                 </div>
             </section>
 
-            {/* Integrations */}
+            {/* How It Works */}
             <section className="section-padding bg-gray-50">
                 <div className="container-custom">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-4xl font-display font-bold text-gray-900 mb-6">
-                                Seamless Integrations
-                            </h2>
-                            <p className="text-lg text-gray-600 mb-8">
-                                Connect our Banking Solutions with your existing systems through our comprehensive API and
-                                pre-built integrations with popular platforms.
-                            </p>
-                            <ul className="space-y-3">
-                                {integrations.map((integration, index) => (
-                                    <li key={index} className="flex items-start text-gray-700">
-                                        <CheckCircleIcon className="w-6 h-6 text-indigo-500 mr-3 flex-shrink-0 mt-0.5" />
-                                        {integration}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="card-enterprise p-8 bg-gradient-to-br from-indigo-50 to-purple-50">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-6">Technical Specifications</h3>
-                            <div className="space-y-4">
-                                {[
-                                    { label: 'Architecture', value: 'Microservices, Cloud-Native' },
-                                    { label: 'API', value: 'RESTful, GraphQL' },
-                                    { label: 'Database', value: 'PostgreSQL, MongoDB' },
-                                    { label: 'Authentication', value: 'OAuth 2.0, SSO, MFA' },
-                                    { label: 'Deployment', value: 'Public, Private, On-Premise' },
-                                    { label: 'Mobile', value: 'iOS, Android native apps' },
-                                ].map((spec, index) => (
-                                    <div key={index} className="flex justify-between items-center p-3 bg-white rounded-lg">
-                                        <span className="font-semibold text-gray-900">{spec.label}</span>
-                                        <span className="text-indigo-600 text-sm">{spec.value}</span>
-                                    </div>
-                                ))}
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
+                            How It Works
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Simple 4-step process to transform your banking operations
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        {[
+                            { step: '1', title: 'Customer Onboarding', desc: 'KYC verification and account opening' },
+                            { step: '2', title: 'Account Services', desc: 'Deposits, withdrawals, and transfers' },
+                            { step: '3', title: 'Loan Processing', desc: 'Credit assessment and disbursement' },
+                            { step: '4', title: 'Digital Banking', desc: 'Multi-channel customer access' },
+                        ].map((phase, index) => (
+                            <div key={index} className="text-center">
+                                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-600 text-white flex items-center justify-center text-2xl font-bold">
+                                    {phase.step}
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">{phase.title}</h3>
+                                <p className="text-sm text-gray-600">{phase.desc}</p>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -243,62 +203,68 @@ export default function BankingPage() {
                             Flexible Pricing
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Choose the pricing model that works for your institution
+                            Choose the deployment model that fits your institution
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {[
                             {
-                                title: 'Per-User',
-                                price: 'Custom',
-                                description: 'Monthly subscription per active user',
-                                features: ['All modules included', 'Unlimited transactions', 'Mobile apps', 'Email support'],
+                                name: 'Cloud',
+                                price: '$2,999',
+                                period: '/month',
+                                description: 'SaaS deployment on secure cloud',
+                                features: ['Up to 10,000 accounts', 'Standard modules', 'Email support', 'Monthly updates', '99.9% uptime SLA'],
                             },
                             {
-                                title: 'Per-Transaction',
-                                price: 'Custom',
-                                description: 'Transaction-based pricing',
-                                features: ['Pay per transaction', 'No user limits', 'API access', 'Priority support'],
+                                name: 'Hybrid',
+                                price: '$5,999',
+                                period: '/month',
+                                description: 'Private cloud with custom features',
+                                features: ['Up to 50,000 accounts', 'All modules', 'Priority support', 'Custom integrations', 'Dedicated instance'],
                                 popular: true,
                             },
                             {
-                                title: 'Enterprise',
+                                name: 'On-Premise',
                                 price: 'Custom',
-                                description: 'Custom deployment and pricing',
-                                features: ['On-premise option', 'Dedicated support', 'Custom integrations', 'SLA guarantee'],
+                                period: '',
+                                description: 'Full on-premise deployment',
+                                features: ['Unlimited accounts', 'Source code access', '24/7 support', 'Custom development', 'Complete data sovereignty'],
                             },
                         ].map((plan, index) => (
                             <div
                                 key={index}
-                                className={`card-enterprise p-8 relative ${plan.popular ? 'ring-2 ring-indigo-500 shadow-2xl' : ''
+                                className={`card-enterprise p-8 relative ${plan.popular ? 'ring-2 ring-purple-500 shadow-2xl' : ''
                                     }`}
                             >
                                 {plan.popular && (
                                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                                        <span className="inline-flex items-center px-4 py-1 rounded-full bg-indigo-600 text-white text-sm font-semibold">
+                                        <span className="inline-flex items-center px-4 py-1 rounded-full bg-purple-600 text-white text-sm font-semibold">
                                             Most Popular
                                         </span>
                                     </div>
                                 )}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.title}</h3>
-                                <div className="text-3xl font-bold text-gray-900 mb-2">{plan.price}</div>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                                <div className="mb-4">
+                                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                                    <span className="text-gray-600">{plan.period}</span>
+                                </div>
                                 <p className="text-sm text-gray-600 mb-6">{plan.description}</p>
                                 <ul className="space-y-3 mb-8">
                                     {plan.features.map((feature, idx) => (
                                         <li key={idx} className="flex items-start text-sm text-gray-600">
-                                            <CheckCircleIcon className="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" />
+                                            <CheckCircleIcon className="w-5 h-5 text-purple-500 mr-2 flex-shrink-0 mt-0.5" />
                                             {feature}
                                         </li>
                                     ))}
                                 </ul>
                                 <Link
-                                    href="/contact?type=banking-quote"
+                                    href={`/contact?type=banking-${plan.name.toLowerCase()}`}
                                     className={`block text-center py-3 px-6 rounded-lg font-semibold transition-all ${plan.popular
-                                        ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                                        ? 'bg-purple-600 text-white hover:bg-purple-700'
                                         : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                                         }`}
                                 >
-                                    Get Quote
+                                    Get Started
                                 </Link>
                             </div>
                         ))}
@@ -307,16 +273,16 @@ export default function BankingPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="section-padding bg-gradient-to-br from-indigo-600 to-purple-600">
+            <section className="section-padding bg-gradient-to-br from-purple-600 to-indigo-600">
                 <div className="container-custom text-center">
                     <h2 className="text-4xl font-display font-bold text-white mb-6">
-                        See Banking Solutions in Action
+                        Transform Your Banking Operations Today
                     </h2>
                     <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                        Schedule a personalized demo to see how our Banking Solutions can transform your financial operations
+                        Join leading financial institutions using our banking platform
                     </p>
-                    <Link href="/contact?type=banking-demo" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-medium rounded-lg text-indigo-600 bg-white hover:bg-transparent hover:text-white transition-all duration-200">
-                        Request Demo
+                    <Link href="/contact?type=banking-demo" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-medium rounded-lg text-purple-600 bg-white hover:bg-transparent hover:text-white transition-all duration-200">
+                        Schedule Demo
                     </Link>
                 </div>
             </section>

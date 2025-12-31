@@ -7,7 +7,8 @@ import {
     FingerPrintIcon,
     ChartBarIcon,
     GlobeAltIcon,
-    ShieldCheckIcon
+    ShieldCheckIcon,
+    TruckIcon
 } from '@heroicons/react/24/solid'
 
 export const metadata = genMeta({
@@ -120,6 +121,22 @@ const products = [
             'Regulatory compliance',
         ],
         color: 'from-indigo-500 to-purple-500',
+    },
+    {
+        name: 'Kargo Manage',
+        tagline: 'Cargo Management Solution',
+        description: 'End-to-end cargo and logistics management platform for freight forwarding, warehousing, and supply chain operations',
+        icon: <TruckIcon className="w-8 h-8" />,
+        href: '/products/saas/kargo-manage',
+        features: [
+            'Shipment tracking & tracing',
+            'Warehouse management',
+            'Customs documentation',
+            'Fleet & route optimization',
+            'Rate management',
+            'Reports & analytics',
+        ],
+        color: 'from-teal-500 to-cyan-500',
     },
     {
         name: 'SafeInn Rail',

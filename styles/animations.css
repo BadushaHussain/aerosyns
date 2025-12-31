@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
+    /* Animation Delays */
     .animation-delay-200 {
         animation-delay: 200ms;
     }
@@ -25,5 +26,115 @@
 
     .animation-delay-4000 {
         animation-delay: 4000ms;
+    }
+
+    /* Blob Animation */
+    .animate-blob {
+        animation: blob 7s infinite;
+    }
+
+    /* Floating Animation */
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    /* Gradient Shift Animation */
+    .animate-gradient {
+        animation: gradient-shift 8s ease infinite;
+        background-size: 200% 200%;
+    }
+
+    /* Pulse Glow Animation */
+    .animate-pulse-glow {
+        animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    /* Fade In Animation */
+    .animate-fade-in {
+        animation: fade-in 0.8s ease-out forwards;
+        opacity: 0;
+    }
+
+    /* Slide Up Animation */
+    .animate-slide-up {
+        animation: slide-up 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    /* Rotate Animation */
+    .animate-rotate {
+        animation: rotate 20s linear infinite;
+    }
+}
+
+/* Keyframe Definitions */
+@keyframes blob {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }

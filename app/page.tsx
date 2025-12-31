@@ -7,7 +7,7 @@ import { FaTrophy, FaCheckCircle, FaTools, FaArrowRight } from 'react-icons/fa'
 import { MdCheckCircle } from 'react-icons/md'
 import { Shield, Lock, Globe, TrendingUp, Handshake, Settings } from 'lucide-react'
 import { HiCpuChip, HiCloudArrowUp, HiShieldExclamation, HiCircleStack, HiLifebuoy, HiCodeBracketSquare } from 'react-icons/hi2'
-import { FaPlane, FaNetworkWired, FaDatabase, FaChartLine, FaUsers, FaSuitcase, FaBrain, FaLock, FaFileAlt, FaBriefcase, FaFingerprint, FaUserTie, FaWarehouse, FaUniversity } from 'react-icons/fa'
+import { FaPlane, FaNetworkWired, FaDatabase, FaChartLine, FaUsers, FaSuitcase, FaBrain, FaLock, FaFileAlt, FaBriefcase, FaFingerprint, FaUserTie, FaWarehouse, FaUniversity, FaBell, FaTruck, FaShieldAlt } from 'react-icons/fa'
 
 export default function HomePage() {
     const services = [
@@ -128,24 +128,19 @@ export default function HomePage() {
                     </svg>
                 </div>
 
-                {/* Floating Gradient Orbs */}
-                <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-                <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-
                 <div className="container-custom relative">
                     <div className="grid lg:grid-cols-2 gap-12 items-center py-20 lg:py-28">
                         {/* Left Column - Content */}
                         <div className="max-w-2xl">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                                 From fiber to supercomputing, delivering enterprise IT with zero-downtime assurance
                             </h1>
-                            <p className="text-xl text-gray-600 mb-8 leading-relaxed animate-fade-in animation-delay-200">
+                            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                                 Aerosyns delivers secure, high-performance IT ecosystems across on-premise, private, and public clouds.
                                 We design Tier-ready data centers, deploy AI supercomputing clusters, and operate mission-critical
                                 systems with enterprise SLAs, compliance, and local UAE residency options.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in animation-delay-400">
+                            <div className="flex flex-col sm:flex-row gap-4 mb-8">
                                 <Link
                                     href="/contact?type=assessment"
                                     className="inline-flex items-center justify-center px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded transition-colors"
@@ -163,7 +158,7 @@ export default function HomePage() {
                         </div>
 
                         {/* Right Column - Trust Badges Card with Animation */}
-                        <div className="relative animate-fade-in animation-delay-600">
+                        <div className="relative">
                             <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-500">
                                 <h3 className="text-lg font-bold text-gray-900 mb-6">Enterprise Assurance</h3>
                                 <div className="space-y-4">
@@ -183,13 +178,14 @@ export default function HomePage() {
                 </div>
             </section>
 
+
             {/* Stats Section with Icons */}
             <section className="bg-white border-b border-gray-200">
                 <div className="container-custom">
                     <div className="py-16">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                             {stats.map((stat, index) => (
-                                <div key={index} className="text-center group animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                                <div key={index} className="text-center group">
                                     <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 group-hover:scale-110 transition-all duration-300 ${index === 0 ? 'bg-blue-100 group-hover:bg-blue-500' :
                                         index === 1 ? 'bg-amber-100 group-hover:bg-amber-500' :
                                             index === 2 ? 'bg-green-100 group-hover:bg-green-500' :
@@ -227,8 +223,7 @@ export default function HomePage() {
                         {services.map((service, index) => (
                             <div
                                 key={index}
-                                className="group bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-900 hover:shadow-2xl transition-all duration-500 relative overflow-hidden animate-fade-in"
-                                style={{ animationDelay: `${index * 100}ms` }}
+                                className="group bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-900 hover:shadow-2xl transition-all duration-500 relative overflow-hidden"
                             >
                                 {/* Decorative corner */}
                                 <div className="absolute top-0 right-0 w-20 h-20 bg-gray-100 rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -322,40 +317,32 @@ export default function HomePage() {
                                 tagline: 'Customer Relationship Management',
                                 description: 'Sales pipeline, customer support, and marketing automation in one platform',
                                 features: ['Lead & pipeline management', 'Customer support ticketing', 'Email & WhatsApp integration', 'Sales automation'],
-                                color: 'from-red-500 to-red-600',
-                                url: '/products'
+                                color: 'from-indigo-500 to-purple-600',
+                                url: '/products/saas/crm'
                             },
                             {
                                 name: 'Banking Solutions',
                                 tagline: 'Core Banking & Digital Banking',
                                 description: 'Complete banking platform with accounts, loans, deposits, and digital banking channels',
                                 features: ['Account management', 'Loan processing', 'Digital banking', 'Payment gateway'],
-                                color: 'from-indigo-500 to-indigo-600',
-                                url: '/products'
+                                color: 'from-purple-500 to-indigo-600',
+                                url: '/products/saas/banking'
                             },
                             {
-                                name: 'SafeInn Rail',
-                                tagline: 'Railway Safety Management',
-                                description: 'Comprehensive railway safety platform with 32 integrated modules for incident management, compliance, and analytics',
-                                features: ['Incident & accident management', 'Risk assessment & CAPA', 'Real-time track monitoring', 'Predictive maintenance'],
-                                color: 'from-red-500 to-red-600',
-                                url: '/products/saas/safeinn-rail'
+                                name: 'Kargo Manage',
+                                tagline: 'Cargo Management Solution',
+                                description: 'End-to-end cargo and logistics management platform for freight forwarding, warehousing, and supply chain operations',
+                                features: ['Shipment tracking & tracing', 'Warehouse management', 'Customs documentation', 'Fleet & route optimization'],
+                                color: 'from-teal-500 to-teal-600',
+                                url: '/products/saas/kargo-manage'
                             },
                             {
-                                name: 'SafeInn Airport',
-                                tagline: 'Airport Safety Management',
-                                description: 'ICAO SMS-compliant aviation safety platform with 35+ modules for airside operations, emergency response, and compliance',
-                                features: ['Airside operations safety', 'ICAO Annex 14 compliance', 'Emergency response management', 'Wildlife hazard tracking'],
-                                color: 'from-blue-500 to-blue-600',
-                                url: '/products/saas/safeinn-airport'
-                            },
-                            {
-                                name: 'SafeInn Seaport',
-                                tagline: 'Maritime Safety Management',
-                                description: 'IMO & ISPS-compliant maritime safety platform with 38+ modules for vessel operations, cargo handling, and port security',
-                                features: ['Vessel & marine operations', 'IMO & ISPS compliance', 'Cargo handling safety', 'Port security management'],
-                                color: 'from-cyan-500 to-cyan-600',
-                                url: '/products/saas/safeinn-seaport'
+                                name: 'Safety Prevention',
+                                tagline: 'Comprehensive Safety Management Platform',
+                                description: 'Unified safety management system for Railway, Airport, and Seaport operations with 100+ integrated modules for compliance, incident management, and analytics',
+                                features: ['Railway safety & compliance', 'Airport ICAO SMS compliance', 'Maritime IMO & ISPS compliance', 'Incident & risk management'],
+                                color: 'from-red-500 to-orange-600',
+                                url: '/products/saas/safety-prevention'
                             },
                         ].map((product, index) => (
                             <Link
@@ -370,12 +357,13 @@ export default function HomePage() {
                                 <div className="relative z-10">
                                     <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg mb-4 bg-gradient-to-br ${product.color}`}>
                                         {index === 0 ? <FaFileAlt className="w-6 h-6 text-white" /> :
-                                            index === 1 ? <FaFileAlt className="w-6 h-6 text-white" /> :
+                                            index === 1 ? <FaBell className="w-6 h-6 text-white" /> :
                                                 index === 2 ? <FaBriefcase className="w-6 h-6 text-white" /> :
                                                     index === 3 ? <FaFingerprint className="w-6 h-6 text-white" /> :
                                                         index === 4 ? <FaUserTie className="w-6 h-6 text-white" /> :
-                                                            index === 5 ? <FaWarehouse className="w-6 h-6 text-white" /> :
-                                                                <FaUniversity className="w-6 h-6 text-white" />}
+                                                            index === 5 ? <FaUniversity className="w-6 h-6 text-white" /> :
+                                                                index === 6 ? <FaTruck className="w-6 h-6 text-white" /> :
+                                                                    <FaShieldAlt className="w-6 h-6 text-white" />}
                                     </div>
 
                                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
@@ -576,7 +564,7 @@ export default function HomePage() {
                                 icon: Settings
                             },
                         ].map((item, index) => (
-                            <div key={index} className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                            <div key={index} className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                                 <div className="inline-flex items-center justify-center w-14 h-14 bg-gray-100 rounded-lg mb-4">
                                     <item.icon className="w-7 h-7 text-gray-900" strokeWidth={2} />
                                 </div>

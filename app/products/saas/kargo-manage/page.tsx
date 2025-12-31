@@ -1,97 +1,97 @@
 import { generateMetadata as genMeta } from '@/lib/seo'
 import Link from 'next/link'
-import { ChartBarIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
+import { TruckIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
 
 export const metadata = genMeta({
-    title: 'CRM - Customer Relationship Management Platform',
+    title: 'Kargo Manage - Cargo & Logistics Management Platform',
     description:
-        'Complete CRM solution for sales pipeline management, customer support, marketing automation, and analytics. Streamline your customer relationships with our enterprise-grade platform.',
+        'End-to-end cargo and logistics management solution for freight forwarding, warehousing, customs clearance, and supply chain operations.',
     keywords: [
-        'CRM software',
-        'customer relationship management',
-        'sales pipeline',
-        'customer support',
-        'marketing automation',
-        'sales CRM UAE',
+        'cargo management',
+        'logistics software',
+        'freight forwarding',
+        'warehouse management',
+        'customs clearance',
+        'supply chain management',
     ],
 })
 
 const useCases = [
     {
-        title: 'Sales Teams',
-        description: 'Manage leads, opportunities, and close more deals',
-        capabilities: ['Lead management', 'Pipeline tracking', 'Sales forecasting', 'Quote generation'],
+        title: 'Freight Forwarding',
+        description: 'Streamline international and domestic freight operations',
+        documents: ['Shipment tracking', 'Rate management', 'Carrier coordination', 'Documentation'],
     },
     {
-        title: 'Customer Support',
-        description: 'Deliver exceptional customer service and support',
-        capabilities: ['Ticket management', 'Knowledge base', 'SLA tracking', 'Customer portal'],
+        title: 'Warehouse Management',
+        description: 'Optimize warehouse operations and inventory control',
+        documents: ['Inventory tracking', 'Space optimization', 'Pick & pack', 'Stock management'],
     },
     {
-        title: 'Marketing Teams',
-        description: 'Execute targeted campaigns and track ROI',
-        capabilities: ['Email campaigns', 'Lead nurturing', 'Campaign analytics', 'Marketing automation'],
+        title: 'Customs Clearance',
+        description: 'Simplify customs documentation and compliance',
+        documents: ['Customs declarations', 'Duty calculations', 'Compliance tracking', 'Document generation'],
     },
     {
-        title: 'Account Management',
-        description: 'Build stronger customer relationships',
-        capabilities: ['Account hierarchy', 'Contact management', 'Activity tracking', '360° customer view'],
+        title: 'Supply Chain',
+        description: 'End-to-end visibility across your supply chain',
+        documents: ['Order management', 'Vendor coordination', 'Route optimization', 'Performance analytics'],
     },
 ]
 
 const features = [
     {
-        title: 'Lead & Pipeline Management',
-        description: 'Capture, qualify, and convert leads efficiently',
-        items: ['Lead capture forms', 'Lead scoring', 'Pipeline stages', 'Deal tracking'],
+        title: 'Shipment Tracking & Tracing',
+        description: 'Real-time visibility of cargo movement across all modes',
+        items: ['GPS tracking', 'Multi-modal tracking', 'Customer portal', 'Automated updates'],
     },
     {
-        title: 'Customer Support Ticketing',
-        description: 'Resolve customer issues faster',
-        items: ['Multi-channel tickets', 'Auto-assignment', 'SLA management', 'Customer satisfaction'],
+        title: 'Warehouse Management',
+        description: 'Complete warehouse operations and inventory control',
+        items: ['Bin location management', 'Barcode scanning', 'Stock alerts', 'Cycle counting'],
     },
     {
-        title: 'Email & WhatsApp Integration',
-        description: 'Communicate with customers on their preferred channels',
-        items: ['Email templates', 'WhatsApp messaging', 'SMS notifications', 'Chat integration'],
+        title: 'Customs Documentation',
+        description: 'Automated customs clearance and compliance',
+        items: ['Auto document generation', 'HS code management', 'Duty calculation', 'Compliance checks'],
     },
     {
-        title: 'Sales Automation',
-        description: 'Automate repetitive tasks and workflows',
-        items: ['Workflow automation', 'Task reminders', 'Follow-up sequences', 'Auto-assignment rules'],
+        title: 'Fleet & Route Optimization',
+        description: 'Optimize delivery routes and fleet utilization',
+        items: ['Route planning', 'Load optimization', 'Driver management', 'Fuel tracking'],
     },
     {
-        title: 'Analytics & Forecasting',
-        description: 'Make data-driven decisions with powerful insights',
-        items: ['Sales dashboards', 'Revenue forecasting', 'Performance metrics', 'Custom reports'],
+        title: 'Rate Management',
+        description: 'Comprehensive pricing and quotation system',
+        items: ['Multi-currency support', 'Rate cards', 'Auto quotations', 'Margin analysis'],
     },
     {
-        title: 'Mobile Apps',
-        description: 'Access your CRM on the go',
-        items: ['iOS & Android apps', 'Offline mode', 'Mobile notifications', 'Quick actions'],
+        title: 'Reports & Analytics',
+        description: 'Powerful insights into your logistics operations',
+        items: ['Performance dashboards', 'Revenue reports', 'Shipment analytics', 'Custom reports'],
     },
 ]
 
-export default function CRMPage() {
+export default function KargoManagePage() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-gray-900 via-indigo-900 to-gray-900 section-padding">
+            <section className="relative bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900 section-padding">
                 <div className="container-custom">
                     <div className="max-w-4xl">
-                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
-                            <ChartBarIcon className="w-5 h-5 text-indigo-400 mr-2" />
-                            <span className="text-indigo-400 text-sm font-semibold">Customer Relationship Management</span>
+                        <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 mb-6">
+                            <TruckIcon className="w-5 h-5 text-teal-400 mr-2" />
+                            <span className="text-teal-400 text-sm font-semibold">Cargo & Logistics</span>
                         </div>
                         <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
-                            CRM Platform
+                            Kargo Manage Platform
                         </h1>
                         <p className="text-xl text-gray-300 mb-8">
-                            All-in-one customer relationship management platform for sales, support, and marketing teams.
-                            Manage your entire customer lifecycle from lead to loyal customer with powerful automation and insights.
+                            Complete cargo and logistics management solution for freight forwarders, 3PLs, and supply chain operators.
+                            Streamline operations from booking to delivery with real-time tracking and automated workflows.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/contact?type=crm-demo" className="btn-primary">
+                            <Link href="/contact?type=kargo-demo" className="btn-primary">
                                 Request Demo
                             </Link>
                             <Link href="#features" className="btn-secondary">
@@ -107,10 +107,10 @@ export default function CRMPage() {
                 <div className="container-custom">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
-                            Built for Every Team
+                            Industry Use Cases
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Empower your sales, support, marketing, and account management teams
+                            Kargo Manage adapts to your specific logistics and supply chain needs
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -122,10 +122,10 @@ export default function CRMPage() {
                                 <p className="text-gray-600 mb-6">{useCase.description}</p>
                                 <div className="space-y-2">
                                     <div className="text-sm font-semibold text-gray-900 mb-3">Key Capabilities:</div>
-                                    {useCase.capabilities.map((capability, idx) => (
+                                    {useCase.documents.map((doc, idx) => (
                                         <div key={idx} className="flex items-center text-sm text-gray-600">
-                                            <CheckCircleIcon className="w-5 h-5 text-indigo-500 mr-2" />
-                                            {capability}
+                                            <CheckCircleIcon className="w-5 h-5 text-teal-500 mr-2" />
+                                            {doc}
                                         </div>
                                     ))}
                                 </div>
@@ -143,7 +143,7 @@ export default function CRMPage() {
                             Powerful Features
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Everything you need to manage customer relationships effectively
+                            Everything you need for comprehensive cargo and logistics management
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -154,7 +154,7 @@ export default function CRMPage() {
                                 <ul className="space-y-2">
                                     {feature.items.map((item, idx) => (
                                         <li key={idx} className="flex items-start text-sm text-gray-600">
-                                            <CheckCircleIcon className="w-4 h-4 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" />
+                                            <CheckCircleIcon className="w-4 h-4 text-teal-500 mr-2 flex-shrink-0 mt-0.5" />
                                             {item}
                                         </li>
                                     ))}
@@ -170,21 +170,21 @@ export default function CRMPage() {
                 <div className="container-custom">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
-                            How Our CRM Works
+                            How Kargo Manage Works
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Simple 4-step process to transform your customer relationships
+                            Simple 4-step process to streamline your logistics operations
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                         {[
-                            { step: '1', title: 'Capture Leads', desc: 'Collect leads from multiple channels' },
-                            { step: '2', title: 'Nurture & Qualify', desc: 'Engage and score leads automatically' },
-                            { step: '3', title: 'Convert to Sales', desc: 'Close deals with pipeline tracking' },
-                            { step: '4', title: 'Support & Retain', desc: 'Deliver exceptional customer service' },
+                            { step: '1', title: 'Create Shipment', desc: 'Book and document cargo details' },
+                            { step: '2', title: 'Track Movement', desc: 'Real-time tracking across modes' },
+                            { step: '3', title: 'Manage Customs', desc: 'Automated clearance documentation' },
+                            { step: '4', title: 'Deliver & Invoice', desc: 'Proof of delivery and billing' },
                         ].map((phase, index) => (
                             <div key={index} className="text-center">
-                                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-600 text-white flex items-center justify-center text-2xl font-bold">
+                                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-teal-600 text-white flex items-center justify-center text-2xl font-bold">
                                     {phase.step}
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-2">{phase.title}</h3>
@@ -203,42 +203,42 @@ export default function CRMPage() {
                             Simple, Transparent Pricing
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Choose the plan that fits your team size
+                            Choose the plan that fits your logistics operation
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {[
                             {
                                 name: 'Starter',
-                                price: '$29',
-                                period: '/user/month',
-                                description: 'Perfect for small teams',
-                                features: ['Up to 5 users', 'Lead management', 'Email integration', 'Mobile apps', 'Basic reports'],
+                                price: '$99',
+                                period: '/month',
+                                description: 'Perfect for small freight forwarders',
+                                features: ['Up to 100 shipments/month', '3 users', 'Basic tracking', 'Email support'],
                             },
                             {
                                 name: 'Professional',
-                                price: '$59',
-                                period: '/user/month',
-                                description: 'For growing sales teams',
-                                features: ['Up to 25 users', 'Sales automation', 'WhatsApp integration', 'Advanced analytics', 'API access', 'Custom fields'],
+                                price: '$299',
+                                period: '/month',
+                                description: 'For growing logistics companies',
+                                features: ['Up to 500 shipments/month', '10 users', 'Advanced tracking', 'Customs integration', 'API access'],
                                 popular: true,
                             },
                             {
                                 name: 'Enterprise',
                                 price: 'Custom',
                                 period: '',
-                                description: 'For large organizations',
-                                features: ['Unlimited users', 'Custom integrations', 'Dedicated support', 'Advanced security', 'SLA guarantee', 'Custom development'],
+                                description: 'For large 3PL operations',
+                                features: ['Unlimited shipments', 'Unlimited users', 'Multi-warehouse', 'Dedicated support', 'Custom integrations'],
                             },
                         ].map((plan, index) => (
                             <div
                                 key={index}
-                                className={`card-enterprise p-8 relative ${plan.popular ? 'ring-2 ring-indigo-500 shadow-2xl' : ''
+                                className={`card-enterprise p-8 relative ${plan.popular ? 'ring-2 ring-teal-500 shadow-2xl' : ''
                                     }`}
                             >
                                 {plan.popular && (
                                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                                        <span className="inline-flex items-center px-4 py-1 rounded-full bg-indigo-600 text-white text-sm font-semibold">
+                                        <span className="inline-flex items-center px-4 py-1 rounded-full bg-teal-600 text-white text-sm font-semibold">
                                             Most Popular
                                         </span>
                                     </div>
@@ -252,15 +252,15 @@ export default function CRMPage() {
                                 <ul className="space-y-3 mb-8">
                                     {plan.features.map((feature, idx) => (
                                         <li key={idx} className="flex items-start text-sm text-gray-600">
-                                            <CheckCircleIcon className="w-5 h-5 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" />
+                                            <CheckCircleIcon className="w-5 h-5 text-teal-500 mr-2 flex-shrink-0 mt-0.5" />
                                             {feature}
                                         </li>
                                     ))}
                                 </ul>
                                 <Link
-                                    href={`/contact?type=crm-${plan.name.toLowerCase()}`}
+                                    href={`/contact?type=kargo-${plan.name.toLowerCase()}`}
                                     className={`block text-center py-3 px-6 rounded-lg font-semibold transition-all ${plan.popular
-                                        ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                                        ? 'bg-teal-600 text-white hover:bg-teal-700'
                                         : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                                         }`}
                                 >
@@ -273,15 +273,15 @@ export default function CRMPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="section-padding bg-gradient-to-br from-indigo-600 to-purple-600">
+            <section className="section-padding bg-gradient-to-br from-teal-600 to-cyan-600">
                 <div className="container-custom text-center">
                     <h2 className="text-4xl font-display font-bold text-white mb-6">
-                        Start Growing Your Business Today
+                        Transform Your Logistics Operations Today
                     </h2>
                     <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                        Join thousands of businesses using our CRM to close more deals and delight customers
+                        Join leading freight forwarders and 3PLs using Kargo Manage to streamline operations
                     </p>
-                    <Link href="/contact?type=crm-demo" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-medium rounded-lg text-indigo-600 bg-white hover:bg-transparent hover:text-white transition-all duration-200">
+                    <Link href="/contact?type=kargo-demo" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-medium rounded-lg text-teal-600 bg-white hover:bg-transparent hover:text-white transition-all duration-200">
                         Start Free Trial
                     </Link>
                 </div>

@@ -103,14 +103,14 @@ export default function Navigation() {
     return (
         <header className="sticky top-0 z-50 bg-gradient-to-r from-white via-gray-50 to-white backdrop-blur-lg border-b border-gray-200/50 shadow-lg">
             <nav className="container-custom" aria-label="Global">
-                <div className="flex items-center justify-between py-5">
+                <div className="flex items-center justify-between py-3">
                     <div className="flex lg:flex-1">
                         <Link href="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Aerosyns</span>
                             <img
-                                src="/aerosyns-logo.svg"
+                                src="/aerosyns-logo.png"
                                 alt="Aerosyns"
-                                className="h-16 w-auto"
+                                className="h-12 w-auto"
                             />
                         </Link>
                     </div>
@@ -264,9 +264,9 @@ export default function Navigation() {
                         <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                             <span className="sr-only">Aerosyns</span>
                             <img
-                                src="/aerosyns-logo.svg"
+                                src="/aerosyns-logo.png"
                                 alt="Aerosyns"
-                                className="h-14 w-auto"
+                                className="h-10 w-auto"
                             />
                         </Link>
                         <button
