@@ -249,10 +249,10 @@ export default function Navigation() {
                             href="https://login.microsoftonline.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="relative inline-flex items-center gap-2 px-6 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg shadow-lg hover:shadow-xl hover:shadow-primary-500/50 hover:scale-105 transition-all duration-300"
+                            className="group inline-flex items-center gap-2 px-6 py-2.5 text-sm font-bold text-gray-900 bg-white border-2 border-gray-300 rounded-lg hover:border-gray-900 hover:shadow-md transition-all duration-300"
                         >
-                            <UserCircleIcon className="w-5 h-5" />
-                            Employee Login
+                            <UserCircleIcon className="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" />
+                            <span>Employee Login</span>
                         </a>
                     </div>
                 </div>
