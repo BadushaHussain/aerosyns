@@ -1,0 +1,31 @@
+{
+    "name": "Aerosyns - Aviation Technology Solutions",
+    "short_name": "Aerosyns",
+    "description": "Leading provider of aviation technology solutions including SaaS products, airport IT systems, and safety management platforms",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0284c7",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/aerosyns-icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/aerosyns-logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "categories": [
+        "business",
+        "productivity",
+        "technology"
+    ],
+    "lang": "en-US",
+    "dir": "ltr"
+}

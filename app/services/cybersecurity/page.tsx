@@ -1,6 +1,6 @@
 import { generateMetadata as genMeta } from '@/lib/seo'
 import Link from 'next/link'
-import { ShieldCheckIcon, LockClosedIcon, EyeIcon, DocumentCheckIcon } from '@heroicons/react/24/solid'
+import { ShieldCheckIcon, LockClosedIcon, EyeIcon, DocumentCheckIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
 
 export const metadata = genMeta({
     title: 'Cybersecurity Services & Solutions',
@@ -90,6 +90,132 @@ const threatServices = [
     {
         title: 'Security Audits',
         description: 'Comprehensive review of security posture and compliance',
+    },
+]
+
+const threatLandscape = [
+    { stat: '4.5M+', label: 'Cyber attacks daily', description: 'Global average' },
+    { stat: '287 days', label: 'Average breach detection', description: 'Industry average' },
+    { stat: '$4.45M', label: 'Average breach cost', description: 'Per incident' },
+    { stat: '95%', label: 'Human error factor', description: 'In security incidents' },
+]
+
+const securityTechnologies = [
+    {
+        category: 'SIEM & Analytics',
+        tools: ['Splunk Enterprise Security', 'IBM QRadar', 'Microsoft Sentinel', 'Elastic SIEM'],
+        capabilities: 'Real-time threat detection, log aggregation, correlation',
+    },
+    {
+        category: 'Endpoint Protection',
+        tools: ['CrowdStrike Falcon', 'Microsoft Defender', 'SentinelOne', 'Carbon Black'],
+        capabilities: 'EDR, antivirus, behavioral analysis, threat hunting',
+    },
+    {
+        category: 'Network Security',
+        tools: ['Palo Alto NGFW', 'Fortinet FortiGate', 'Cisco Firepower', 'Check Point'],
+        capabilities: 'NGFW, IPS/IDS, SSL inspection, application control',
+    },
+    {
+        category: 'Identity & Access',
+        tools: ['Okta', 'Azure AD', 'CyberArk', 'Duo Security'],
+        capabilities: 'SSO, MFA, PAM, identity governance',
+    },
+    {
+        category: 'Cloud Security',
+        tools: ['Prisma Cloud', 'CloudGuard', 'AWS Security Hub', 'Azure Security Center'],
+        capabilities: 'CSPM, CWPP, container security, compliance',
+    },
+    {
+        category: 'Threat Intelligence',
+        tools: ['Recorded Future', 'ThreatConnect', 'MISP', 'AlienVault OTX'],
+        capabilities: 'Threat feeds, IOC management, threat hunting',
+    },
+]
+
+const incidentResponse = [
+    {
+        phase: 'Preparation',
+        duration: 'Ongoing',
+        activities: ['IR plan development', 'Team training', 'Tool deployment', 'Runbook creation'],
+    },
+    {
+        phase: 'Detection & Analysis',
+        duration: '< 15 minutes',
+        activities: ['Alert triage', 'Threat validation', 'Scope assessment', 'Severity classification'],
+    },
+    {
+        phase: 'Containment',
+        duration: '< 1 hour',
+        activities: ['Isolate affected systems', 'Block malicious IPs', 'Disable compromised accounts', 'Preserve evidence'],
+    },
+    {
+        phase: 'Eradication & Recovery',
+        duration: '1-24 hours',
+        activities: ['Remove malware', 'Patch vulnerabilities', 'Restore systems', 'Verify integrity'],
+    },
+    {
+        phase: 'Post-Incident',
+        duration: '1-2 weeks',
+        activities: ['Forensic analysis', 'Lessons learned', 'Report generation', 'Process improvement'],
+    },
+]
+
+const pricingTiers = [
+    {
+        tier: 'Essential',
+        price: 'Starting at $5,000/month',
+        features: [
+            'Basic SIEM monitoring',
+            'Endpoint protection (up to 100 devices)',
+            'Email security',
+            'Quarterly vulnerability scans',
+            'Business hours support',
+        ],
+        bestFor: 'Small businesses, startups',
+    },
+    {
+        tier: 'Professional',
+        price: 'Starting at $15,000/month',
+        features: [
+            'Advanced SIEM with correlation',
+            'Endpoint protection (up to 500 devices)',
+            'NGFW management',
+            'Monthly penetration testing',
+            'Incident response (8x5)',
+            'Compliance reporting',
+        ],
+        popular: true,
+        bestFor: 'Medium enterprises',
+    },
+    {
+        tier: 'Enterprise',
+        price: 'Custom pricing',
+        features: [
+            '24/7 managed SOC',
+            'Unlimited endpoint protection',
+            'Zero-trust architecture',
+            'Continuous pen testing',
+            'Dedicated security team',
+            'Incident response (24/7)',
+            'Compliance certification support',
+        ],
+        bestFor: 'Large enterprises, regulated industries',
+    },
+]
+
+const caseStudies = [
+    {
+        industry: 'Financial Services',
+        challenge: 'PCI-DSS compliance and advanced persistent threats',
+        solution: 'Deployed 24/7 SOC, SIEM, and zero-trust architecture',
+        results: ['100% PCI-DSS compliance', '99.9% threat detection rate', '< 10 min response time', 'Zero successful breaches'],
+    },
+    {
+        industry: 'Healthcare',
+        challenge: 'HIPAA compliance and ransomware protection',
+        solution: 'Implemented EDR, backup encryption, and security awareness training',
+        results: ['HIPAA certified', 'Blocked 50+ ransomware attempts', '95% reduction in phishing clicks', 'Zero data breaches'],
     },
 ]
 
@@ -267,6 +393,220 @@ export default function CybersecurityPage() {
                                 ))}
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Threat Landscape */}
+            <section className="section-padding bg-gray-900 text-white">
+                <div className="container-custom">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-display font-bold text-white mb-4">
+                            Current Threat Landscape
+                        </h2>
+                        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                            Why advanced cybersecurity is critical for your business
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        {threatLandscape.map((item, index) => (
+                            <div key={index} className="text-center p-6 bg-gray-800 rounded-2xl border border-gray-700">
+                                <div className="text-4xl font-bold text-primary-400 mb-2">{item.stat}</div>
+                                <div className="text-lg font-semibold text-white mb-1">{item.label}</div>
+                                <div className="text-sm text-gray-400">{item.description}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Security Technologies */}
+            <section className="section-padding bg-white">
+                <div className="container-custom">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
+                            Technology Stack
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Best-in-class security tools and platforms we deploy
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {securityTechnologies.map((tech, index) => (
+                            <div key={index} className="card-enterprise p-8 hover:border-primary-500 transition-colors">
+                                <h3 className="text-xl font-bold text-gray-900 mb-4">{tech.category}</h3>
+                                <div className="mb-4">
+                                    <p className="text-xs text-gray-500 font-semibold mb-2">Key Tools:</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {tech.tools.map((tool, idx) => (
+                                            <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded">
+                                                {tool}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                                <p className="text-sm text-gray-600 border-t border-gray-100 pt-3">
+                                    <span className="font-semibold text-primary-600">Capabilities:</span> {tech.capabilities}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Incident Response */}
+            <section className="section-padding bg-gray-50">
+                <div className="container-custom">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
+                            Incident Response Framework
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Rapid, structured response to security incidents
+                        </p>
+                    </div>
+                    <div className="relative">
+                        <div className="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-gray-200 hidden md:block"></div>
+                        <div className="space-y-12">
+                            {incidentResponse.map((phase, index) => (
+                                <div key={index} className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                                    <div className="flex-1 w-full md:text-right">
+                                        {index % 2 !== 0 && (
+                                            <div className="md:pr-8">
+                                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{phase.phase}</h3>
+                                                <div className="text-primary-600 font-semibold mb-2">{phase.duration}</div>
+                                                <div className="flex flex-wrap gap-2 justify-end">
+                                                    {phase.activities.map((activity, idx) => (
+                                                        <span key={idx} className="bg-white px-3 py-1 rounded shadow-sm text-sm text-gray-600">
+                                                            {activity}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div className="w-12 h-12 rounded-full bg-primary-600 border-4 border-white shadow-lg flex items-center justify-center z-10 shrink-0 text-white font-bold">
+                                        {index + 1}
+                                    </div>
+                                    <div className="flex-1 w-full">
+                                        {index % 2 === 0 && (
+                                            <div className="md:pl-8">
+                                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{phase.phase}</h3>
+                                                <div className="text-primary-600 font-semibold mb-2">{phase.duration}</div>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {phase.activities.map((activity, idx) => (
+                                                        <span key={idx} className="bg-white px-3 py-1 rounded shadow-sm text-sm text-gray-600">
+                                                            {activity}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+                                        {/* Mobile view content for odd items */}
+                                        {index % 2 !== 0 && (
+                                            <div className="block md:hidden">
+                                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{phase.phase}</h3>
+                                                <div className="text-primary-600 font-semibold mb-2">{phase.duration}</div>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {phase.activities.map((activity, idx) => (
+                                                        <span key={idx} className="bg-white px-3 py-1 rounded shadow-sm text-sm text-gray-600">
+                                                            {activity}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Pricing Packages */}
+            <section className="section-padding bg-white">
+                <div className="container-custom">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
+                            Security Packages
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Flexible security tiers for every organization size
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {pricingTiers.map((tier, index) => (
+                            <div
+                                key={index}
+                                className={`card-enterprise p-8 relative flex flex-col ${tier.popular ? 'ring-2 ring-primary-500 shadow-2xl scale-105' : ''}`}
+                            >
+                                {tier.popular && (
+                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                                        <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-semibold">
+                                            Most Popular
+                                        </span>
+                                    </div>
+                                )}
+                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.tier}</h3>
+                                <div className="text-xl font-bold text-primary-600 mb-6">{tier.price}</div>
+                                <ul className="space-y-3 mb-8 flex-1">
+                                    {tier.features.map((feature, idx) => (
+                                        <li key={idx} className="flex items-start text-sm text-gray-600">
+                                            <CheckCircleIcon className="w-5 h-5 text-primary-500 mr-2 flex-shrink-0 mt-0.5" />
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <div className="pt-4 border-t border-gray-200">
+                                    <p className="text-xs text-gray-500 font-semibold mb-1">Best For:</p>
+                                    <p className="text-sm text-gray-700">{tier.bestFor}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Case Studies */}
+            <section className="section-padding bg-gray-50">
+                <div className="container-custom">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
+                            Success Stories
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Proven results in critical sectors
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {caseStudies.map((study, index) => (
+                            <div key={index} className="card-enterprise p-8">
+                                <div className="flex items-center justify-between mb-6">
+                                    <h3 className="text-2xl font-bold text-gray-900">{study.industry}</h3>
+                                    <ShieldCheckIcon className="w-8 h-8 text-primary-500" />
+                                </div>
+                                <div className="mb-4">
+                                    <h4 className="font-semibold text-gray-900 mb-2">Challenge:</h4>
+                                    <p className="text-sm text-gray-600">{study.challenge}</p>
+                                </div>
+                                <div className="mb-6">
+                                    <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
+                                    <p className="text-sm text-gray-600">{study.solution}</p>
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-gray-900 mb-3">Key Results:</h4>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        {study.results.map((result, idx) => (
+                                            <div key={idx} className="flex items-start text-sm text-gray-600">
+                                                <CheckCircleIcon className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                                                {result}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
