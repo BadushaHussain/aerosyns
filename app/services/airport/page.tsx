@@ -250,11 +250,11 @@ export default function AirportServicesPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {whyChooseUs.map((reason, index) => (
                             <div key={index} className="card-enterprise p-6">
-                                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                                    <CheckCircleIcon className="w-7 h-7 text-blue-600" />
+                                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                                    <CheckCircleIcon className="w-7 h-7 text-blue-600 dark:text-blue-400" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">{reason.title}</h3>
-                                <p className="text-gray-600">{reason.description}</p>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{reason.title}</h3>
+                                <p className="text-gray-600 dark:text-gray-300">{reason.description}</p>
                             </div>
                         ))}
                     </div>
@@ -275,7 +275,7 @@ export default function AirportServicesPage() {
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                         {clientTypes.map((client, index) => (
                             <div key={index} className="card-enterprise p-4 text-center">
-                                <div className="text-sm font-semibold text-gray-900">{client}</div>
+                                <div className="text-sm font-semibold text-gray-900 dark:text-white">{client}</div>
                             </div>
                         ))}
                     </div>
@@ -312,11 +312,11 @@ export default function AirportServicesPage() {
                             },
                         ].map((model, index) => (
                             <div key={index} className="card-enterprise p-8">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3">{model.title}</h3>
-                                <p className="text-gray-600 mb-6">{model.description}</p>
+                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{model.title}</h3>
+                                <p className="text-gray-600 dark:text-gray-300 mb-6">{model.description}</p>
                                 <ul className="space-y-2">
                                     {model.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-start text-sm text-gray-600">
+                                        <li key={idx} className="flex items-start text-sm text-gray-600 dark:text-gray-300">
                                             <CheckCircleIcon className="w-5 h-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" />
                                             {feature}
                                         </li>

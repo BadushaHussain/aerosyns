@@ -14,7 +14,7 @@ export default function SLAPage() {
                         Service Level Agreement (SLA)
                     </h1>
                     <p className="text-gray-600 mb-8">
-                        Last Updated: December 25, 2024
+                        Last Updated: January 2, 2026
                     </p>
 
                     <div className="prose prose-lg max-w-none">

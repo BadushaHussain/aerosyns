@@ -545,45 +545,69 @@ export default function HomePage() {
                             {
                                 title: 'Mission-Critical Uptime',
                                 description: 'SLA-backed 99.99% uptime with 24/7 NOC and on-call engineering support for zero-downtime operations.',
-                                icon: Shield
+                                icon: Shield,
+                                href: '/services/managed-services'
                             },
                             {
                                 title: 'Enterprise Security',
                                 description: 'SOC2 Type II and ISO 27001 certified with zero-trust architecture, SIEM, and managed detection.',
-                                icon: Lock
+                                icon: Lock,
+                                href: '/services/cybersecurity'
                             },
                             {
                                 title: 'Local Data Residency',
                                 description: 'UAE-based infrastructure options ensuring compliance with local data sovereignty requirements.',
-                                icon: Globe
+                                icon: Globe,
+                                href: '/services/cloud'
                             },
                             {
                                 title: 'Proven Track Record',
                                 description: 'Over 15 years of experience delivering 500+ successful enterprise IT projects across MENA.',
-                                icon: TrendingUp
+                                icon: TrendingUp,
+                                href: '/company/about'
                             },
                             {
                                 title: 'Technology Partners',
                                 description: 'Authorized partnerships with Dell, HP, Cisco, Fortinet, and other leading technology vendors.',
-                                icon: Handshake
+                                icon: Handshake,
+                                href: '/company/partners'
                             },
                             {
                                 title: 'Comprehensive Support',
                                 description: 'End-to-end lifecycle management from assessment and design to implementation and ongoing support.',
-                                icon: Settings
+                                icon: Settings,
+                                href: '/services/managed-services'
                             },
                         ].map((item, index) => (
-                            <div key={index} className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                                <div className="inline-flex items-center justify-center w-14 h-14 bg-gray-100 rounded-lg mb-4">
-                                    <item.icon className="w-7 h-7 text-gray-900" strokeWidth={2} />
+                            item.href ? (
+                                <Link key={index} href={item.href} className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-900 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
+                                    <div className="inline-flex items-center justify-center w-14 h-14 bg-gray-100 rounded-lg mb-4 group-hover:bg-gray-900 transition-colors">
+                                        <item.icon className="w-7 h-7 text-gray-900 group-hover:text-white transition-colors" strokeWidth={2} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-gray-900">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-gray-600 leading-relaxed">
+                                        {item.description}
+                                    </p>
+                                    <div className="mt-4 inline-flex items-center text-gray-900 font-semibold group-hover:gap-2 transition-all">
+                                        Learn More
+                                        <FaArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                                    </div>
+                                </Link>
+                            ) : (
+                                <div key={index} className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                                    <div className="inline-flex items-center justify-center w-14 h-14 bg-gray-100 rounded-lg mb-4">
+                                        <item.icon className="w-7 h-7 text-gray-900" strokeWidth={2} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-gray-600 leading-relaxed">
+                                        {item.description}
+                                    </p>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                    {item.title}
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed">
-                                    {item.description}
-                                </p>
-                            </div>
+                            )
                         ))}
                     </div>
                 </div>
