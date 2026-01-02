@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import {
     EnvelopeIcon,
     PhoneIcon,
@@ -82,9 +83,11 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
                     <div className="lg:col-span-2">
                         <Link href="/" className="inline-block mb-4 p-1.5 bg-white rounded-xl shadow-sm">
-                            <img
+                            <Image
                                 src="/aerosyns-logo.png"
                                 alt="Aerosyns"
+                                width={240}
+                                height={64}
                                 className="h-16 w-auto"
                             />
                         </Link>

@@ -9,7 +9,15 @@ export const metadata = genMeta({
     keywords: ['network infrastructure', 'Cisco deployment', 'Aruba wireless', 'SD-WAN', 'enterprise networking UAE'],
 })
 
-const equipmentCategories = [
+interface NetworkEquipment {
+    brand: string
+    ports?: string
+    standard?: string
+    speed: string
+    features: string
+}
+
+const equipmentCategories: { category: string; description: string; models: NetworkEquipment[] }[] = [
     {
         category: 'Core Switches',
         description: 'High-performance backbone switching',

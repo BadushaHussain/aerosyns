@@ -2,6 +2,7 @@
 
 import { Fragment, useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
     Bars3Icon,
@@ -107,10 +108,13 @@ export default function Navigation() {
                     <div className="flex lg:flex-1">
                         <Link href="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Aerosyns</span>
-                            <img
+                            <Image
                                 src="/aerosyns-logo.png"
                                 alt="Aerosyns"
+                                width={180}
+                                height={48}
                                 className="h-12 w-auto"
+                                priority
                             />
                         </Link>
                     </div>
@@ -263,9 +267,11 @@ export default function Navigation() {
                     <div className="flex items-center justify-between">
                         <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                             <span className="sr-only">Aerosyns</span>
-                            <img
+                            <Image
                                 src="/aerosyns-logo.png"
                                 alt="Aerosyns"
+                                width={150}
+                                height={40}
                                 className="h-10 w-auto"
                             />
                         </Link>

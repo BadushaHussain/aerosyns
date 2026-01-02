@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 export interface ProductCardProps {
@@ -46,11 +47,12 @@ export default function ProductCard({
 
             {/* Icon or Image */}
             {imageUrl ? (
-                <div className="mb-6 rounded-lg overflow-hidden">
-                    <img
+                <div className="mb-6 rounded-lg overflow-hidden relative h-48 w-full">
+                    <Image
                         src={imageUrl}
                         alt={name}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                 </div>
             ) : icon ? (
