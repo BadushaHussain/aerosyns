@@ -210,6 +210,7 @@ export default function NautifyPage() {
                             {
                                 name: 'Starter',
                                 price: '$49',
+                                offerPrice: '$19.60',
                                 period: '/month',
                                 description: 'Perfect for small teams',
                                 features: ['Up to 500 documents', '2 users', 'Email notifications', 'Basic reports'],
@@ -217,6 +218,7 @@ export default function NautifyPage() {
                             {
                                 name: 'Professional',
                                 price: '$149',
+                                offerPrice: '$89.40',
                                 period: '/month',
                                 description: 'For growing organizations',
                                 features: ['Up to 5,000 documents', '10 users', 'Multi-channel alerts', 'Advanced reports', 'API access'],
@@ -225,6 +227,7 @@ export default function NautifyPage() {
                             {
                                 name: 'Enterprise',
                                 price: 'Custom',
+                                offerPrice: null,
                                 period: '',
                                 description: 'For large organizations',
                                 features: ['Unlimited documents', 'Unlimited users', 'Custom integrations', 'Dedicated support', 'SLA guarantee'],
@@ -244,8 +247,23 @@ export default function NautifyPage() {
                                 )}
                                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                                 <div className="mb-4">
-                                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                                    <span className="text-gray-600">{plan.period}</span>
+                                    {plan.offerPrice ? (
+                                        <div className="flex flex-col">
+                                            <span className="text-sm text-gray-500 line-through mb-1">
+                                                {plan.price}{plan.period}
+                                            </span>
+                                            <div className="flex items-baseline gap-1">
+                                                <span className="text-4xl font-bold text-gray-900">{plan.offerPrice}</span>
+                                                <span className="text-gray-600">{plan.period}</span>
+                                            </div>
+                                            <span className="text-xs text-purple-600 font-semibold mt-1">Offer Price</span>
+                                        </div>
+                                    ) : (
+                                        <>
+                                            <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                                            <span className="text-gray-600">{plan.period}</span>
+                                        </>
+                                    )}
                                 </div>
                                 <p className="text-sm text-gray-600 mb-6">{plan.description}</p>
                                 <ul className="space-y-3 mb-8">
@@ -259,11 +277,11 @@ export default function NautifyPage() {
                                 <Link
                                     href={`/contact?type=nautify-${plan.name.toLowerCase()}`}
                                     className={`block text-center py-3 px-6 rounded-lg font-semibold transition-all ${plan.popular
-                                            ? 'bg-purple-600 text-white hover:bg-purple-700'
-                                            : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                                        ? 'bg-purple-600 text-white hover:bg-purple-700'
+                                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                                         }`}
                                 >
-                                    Get Started
+                                    {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
                                 </Link>
                             </div>
                         ))}

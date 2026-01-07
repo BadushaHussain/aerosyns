@@ -20,14 +20,7 @@ interface QuoteRequest extends LeadData {
 
 export async function submitLead(data: LeadData): Promise<{ success: boolean; message: string }> {
     try {
-        const webhookUrl = process.env.NEXT_PUBLIC_CRM_WEBHOOK_URL
-
-        if (!webhookUrl) {
-            console.error('CRM webhook URL not configured')
-            return { success: false, message: 'Configuration error' }
-        }
-
-        const response = await fetch(webhookUrl, {
+        const response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -43,7 +36,8 @@ export async function submitLead(data: LeadData): Promise<{ success: boolean; me
             throw new Error(`HTTP error! status: ${response.status}`)
         }
 
-        return { success: true, message: 'Lead submitted successfully' }
+        const result = await response.json()
+        return { success: result.success, message: result.message || 'Lead submitted successfully' }
     } catch (error) {
         console.error('Error submitting lead:', error)
         return { success: false, message: 'Failed to submit lead' }
