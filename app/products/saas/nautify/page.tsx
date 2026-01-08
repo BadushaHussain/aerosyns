@@ -115,14 +115,14 @@ export default function NautifyPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {useCases.map((useCase, index) => (
                             <div key={index} className="card-enterprise p-8">
-                                <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">
+                                <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-3">
                                     {useCase.title}
                                 </h3>
-                                <p className="text-gray-600 mb-6">{useCase.description}</p>
+                                <p className="text-gray-600 dark:text-gray-300 mb-6">{useCase.description}</p>
                                 <div className="space-y-2">
-                                    <div className="text-sm font-semibold text-gray-900 mb-3">Common Documents:</div>
+                                    <div className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Common Documents:</div>
                                     {useCase.documents.map((doc, idx) => (
-                                        <div key={idx} className="flex items-center text-sm text-gray-600">
+                                        <div key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                                             <CheckCircleIcon className="w-5 h-5 text-purple-500 mr-2" />
                                             {doc}
                                         </div>
@@ -148,11 +148,11 @@ export default function NautifyPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {features.map((feature, index) => (
                             <div key={index} className="card-enterprise p-8">
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                                <p className="text-sm text-gray-600 mb-4">{feature.description}</p>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{feature.description}</p>
                                 <ul className="space-y-2">
                                     {feature.items.map((item, idx) => (
-                                        <li key={idx} className="flex items-start text-sm text-gray-600">
+                                        <li key={idx} className="flex items-start text-sm text-gray-600 dark:text-gray-300">
                                             <CheckCircleIcon className="w-4 h-4 text-purple-500 mr-2 flex-shrink-0 mt-0.5" />
                                             {item}
                                         </li>
@@ -245,30 +245,30 @@ export default function NautifyPage() {
                                         </span>
                                     </div>
                                 )}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
                                 <div className="mb-4">
                                     {plan.offerPrice ? (
                                         <div className="flex flex-col">
-                                            <span className="text-sm text-gray-500 line-through mb-1">
+                                            <span className="text-sm text-gray-500 dark:text-gray-400 line-through mb-1">
                                                 {plan.price}{plan.period}
                                             </span>
                                             <div className="flex items-baseline gap-1">
-                                                <span className="text-4xl font-bold text-gray-900">{plan.offerPrice}</span>
-                                                <span className="text-gray-600">{plan.period}</span>
+                                                <span className="text-4xl font-bold text-gray-900 dark:text-white">{plan.offerPrice}</span>
+                                                <span className="text-gray-600 dark:text-gray-300">{plan.period}</span>
                                             </div>
                                             <span className="text-xs text-purple-600 font-semibold mt-1">Offer Price</span>
                                         </div>
                                     ) : (
                                         <>
-                                            <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                                            <span className="text-gray-600">{plan.period}</span>
+                                            <span className="text-4xl font-bold text-gray-900 dark:text-white">{plan.price}</span>
+                                            <span className="text-gray-600 dark:text-gray-300">{plan.period}</span>
                                         </>
                                     )}
                                 </div>
-                                <p className="text-sm text-gray-600 mb-6">{plan.description}</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">{plan.description}</p>
                                 <ul className="space-y-3 mb-8">
                                     {plan.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-start text-sm text-gray-600">
+                                        <li key={idx} className="flex items-start text-sm text-gray-600 dark:text-gray-300">
                                             <CheckCircleIcon className="w-5 h-5 text-purple-500 mr-2 flex-shrink-0 mt-0.5" />
                                             {feature}
                                         </li>
