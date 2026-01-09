@@ -157,7 +157,11 @@ export default function NautifyPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {features.map((feature, index) => (
-                            <div key={index} className="card-enterprise p-8">
+                            <Link
+                                key={index}
+                                href={`/products/saas/nautify/features/${feature.title.toLowerCase().replace(/\s+/g, '-').replace('&', '')}`}
+                                className="card-enterprise p-8 hover:scale-105 transition-transform duration-200"
+                            >
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
                                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{feature.description}</p>
                                 <ul className="space-y-2">
@@ -168,7 +172,13 @@ export default function NautifyPage() {
                                         </li>
                                     ))}
                                 </ul>
-                            </div>
+                                <div className="mt-6 text-purple-600 font-semibold flex items-center">
+                                    Learn More
+                                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
