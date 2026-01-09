@@ -6,7 +6,7 @@ import { CheckCircleIcon, ArrowTrendingUpIcon, UserGroupIcon, ClockIcon, BellAle
 export default function EscalationPage() {
     return (
         <main className="min-h-screen bg-gray-50">
-            <section className="bg-gradient-to-r from-red-600 to-pink-600 text-white section-padding">
+            <section className="bg-gradient-to-r from-red-600 to-pink-600 text-white py-20">
                 <div className="container-custom">
                     <div className="max-w-4xl mx-auto text-center">
                         <h1 className="text-5xl font-display font-bold mb-6">Escalation Workflows</h1>
@@ -20,7 +20,7 @@ export default function EscalationPage() {
                 </div>
             </section>
 
-            <section className="section-padding bg-white">
+            <section className="py-16 bg-white">
                 <div className="container-custom">
                     <h2 className="text-4xl font-display font-bold text-gray-900 mb-12 text-center">Escalation Features</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -40,7 +40,7 @@ export default function EscalationPage() {
                 </div>
             </section>
 
-            <section className="section-padding bg-gradient-to-r from-red-600 to-pink-600 text-white">
+            <section className="py-20 bg-gradient-to-r from-red-600 to-pink-600 text-white">
                 <div className="container-custom text-center">
                     <h2 className="text-4xl font-display font-bold mb-6">Ensure Accountability</h2>
                     <Link href="/contact?type=nautify-escalation" className="inline-flex items-center justify-center px-8 py-4 bg-white text-red-600 font-bold text-lg rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg">

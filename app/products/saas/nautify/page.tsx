@@ -336,7 +336,7 @@ export default function NautifyPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="section-padding bg-gradient-to-br from-purple-600 to-pink-600">
+            <section className="py-20 bg-gradient-to-br from-purple-600 to-pink-600">
                 <div className="container-custom text-center">
                     <h2 className="text-4xl font-display font-bold text-white mb-6">
                         Start Tracking Documents Today

@@ -7,7 +7,7 @@ export default function FleetPage() {
     return (
         <main className="min-h-screen bg-gray-50">
             {/* Hero Section */}
-            <section className="bg-gradient-to-r from-orange-600 to-red-600 text-white section-padding">
+            <section className="bg-gradient-to-r from-orange-600 to-red-600 text-white py-20">
                 <div className="container-custom">
                     <div className="max-w-4xl mx-auto text-center">
                         <h1 className="text-5xl font-display font-bold mb-6">
@@ -27,7 +27,7 @@ export default function FleetPage() {
             </section>
 
             {/* Key Challenges */}
-            <section className="section-padding bg-white">
+            <section className="py-16 bg-white">
                 <div className="container-custom">
                     <h2 className="text-4xl font-display font-bold text-gray-900 mb-12 text-center">
                         Fleet Management Challenges
@@ -66,7 +66,7 @@ export default function FleetPage() {
             </section>
 
             {/* Common Documents */}
-            <section className="section-padding bg-gray-50">
+            <section className="py-16 bg-gray-50">
                 <div className="container-custom">
                     <h2 className="text-4xl font-display font-bold text-gray-900 mb-12 text-center">
                         Documents We Track
@@ -107,7 +107,7 @@ export default function FleetPage() {
             </section>
 
             {/* How Nautify Helps */}
-            <section className="section-padding bg-white">
+            <section className="py-16 bg-white">
                 <div className="container-custom">
                     <h2 className="text-4xl font-display font-bold text-gray-900 mb-12 text-center">
                         How Nautify Helps Fleet Managers
@@ -143,7 +143,7 @@ export default function FleetPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="section-padding bg-gradient-to-r from-orange-600 to-red-600 text-white">
+            <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
                 <div className="container-custom text-center">
                     <h2 className="text-4xl font-display font-bold mb-6">
                         Keep Your Fleet Compliant and On the Road
