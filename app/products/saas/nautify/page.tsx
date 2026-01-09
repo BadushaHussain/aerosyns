@@ -114,7 +114,11 @@ export default function NautifyPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {useCases.map((useCase, index) => (
-                            <div key={index} className="card-enterprise p-8">
+                            <Link
+                                key={index}
+                                href={`/products/saas/nautify/${useCase.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                className="card-enterprise p-8 hover:scale-105 transition-transform duration-200"
+                            >
                                 <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-3">
                                     {useCase.title}
                                 </h3>
@@ -128,7 +132,13 @@ export default function NautifyPage() {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                                <div className="mt-6 text-purple-600 font-semibold flex items-center">
+                                    Learn More
+                                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -201,9 +211,29 @@ export default function NautifyPage() {
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
                             Simple, Transparent Pricing
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                             Choose the plan that fits your organization
                         </p>
+
+                        {/* Free Trial Banner */}
+                        <div className="inline-flex flex-col items-center justify-center px-8 py-6 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 shadow-2xl mb-8">
+                            <div className="flex items-center gap-3 mb-3">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span className="text-3xl font-bold text-white">30 Days Absolutely FREE</span>
+                            </div>
+                            <p className="text-white/90 text-sm mb-4">No credit card required • Cancel anytime</p>
+                            <Link
+                                href="/contact?type=nautify-trial"
+                                className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 font-bold text-lg rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl"
+                            >
+                                Start Free Trial Now
+                                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </Link>
+                        </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {[
@@ -281,7 +311,7 @@ export default function NautifyPage() {
                                         : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                                         }`}
                                 >
-                                    {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
+                                    {plan.name === 'Enterprise' ? 'Contact Sales' : 'Start Free Trial'}
                                 </Link>
                             </div>
                         ))}
