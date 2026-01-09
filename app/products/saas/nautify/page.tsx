@@ -102,7 +102,7 @@ export default function NautifyPage() {
             </section>
 
             {/* Use Cases */}
-            <section className="section-padding bg-gray-50">
+            <section className="py-16 bg-gray-50">
                 <div className="container-custom">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
@@ -112,7 +112,7 @@ export default function NautifyPage() {
                             Nautify adapts to your industry's specific document tracking needs
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {useCases.map((useCase, index) => (
                             <Link
                                 key={index}
@@ -145,7 +145,7 @@ export default function NautifyPage() {
             </section>
 
             {/* Features */}
-            <section id="features" className="section-padding bg-white">
+            <section id="features" className="py-16 bg-white">
                 <div className="container-custom">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
@@ -155,16 +155,16 @@ export default function NautifyPage() {
                             Everything you need for comprehensive document compliance management
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {features.map((feature, index) => (
                             <Link
                                 key={index}
                                 href={`/products/saas/nautify/features/${feature.title === 'Document Upload & Storage' ? 'document-upload' :
-                                        feature.title === 'Reports & Analytics' ? 'reports' :
-                                            feature.title === 'Escalation Workflows' ? 'escalation' :
-                                                feature.title === 'Compliance Dashboards' ? 'dashboards' :
-                                                    feature.title === 'Multi-Channel Notifications' ? 'notifications' :
-                                                        'expiry-tracking'
+                                    feature.title === 'Reports & Analytics' ? 'reports' :
+                                        feature.title === 'Escalation Workflows' ? 'escalation' :
+                                            feature.title === 'Compliance Dashboards' ? 'dashboards' :
+                                                feature.title === 'Multi-Channel Notifications' ? 'notifications' :
+                                                    'expiry-tracking'
                                     }`}
                                 className="card-enterprise p-8 hover:scale-105 transition-transform duration-200"
                             >
@@ -191,7 +191,7 @@ export default function NautifyPage() {
             </section>
 
             {/* How It Works */}
-            <section className="section-padding bg-gray-50">
+            <section className="py-16 bg-gray-50">
                 <div className="container-custom">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
@@ -221,18 +221,18 @@ export default function NautifyPage() {
             </section>
 
             {/* Pricing */}
-            <section className="section-padding bg-white">
+            <section className="py-16 bg-white">
                 <div className="container-custom">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
                             Simple, Transparent Pricing
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
                             Choose the plan that fits your organization
                         </p>
 
                         {/* Free Trial Banner */}
-                        <div className="inline-flex flex-col items-center justify-center px-8 py-6 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 shadow-2xl mb-8">
+                        <div className="inline-flex flex-col items-center justify-center px-8 py-6 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 shadow-2xl mb-12">
                             <div className="flex items-center gap-3 mb-3">
                                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
