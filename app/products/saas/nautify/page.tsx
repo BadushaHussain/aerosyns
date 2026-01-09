@@ -17,9 +17,9 @@ export const metadata = genMeta({
 
 const useCases = [
     {
-        title: 'Insurance',
-        description: 'Track policy documents, licenses, and regulatory compliance',
-        documents: ['Insurance policies', 'Agent licenses', 'Regulatory filings', 'Certificates'],
+        title: 'Fleet Management',
+        description: 'Manage vehicle and driver documentation',
+        documents: ['Vehicle registration', 'Insurance', 'Driver licenses', 'Inspection certificates'],
     },
     {
         title: 'Human Resources',
@@ -27,14 +27,14 @@ const useCases = [
         documents: ['Work permits', 'Visas', 'Passports', 'Professional certifications'],
     },
     {
-        title: 'Fleet Management',
-        description: 'Manage vehicle and driver documentation',
-        documents: ['Vehicle registration', 'Insurance', 'Driver licenses', 'Inspection certificates'],
-    },
-    {
         title: 'Immigration',
         description: 'Track visa and permit expiries',
         documents: ['Visas', 'Work permits', 'Residence permits', 'Travel documents'],
+    },
+    {
+        title: 'Insurance',
+        description: 'Track policy documents, licenses, and regulatory compliance',
+        documents: ['Insurance policies', 'Agent licenses', 'Regulatory filings', 'Certificates'],
     },
 ]
 
