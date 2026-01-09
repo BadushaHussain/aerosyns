@@ -159,7 +159,13 @@ export default function NautifyPage() {
                         {features.map((feature, index) => (
                             <Link
                                 key={index}
-                                href={`/products/saas/nautify/features/${feature.title.toLowerCase().replace(/\s+/g, '-').replace('&', '')}`}
+                                href={`/products/saas/nautify/features/${feature.title === 'Document Upload & Storage' ? 'document-upload' :
+                                        feature.title === 'Reports & Analytics' ? 'reports' :
+                                            feature.title === 'Escalation Workflows' ? 'escalation' :
+                                                feature.title === 'Compliance Dashboards' ? 'dashboards' :
+                                                    feature.title === 'Multi-Channel Notifications' ? 'notifications' :
+                                                        'expiry-tracking'
+                                    }`}
                                 className="card-enterprise p-8 hover:scale-105 transition-transform duration-200"
                             >
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
