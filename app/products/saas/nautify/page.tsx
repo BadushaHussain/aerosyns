@@ -101,93 +101,98 @@ export default function NautifyPage() {
                         </p>
                     </div>
 
-                    {/* 3-Image Box Carousel */}
-                    <div className="max-w-6xl mx-auto relative">
+                    {/* Responsive Box Carousel */}
+                    <div className="max-w-6xl mx-auto relative group">
                         {/* Carousel Container */}
-                        <div className="relative overflow-hidden px-12">
-                            <div id="carousel-track" className="flex transition-transform duration-500 ease-in-out">
-                                {[
-                                    { src: '/nautify-login.png', title: 'Login', desc: 'Secure authentication' },
-                                    { src: '/nautify-dashboard.png', title: 'Dashboard', desc: 'Real-time monitoring' },
-                                    { src: '/nautify-documents.png', title: 'Documents', desc: 'File management' },
-                                    { src: '/nautify-expiry.png', title: 'Expiry', desc: 'Calendar tracking' },
-                                    { src: '/nautify-notifications.jpg', title: 'Notifications', desc: 'Multi-channel alerts' },
-                                    { src: '/nautify-compliance.jpg', title: 'Compliance', desc: 'Dashboard overview' },
-                                    { src: '/nautify-reports.jpg', title: 'Reports', desc: 'Analytics and insights' },
-                                    { src: '/nautify-settings.png', title: 'Settings', desc: 'Customize preferences' },
-                                ].map((image, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex-shrink-0 px-3"
-                                        style={{ width: 'calc(100% / 3)' }}
+                        <div
+                            id="carousel-container"
+                            className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory px-4 sm:px-12 py-4 gap-4 sm:gap-6 lg:gap-8"
+                            style={{ scrollBehavior: 'smooth' }}
+                        >
+                            {[
+                                { src: '/nautify/01.JPG', title: 'Dashboard Overview', desc: 'Real-time insights' },
+                                { src: '/nautify/02.JPG', title: 'Document Management', desc: 'Centralized storage' },
+                                { src: '/nautify/03.JPG', title: 'Compliance Tracking', desc: 'Stay compliant' },
+                                { src: '/nautify/04.JPG', title: 'Expiry Alerts', desc: 'Never miss a deadline' },
+                                { src: '/nautify/05.JPG', title: 'Notifications', desc: 'Multi-channel alerts' },
+                                { src: '/nautify/06.JPG', title: 'Reports & Analytics', desc: 'Data-driven decisions' },
+                                { src: '/nautify/07.JPG', title: 'User Management', desc: 'Role-based access' },
+                                { src: '/nautify/08.JPG', title: 'Settings', desc: 'Customize your experience' },
+                                { src: '/nautify/09.JPG', title: 'Search & Filter', desc: 'Find documents fast' },
+                                { src: '/nautify/10.JPG', title: 'Calendar View', desc: 'Visual timeline' },
+                                { src: '/nautify/11.JPG', title: 'Upload Interface', desc: 'Drag & drop files' },
+                                { src: '/nautify/12.JPG', title: 'Document Details', desc: 'Complete metadata' },
+                                { src: '/nautify/13.JPG', title: 'Workflow Automation', desc: 'Streamline processes' },
+                                { src: '/nautify/14.JPG', title: 'Audit Trail', desc: 'Complete transparency' },
+                                { src: '/nautify/15.JPG', title: 'Mobile View', desc: 'Access anywhere' },
+                                { src: '/nautify/16.JPG', title: 'Team Collaboration', desc: 'Work together' },
+                                { src: '/nautify/17.JPG', title: 'Custom Fields', desc: 'Tailor to your needs' },
+                                { src: '/nautify/18.JPG', title: 'Integration Hub', desc: 'Connect your tools' },
+                                { src: '/nautify/19.JPG', title: 'Security Center', desc: 'Enterprise-grade protection' },
+                                { src: '/nautify/20.JPG', title: 'Batch Operations', desc: 'Bulk actions' },
+                                { src: '/nautify/21.JPG', title: 'Version Control', desc: 'Track changes' },
+                                { src: '/nautify/22.JPG', title: 'Export Options', desc: 'Multiple formats' },
+                            ].map((image, index) => (
+                                <div
+                                    key={index}
+                                    className="flex-shrink-0 w-[45%] sm:w-[calc(50%-12px)] lg:w-[calc(25%-24px)] snap-center first:pl-2 last:pr-2"
+                                >
+                                    <button
+                                        onClick={() => {
+                                            const modal = document.getElementById('image-modal');
+                                            const modalImg = document.getElementById('modal-image') as HTMLImageElement;
+                                            const modalTitle = document.getElementById('modal-title');
+                                            const modalDesc = document.getElementById('modal-desc');
+                                            if (modal && modalImg && modalTitle && modalDesc) {
+                                                modal.classList.remove('hidden');
+                                                modalImg.src = image.src;
+                                                modalTitle.textContent = image.title;
+                                                modalDesc.textContent = image.desc;
+                                                (modal as any).currentIndex = index;
+                                            }
+                                        }}
+                                        className="w-full group/card cursor-pointer text-left h-full block"
                                     >
-                                        <button
-                                            onClick={() => {
-                                                const modal = document.getElementById('image-modal');
-                                                const modalImg = document.getElementById('modal-image') as HTMLImageElement;
-                                                const modalTitle = document.getElementById('modal-title');
-                                                const modalDesc = document.getElementById('modal-desc');
-                                                if (modal && modalImg && modalTitle && modalDesc) {
-                                                    modal.classList.remove('hidden');
-                                                    modalImg.src = image.src;
-                                                    modalTitle.textContent = image.title;
-                                                    modalDesc.textContent = image.desc;
-                                                    (modal as any).currentIndex = index;
-                                                }
-                                            }}
-                                            className="w-full group cursor-pointer"
-                                        >
-                                            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                                                <div className="aspect-[9/16] relative bg-gray-100">
-                                                    <img
-                                                        src={image.src}
-                                                        alt={image.title}
-                                                        className="w-full h-full object-cover object-top"
-                                                    />
-                                                    {/* Hover Overlay */}
-                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                                                        <div className="p-6 w-full">
-                                                            <h3 className="text-white text-lg font-bold mb-2">{image.title}</h3>
-                                                            <p className="text-white/90 text-sm">{image.desc}</p>
-                                                            <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                                                                <span>Click to enlarge</span>
-                                                                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                                                                </svg>
-                                                            </div>
-                                                        </div>
+                                        <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col border border-gray-100">
+                                            <div className="aspect-[2/3] relative bg-gray-50">
+                                                <img
+                                                    src={image.src}
+                                                    alt={image.title}
+                                                    className="w-full h-full object-cover object-top"
+                                                />
+                                                {/* Hover Overlay */}
+                                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                    <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white font-medium flex items-center">
+                                                        <span>Expand</span>
+                                                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                                                        </svg>
                                                     </div>
                                                 </div>
-                                                <div className="p-4 text-center bg-gradient-to-br from-purple-50 to-pink-50">
-                                                    <h4 className="font-bold text-gray-900 mb-1">{image.title}</h4>
-                                                    <p className="text-sm text-gray-600">{image.desc}</p>
-                                                </div>
                                             </div>
-                                        </button>
-                                    </div>
-                                ))}
-                            </div>
+                                            <div className="p-3 text-center bg-white border-t border-gray-50 flex-grow">
+                                                <h4 className="font-bold text-gray-900 text-sm mb-0.5">{image.title}</h4>
+                                                <p className="text-xs text-gray-500 line-clamp-1">{image.desc}</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            ))}
                         </div>
 
                         {/* Previous Button */}
                         <button
                             onClick={() => {
-                                const track = document.getElementById('carousel-track');
-                                if (track) {
-                                    const currentTransform = track.style.transform || 'translateX(0%)';
-                                    const currentX = parseInt(currentTransform.match(/-?\d+/)?.[0] || '0');
-                                    const newX = currentX + 100;
-                                    if (newX <= 0) {
-                                        track.style.transform = `translateX(${newX}%)`;
-                                    } else {
-                                        // Wrap to last slide
-                                        track.style.transform = 'translateX(-166.67%)'; // 8 images, show last 3
-                                    }
+                                const container = document.getElementById('carousel-container');
+                                if (container) {
+                                    const scrollAmount = container.clientWidth;
+                                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
                                 }
                             }}
-                            className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl hover:shadow-2xl flex items-center justify-center text-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-200 z-10"
+                            className="absolute -left-2 sm:left-0 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-xl hover:shadow-2xl flex items-center justify-center text-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-200 z-10 opacity-0 group-hover:opacity-100 sm:opacity-100"
+                            aria-label="Previous slide"
                         >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
                         </button>
@@ -195,43 +200,19 @@ export default function NautifyPage() {
                         {/* Next Button */}
                         <button
                             onClick={() => {
-                                const track = document.getElementById('carousel-track');
-                                if (track) {
-                                    const currentTransform = track.style.transform || 'translateX(0%)';
-                                    const currentX = parseInt(currentTransform.match(/-?\d+/)?.[0] || '0');
-                                    const newX = currentX - 100;
-                                    // 8 images total, showing 3 at a time, so max is -166.67% (to show images 6,7,8)
-                                    if (newX >= -166.67) {
-                                        track.style.transform = `translateX(${newX}%)`;
-                                    } else {
-                                        // Wrap to first slide
-                                        track.style.transform = 'translateX(0%)';
-                                    }
+                                const container = document.getElementById('carousel-container');
+                                if (container) {
+                                    const scrollAmount = container.clientWidth;
+                                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                                 }
                             }}
-                            className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl hover:shadow-2xl flex items-center justify-center text-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-200 z-10"
+                            className="absolute -right-2 sm:right-0 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-xl hover:shadow-2xl flex items-center justify-center text-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-200 z-10 opacity-0 group-hover:opacity-100 sm:opacity-100"
+                            aria-label="Next slide"
                         >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                         </button>
-
-                        {/* Slide Indicators */}
-                        <div className="flex justify-center gap-2 mt-8">
-                            {[0, 1, 2].map((slideIndex) => (
-                                <button
-                                    key={slideIndex}
-                                    onClick={() => {
-                                        const track = document.getElementById('carousel-track');
-                                        if (track) {
-                                            track.style.transform = `translateX(-${slideIndex * 100}%)`;
-                                        }
-                                    }}
-                                    className="w-3 h-3 rounded-full bg-purple-300 hover:bg-purple-600 transition-colors"
-                                    aria-label={`Go to slide ${slideIndex + 1}`}
-                                />
-                            ))}
-                        </div>
                     </div>
 
                     {/* View Demo CTA */}
@@ -249,13 +230,22 @@ export default function NautifyPage() {
                 </div>
 
                 {/* Modal for Full-Size Image */}
-                <div id="image-modal" className="hidden fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+                <div
+                    id="image-modal"
+                    className="hidden fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-300"
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) {
+                            document.getElementById('image-modal')?.classList.add('hidden');
+                        }
+                    }}
+                >
                     <button
                         onClick={() => document.getElementById('image-modal')?.classList.add('hidden')}
-                        className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                        className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 active:bg-white/30 flex items-center justify-center text-white transition-all duration-200 z-[110] backdrop-blur-md"
+                        aria-label="Close modal"
                     >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
 
@@ -264,14 +254,28 @@ export default function NautifyPage() {
                         onClick={() => {
                             const modal = document.getElementById('image-modal') as any;
                             const images = [
-                                { src: '/nautify-login.png', title: 'Login', desc: 'Secure authentication' },
-                                { src: '/nautify-dashboard.png', title: 'Dashboard', desc: 'Real-time monitoring' },
-                                { src: '/nautify-documents.png', title: 'Documents', desc: 'File management' },
-                                { src: '/nautify-expiry.png', title: 'Expiry', desc: 'Calendar tracking' },
-                                { src: '/nautify-notifications.jpg', title: 'Notifications', desc: 'Multi-channel alerts' },
-                                { src: '/nautify-compliance.jpg', title: 'Compliance', desc: 'Dashboard overview' },
-                                { src: '/nautify-reports.jpg', title: 'Reports', desc: 'Analytics and insights' },
-                                { src: '/nautify-settings.png', title: 'Settings', desc: 'Customize preferences' },
+                                { src: '/nautify/01.JPG', title: 'Dashboard Overview', desc: 'Real-time insights' },
+                                { src: '/nautify/02.JPG', title: 'Document Management', desc: 'Centralized storage' },
+                                { src: '/nautify/03.JPG', title: 'Compliance Tracking', desc: 'Stay compliant' },
+                                { src: '/nautify/04.JPG', title: 'Expiry Alerts', desc: 'Never miss a deadline' },
+                                { src: '/nautify/05.JPG', title: 'Notifications', desc: 'Multi-channel alerts' },
+                                { src: '/nautify/06.JPG', title: 'Reports & Analytics', desc: 'Data-driven decisions' },
+                                { src: '/nautify/07.JPG', title: 'User Management', desc: 'Role-based access' },
+                                { src: '/nautify/08.JPG', title: 'Settings', desc: 'Customize your experience' },
+                                { src: '/nautify/09.JPG', title: 'Search & Filter', desc: 'Find documents fast' },
+                                { src: '/nautify/10.JPG', title: 'Calendar View', desc: 'Visual timeline' },
+                                { src: '/nautify/11.JPG', title: 'Upload Interface', desc: 'Drag & drop files' },
+                                { src: '/nautify/12.JPG', title: 'Document Details', desc: 'Complete metadata' },
+                                { src: '/nautify/13.JPG', title: 'Workflow Automation', desc: 'Streamline processes' },
+                                { src: '/nautify/14.JPG', title: 'Audit Trail', desc: 'Complete transparency' },
+                                { src: '/nautify/15.JPG', title: 'Mobile View', desc: 'Access anywhere' },
+                                { src: '/nautify/16.JPG', title: 'Team Collaboration', desc: 'Work together' },
+                                { src: '/nautify/17.JPG', title: 'Custom Fields', desc: 'Tailor to your needs' },
+                                { src: '/nautify/18.JPG', title: 'Integration Hub', desc: 'Connect your tools' },
+                                { src: '/nautify/19.JPG', title: 'Security Center', desc: 'Enterprise-grade protection' },
+                                { src: '/nautify/20.JPG', title: 'Batch Operations', desc: 'Bulk actions' },
+                                { src: '/nautify/21.JPG', title: 'Version Control', desc: 'Track changes' },
+                                { src: '/nautify/22.JPG', title: 'Export Options', desc: 'Multiple formats' },
                             ];
                             const currentIndex = modal.currentIndex || 0;
                             const newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
@@ -299,7 +303,7 @@ export default function NautifyPage() {
                                 id="modal-image"
                                 src=""
                                 alt="Full size screenshot"
-                                className="w-full h-full object-cover object-top"
+                                className="w-full h-full object-contain"
                             />
                         </div>
                         <div className="mt-4 text-center text-white">
@@ -313,14 +317,28 @@ export default function NautifyPage() {
                         onClick={() => {
                             const modal = document.getElementById('image-modal') as any;
                             const images = [
-                                { src: '/nautify-login.png', title: 'Login', desc: 'Secure authentication' },
-                                { src: '/nautify-dashboard.png', title: 'Dashboard', desc: 'Real-time monitoring' },
-                                { src: '/nautify-documents.png', title: 'Documents', desc: 'File management' },
-                                { src: '/nautify-expiry.png', title: 'Expiry', desc: 'Calendar tracking' },
-                                { src: '/nautify-notifications.jpg', title: 'Notifications', desc: 'Multi-channel alerts' },
-                                { src: '/nautify-compliance.jpg', title: 'Compliance', desc: 'Dashboard overview' },
-                                { src: '/nautify-reports.jpg', title: 'Reports', desc: 'Analytics and insights' },
-                                { src: '/nautify-settings.png', title: 'Settings', desc: 'Customize preferences' },
+                                { src: '/nautify/01.JPG', title: 'Dashboard Overview', desc: 'Real-time insights' },
+                                { src: '/nautify/02.JPG', title: 'Document Management', desc: 'Centralized storage' },
+                                { src: '/nautify/03.JPG', title: 'Compliance Tracking', desc: 'Stay compliant' },
+                                { src: '/nautify/04.JPG', title: 'Expiry Alerts', desc: 'Never miss a deadline' },
+                                { src: '/nautify/05.JPG', title: 'Notifications', desc: 'Multi-channel alerts' },
+                                { src: '/nautify/06.JPG', title: 'Reports & Analytics', desc: 'Data-driven decisions' },
+                                { src: '/nautify/07.JPG', title: 'User Management', desc: 'Role-based access' },
+                                { src: '/nautify/08.JPG', title: 'Settings', desc: 'Customize your experience' },
+                                { src: '/nautify/09.JPG', title: 'Search & Filter', desc: 'Find documents fast' },
+                                { src: '/nautify/10.JPG', title: 'Calendar View', desc: 'Visual timeline' },
+                                { src: '/nautify/11.JPG', title: 'Upload Interface', desc: 'Drag & drop files' },
+                                { src: '/nautify/12.JPG', title: 'Document Details', desc: 'Complete metadata' },
+                                { src: '/nautify/13.JPG', title: 'Workflow Automation', desc: 'Streamline processes' },
+                                { src: '/nautify/14.JPG', title: 'Audit Trail', desc: 'Complete transparency' },
+                                { src: '/nautify/15.JPG', title: 'Mobile View', desc: 'Access anywhere' },
+                                { src: '/nautify/16.JPG', title: 'Team Collaboration', desc: 'Work together' },
+                                { src: '/nautify/17.JPG', title: 'Custom Fields', desc: 'Tailor to your needs' },
+                                { src: '/nautify/18.JPG', title: 'Integration Hub', desc: 'Connect your tools' },
+                                { src: '/nautify/19.JPG', title: 'Security Center', desc: 'Enterprise-grade protection' },
+                                { src: '/nautify/20.JPG', title: 'Batch Operations', desc: 'Bulk actions' },
+                                { src: '/nautify/21.JPG', title: 'Version Control', desc: 'Track changes' },
+                                { src: '/nautify/22.JPG', title: 'Export Options', desc: 'Multiple formats' },
                             ];
                             const currentIndex = modal.currentIndex || 0;
                             const newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
