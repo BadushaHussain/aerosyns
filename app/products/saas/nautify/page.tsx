@@ -238,6 +238,88 @@ export default function NautifyPage() {
                             document.getElementById('image-modal')?.classList.add('hidden');
                         }
                     }}
+                    onTouchStart={(e) => {
+                        const modal = document.getElementById('image-modal') as any;
+                        modal.touchStartX = e.touches[0].clientX;
+                        modal.touchStartY = e.touches[0].clientY;
+                    }}
+                    onTouchMove={(e) => {
+                        const modal = document.getElementById('image-modal') as any;
+                        if (!modal.touchStartX) return;
+
+                        const touchEndX = e.touches[0].clientX;
+                        const touchEndY = e.touches[0].clientY;
+                        const diffX = modal.touchStartX - touchEndX;
+                        const diffY = modal.touchStartY - touchEndY;
+
+                        // Only handle horizontal swipes (ignore vertical scrolling)
+                        if (Math.abs(diffX) > Math.abs(diffY)) {
+                            e.preventDefault();
+                        }
+                    }}
+                    onTouchEnd={(e) => {
+                        const modal = document.getElementById('image-modal') as any;
+                        if (!modal.touchStartX) return;
+
+                        const touchEndX = e.changedTouches[0].clientX;
+                        const touchEndY = e.changedTouches[0].clientY;
+                        const diffX = modal.touchStartX - touchEndX;
+                        const diffY = modal.touchStartY - touchEndY;
+
+                        // Only trigger if horizontal swipe is dominant and exceeds threshold
+                        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                            const images = [
+                                { src: '/nautify/01.JPG', title: 'Dashboard Overview', desc: 'Real-time insights' },
+                                { src: '/nautify/02.JPG', title: 'Document Management', desc: 'Centralized storage' },
+                                { src: '/nautify/03.JPG', title: 'Compliance Tracking', desc: 'Stay compliant' },
+                                { src: '/nautify/04.JPG', title: 'Expiry Alerts', desc: 'Never miss a deadline' },
+                                { src: '/nautify/05.JPG', title: 'Notifications', desc: 'Multi-channel alerts' },
+                                { src: '/nautify/06.JPG', title: 'Reports & Analytics', desc: 'Data-driven decisions' },
+                                { src: '/nautify/07.JPG', title: 'User Management', desc: 'Role-based access' },
+                                { src: '/nautify/08.JPG', title: 'Settings', desc: 'Customize your experience' },
+                                { src: '/nautify/09.JPG', title: 'Search & Filter', desc: 'Find documents fast' },
+                                { src: '/nautify/10.JPG', title: 'Calendar View', desc: 'Visual timeline' },
+                                { src: '/nautify/11.JPG', title: 'Upload Interface', desc: 'Drag & drop files' },
+                                { src: '/nautify/12.JPG', title: 'Document Details', desc: 'Complete metadata' },
+                                { src: '/nautify/13.JPG', title: 'Workflow Automation', desc: 'Streamline processes' },
+                                { src: '/nautify/14.JPG', title: 'Audit Trail', desc: 'Complete transparency' },
+                                { src: '/nautify/15.JPG', title: 'Mobile View', desc: 'Access anywhere' },
+                                { src: '/nautify/16.JPG', title: 'Team Collaboration', desc: 'Work together' },
+                                { src: '/nautify/17.JPG', title: 'Custom Fields', desc: 'Tailor to your needs' },
+                                { src: '/nautify/18.JPG', title: 'Integration Hub', desc: 'Connect your tools' },
+                                { src: '/nautify/19.JPG', title: 'Security Center', desc: 'Enterprise-grade protection' },
+                                { src: '/nautify/20.JPG', title: 'Batch Operations', desc: 'Bulk actions' },
+                                { src: '/nautify/21.JPG', title: 'Version Control', desc: 'Track changes' },
+                                { src: '/nautify/22.JPG', title: 'Export Options', desc: 'Multiple formats' },
+                            ];
+
+                            const currentIndex = modal.currentIndex || 0;
+                            let newIndex;
+
+                            if (diffX > 0) {
+                                // Swiped left - go to next image
+                                newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+                            } else {
+                                // Swiped right - go to previous image
+                                newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+                            }
+
+                            const modalImg = document.getElementById('modal-image') as HTMLImageElement;
+                            const modalTitle = document.getElementById('modal-title');
+                            const modalDesc = document.getElementById('modal-desc');
+
+                            if (modalImg && modalTitle && modalDesc) {
+                                modalImg.src = images[newIndex].src;
+                                modalTitle.textContent = images[newIndex].title;
+                                modalDesc.textContent = images[newIndex].desc;
+                                modal.currentIndex = newIndex;
+                            }
+                        }
+
+                        // Reset touch tracking
+                        modal.touchStartX = null;
+                        modal.touchStartY = null;
+                    }}
                 >
                     <button
                         onClick={() => document.getElementById('image-modal')?.classList.add('hidden')}
