@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { PhoneIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
 
 export const metadata = genMeta({
-    title: 'Booth - Cloud Call Center & Contact Center Platform',
+    title: 'Telestation Hub - Cloud Call Center & Contact Center Platform',
     description:
         'Complete cloud-based call center solution with IVR, call routing, recording, analytics, and CRM integration. Built for customer support teams and contact centers.',
     keywords: [
@@ -72,7 +72,7 @@ const features = [
     },
 ]
 
-export default function BoothPage() {
+export default function TelestationHubPage() {
     return (
         <>
             {/* Hero Section */}
@@ -84,14 +84,14 @@ export default function BoothPage() {
                             <span className="text-green-400 text-sm font-semibold">Call Center Platform</span>
                         </div>
                         <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
-                            Booth Call Center Platform
+                            Telestation Hub Call Center Platform
                         </h1>
                         <p className="text-xl text-gray-300 mb-8">
                             Cloud-based call center solution for customer support, sales, and help desk teams.
                             Handle inbound and outbound calls with intelligent routing, IVR, recording, and real-time analytics.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/contact?type=booth-demo" className="btn-primary">
+                            <Link href="/contact?type=telestation-hub-demo" className="btn-primary">
                                 Request Demo
                             </Link>
                             <Link href="#features" className="btn-secondary">
@@ -170,7 +170,7 @@ export default function BoothPage() {
                 <div className="container-custom">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
-                            How Booth Works
+                            How Telestation Hub Works
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                             Simple 4-step process to transform your call center operations
@@ -258,7 +258,7 @@ export default function BoothPage() {
                                     ))}
                                 </ul>
                                 <Link
-                                    href={`/contact?type=booth-${plan.name.toLowerCase()}`}
+                                    href={`/contact?type=telestation-hub-${plan.name.toLowerCase()}`}
                                     className={`block text-center py-3 px-6 rounded-lg font-semibold transition-all ${plan.popular
                                         ? 'bg-green-600 text-white hover:bg-green-700'
                                         : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
@@ -279,9 +279,9 @@ export default function BoothPage() {
                         Transform Your Call Center Today
                     </h2>
                     <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                        Join leading contact centers using Booth to deliver exceptional customer experiences
+                        Join leading contact centers using Telestation Hub to deliver exceptional customer experiences
                     </p>
-                    <Link href="/contact?type=booth-demo" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-medium rounded-lg text-green-600 bg-white hover:bg-transparent hover:text-white transition-all duration-200">
+                    <Link href="/contact?type=telestation-hub-demo" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-medium rounded-lg text-green-600 bg-white hover:bg-transparent hover:text-white transition-all duration-200">
                         Start Free Trial
                     </Link>
                 </div>

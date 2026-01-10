@@ -18,7 +18,7 @@ import {
     CodeBracketIcon,
     UserCircleIcon,
 } from '@heroicons/react/24/solid'
-import { FaPlane } from 'react-icons/fa'
+import { FaPlane, FaRobot } from 'react-icons/fa'
 
 const services = [
     {
@@ -44,6 +44,12 @@ const services = [
         description: 'SOC, SIEM, zero-trust, and compliance',
         href: '/services/cybersecurity',
         icon: ShieldCheckIcon,
+    },
+    {
+        name: 'HumaNova Robotics',
+        description: 'AI-powered assistive robots and RaaS platform',
+        href: '/services/robotics',
+        icon: FaRobot,
     },
     {
         name: 'Infrastructure & Cabling',

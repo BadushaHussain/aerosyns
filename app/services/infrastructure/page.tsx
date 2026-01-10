@@ -270,7 +270,7 @@ export default function InfrastructurePage() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 section-padding">
+            <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-24 pb-16 md:pt-32 md:pb-20">
                 <div className="container-custom">
                     <div className="max-w-4xl">
                         <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6">
@@ -296,7 +296,7 @@ export default function InfrastructurePage() {
             </section>
 
             {/* Services Grid */}
-            <section id="services" className="section-padding bg-gray-50">
+            <section id="services" className="section-padding bg-gray-50 scroll-mt-20">
                 <div className="container-custom">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">

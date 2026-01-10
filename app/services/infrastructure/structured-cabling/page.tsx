@@ -203,7 +203,7 @@ export default function StructuredCablingPage() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 section-padding">
+            <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-24 pb-16 md:pt-32 md:pb-20">
                 <div className="container-custom">
                     <div className="max-w-4xl">
                         <Link href="/services/infrastructure" className="inline-flex items-center text-primary-400 hover:text-primary-300 mb-4 text-sm">
@@ -233,7 +233,7 @@ export default function StructuredCablingPage() {
             </section>
 
             {/* Cable Types */}
-            <section id="cable-types" className="section-padding bg-gray-50">
+            <section id="cable-types" className="section-padding bg-gray-50 scroll-mt-20">
                 <div className="container-custom">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">

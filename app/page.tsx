@@ -281,36 +281,12 @@ export default function HomePage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             {
-                                name: 'Nizsoft',
-                                tagline: 'Modern Insurance Platform',
-                                description: 'End-to-end insurance management with policy, claims, KYC, and agent modules',
-                                features: ['Policy lifecycle management', 'Claims processing & tracking', 'Agent portal & commissions', 'KYC & document management'],
-                                color: 'from-blue-500 to-blue-600',
-                                url: 'https://www.nizsoft.cloud/'
-                            },
-                            {
-                                name: 'Nautify',
-                                tagline: 'Document Expiry & Compliance',
-                                description: 'Automated document expiry tracking with notifications and compliance management',
-                                features: ['Document expiry tracking', 'Automated notifications', 'Compliance dashboards', 'Escalation workflows'],
-                                color: 'from-purple-500 to-purple-600',
-                                url: '/products/saas/nautify'
-                            },
-                            {
-                                name: 'Resourcegate',
-                                tagline: 'Human Resource Management',
-                                description: 'Complete employee lifecycle management with payroll, leave, and attendance',
-                                features: ['Employee onboarding', 'Leave & attendance', 'Payroll processing', 'Performance management'],
-                                color: 'from-green-500 to-green-600',
-                                url: '/products/saas/resourcegate'
-                            },
-                            {
-                                name: 'Metricslog',
-                                tagline: 'Access Control & Attendance',
-                                description: 'Device integration for fingerprint, face recognition, and RFID access control',
-                                features: ['Multi-device integration', 'Fingerprint & face recognition', 'RFID card support', 'Real-time attendance'],
-                                color: 'from-orange-500 to-orange-600',
-                                url: '/products/saas/metricslog'
+                                name: 'Banking Solutions',
+                                tagline: 'Core Banking & Digital Banking',
+                                description: 'Complete banking platform with accounts, loans, deposits, and digital banking channels',
+                                features: ['Account management', 'Loan processing', 'Digital banking', 'Payment gateway'],
+                                color: 'from-purple-500 to-indigo-600',
+                                url: '/products/saas/banking'
                             },
                             {
                                 name: 'CRM',
@@ -321,20 +297,44 @@ export default function HomePage() {
                                 url: '/products/saas/crm'
                             },
                             {
-                                name: 'Banking Solutions',
-                                tagline: 'Core Banking & Digital Banking',
-                                description: 'Complete banking platform with accounts, loans, deposits, and digital banking channels',
-                                features: ['Account management', 'Loan processing', 'Digital banking', 'Payment gateway'],
-                                color: 'from-purple-500 to-indigo-600',
-                                url: '/products/saas/banking'
-                            },
-                            {
                                 name: 'Kargo Manage',
                                 tagline: 'Cargo Management Solution',
                                 description: 'End-to-end cargo and logistics management platform for freight forwarding, warehousing, and supply chain operations',
                                 features: ['Shipment tracking & tracing', 'Warehouse management', 'Customs documentation', 'Fleet & route optimization'],
                                 color: 'from-teal-500 to-teal-600',
                                 url: '/products/saas/kargo-manage'
+                            },
+                            {
+                                name: 'Metricslog',
+                                tagline: 'Access Control & Attendance',
+                                description: 'Device integration for fingerprint, face recognition, and RFID access control',
+                                features: ['Multi-device integration', 'Fingerprint & face recognition', 'RFID card support', 'Real-time attendance'],
+                                color: 'from-orange-500 to-orange-600',
+                                url: '/products/saas/metricslog'
+                            },
+                            {
+                                name: 'Nautify',
+                                tagline: 'Document Expiry & Compliance',
+                                description: 'Automated document expiry tracking with notifications and compliance management',
+                                features: ['Document expiry tracking', 'Automated notifications', 'Compliance dashboards', 'Escalation workflows'],
+                                color: 'from-purple-500 to-purple-600',
+                                url: '/products/saas/nautify'
+                            },
+                            {
+                                name: 'Nizsoft',
+                                tagline: 'Modern Insurance Platform',
+                                description: 'End-to-end insurance management with policy, claims, KYC, and agent modules',
+                                features: ['Policy lifecycle management', 'Claims processing & tracking', 'Agent portal & commissions', 'KYC & document management'],
+                                color: 'from-blue-500 to-blue-600',
+                                url: 'https://www.nizsoft.cloud/'
+                            },
+                            {
+                                name: 'Resourcegate',
+                                tagline: 'Human Resource Management',
+                                description: 'Complete employee lifecycle management with payroll, leave, and attendance',
+                                features: ['Employee onboarding', 'Leave & attendance', 'Payroll processing', 'Performance management'],
+                                color: 'from-green-500 to-green-600',
+                                url: '/products/saas/resourcegate'
                             },
                             {
                                 name: 'Safety Prevention',
@@ -345,12 +345,12 @@ export default function HomePage() {
                                 url: '/products/saas/safety-prevention'
                             },
                             {
-                                name: 'Booth',
+                                name: 'Telestation Hub',
                                 tagline: 'Call Center Platform',
                                 description: 'Cloud-based call center solution with IVR, intelligent routing, call recording, and real-time analytics for customer support teams',
                                 features: ['IVR & call routing', 'Call recording & monitoring', 'Real-time analytics', 'CRM integration'],
                                 color: 'from-green-500 to-emerald-600',
-                                url: '/products/saas/booth'
+                                url: '/products/saas/telestation-hub'
                             },
                         ].map((product, index) => (
                             <Link
@@ -364,13 +364,13 @@ export default function HomePage() {
 
                                 <div className="relative z-10">
                                     <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg mb-4 bg-gradient-to-br ${product.color}`}>
-                                        {index === 0 ? <FaFileAlt className="w-6 h-6 text-white" /> :
-                                            index === 1 ? <FaBell className="w-6 h-6 text-white" /> :
-                                                index === 2 ? <FaBriefcase className="w-6 h-6 text-white" /> :
+                                        {index === 0 ? <FaUniversity className="w-6 h-6 text-white" /> :
+                                            index === 1 ? <FaUserTie className="w-6 h-6 text-white" /> :
+                                                index === 2 ? <FaTruck className="w-6 h-6 text-white" /> :
                                                     index === 3 ? <FaFingerprint className="w-6 h-6 text-white" /> :
-                                                        index === 4 ? <FaUserTie className="w-6 h-6 text-white" /> :
-                                                            index === 5 ? <FaUniversity className="w-6 h-6 text-white" /> :
-                                                                index === 6 ? <FaTruck className="w-6 h-6 text-white" /> :
+                                                        index === 4 ? <FaBell className="w-6 h-6 text-white" /> :
+                                                            index === 5 ? <FaFileAlt className="w-6 h-6 text-white" /> :
+                                                                index === 6 ? <FaBriefcase className="w-6 h-6 text-white" /> :
                                                                     index === 7 ? <FaShieldAlt className="w-6 h-6 text-white" /> :
                                                                         <FaPhone className="w-6 h-6 text-white" />}
                                     </div>

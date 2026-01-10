@@ -1,8 +1,53 @@
 import { generateMetadata as genMeta } from '@/lib/seo'
 import Link from 'next/link'
+import Image from 'next/image'
 import { CpuChipIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
-import { FaServer, FaMicrochip, FaNetworkWired, FaRobot, FaChartLine, FaCode, FaDocker, FaCog, FaAward, FaRocket } from 'react-icons/fa'
-import { SiPytorch, SiTensorflow, SiKubernetes, SiNvidia } from 'react-icons/si'
+import { FaDatabase, FaMicrochip, FaCloudUploadAlt, FaLightbulb, FaCamera, FaFlask, FaChartLine, FaRocket } from 'react-icons/fa'
+import { HiServer } from 'react-icons/hi2'
+import { TbTrendingUp } from 'react-icons/tb'
+
+// Custom NVIDIA Logo Component
+const NvidiaLogo = ({ className }: { className?: string }) => {
+    // Extract width and height from Tailwind classes (w-8 = 32px, w-12 = 48px, etc.)
+    const sizeMap: Record<string, number> = { 'w-8': 32, 'h-8': 32, 'w-12': 48, 'h-12': 48 }
+    const classes = className?.split(' ') || []
+    const width = classes.find(c => c.startsWith('w-'))
+    const height = classes.find(c => c.startsWith('h-'))
+    const w = width ? sizeMap[width] || 32 : 32
+    const h = height ? sizeMap[height] || 32 : 32
+
+    return (
+        <Image
+            src="/nvidia-logo.png"
+            alt="NVIDIA"
+            width={w}
+            height={h}
+            className={className}
+            style={{ objectFit: 'contain' }}
+        />
+    )
+}
+
+// Custom Framework Logo Components
+const PyTorchLogo = ({ className }: { className?: string }) => (
+    <Image src="/pytorch-logo.png" alt="PyTorch" width={48} height={48} className={className} style={{ objectFit: 'contain' }} />
+)
+
+const TensorFlowLogo = ({ className }: { className?: string }) => (
+    <Image src="/tensorflow-logo.png" alt="TensorFlow" width={48} height={48} className={className} style={{ objectFit: 'contain' }} />
+)
+
+const KubernetesLogo = ({ className }: { className?: string }) => (
+    <Image src="/kubernetes-logo.png" alt="Kubernetes" width={48} height={48} className={className} style={{ objectFit: 'contain' }} />
+)
+
+const DockerLogo = ({ className }: { className?: string }) => (
+    <Image src="/docker-logo.png" alt="Docker" width={48} height={48} className={className} style={{ objectFit: 'contain' }} />
+)
+
+const MLflowLogo = ({ className }: { className?: string }) => (
+    <Image src="/mlflow-logo.png" alt="MLflow" width={48} height={48} className={className} style={{ objectFit: 'contain' }} />
+)
 
 export const metadata = genMeta({
     title: 'AI Infrastructure & GPU Clusters',
@@ -22,7 +67,7 @@ const offerings = [
     {
         title: 'GPU Appliances & Clusters',
         description: 'High-density GPU servers with NVLink/NVSwitch fabrics for maximum performance',
-        icon: SiNvidia,
+        icon: NvidiaLogo,
         specs: [
             'NVIDIA A100, H100, L40S GPUs',
             'NVLink & NVSwitch interconnect',
@@ -33,7 +78,7 @@ const offerings = [
     {
         title: 'HPC & Supercomputing',
         description: 'High-performance computing clusters for research and production workloads',
-        icon: FaServer,
+        icon: HiServer,
         specs: [
             'Multi-node cluster deployment',
             'Infiniband/RoCE networking',
@@ -44,7 +89,7 @@ const offerings = [
     {
         title: 'ML Platform Engineering',
         description: 'End-to-end MLOps platform with training pipelines and model serving',
-        icon: FaRobot,
+        icon: FaMicrochip,
         specs: [
             'Kubernetes-based ML platform',
             'Model training & fine-tuning',
@@ -55,7 +100,7 @@ const offerings = [
     {
         title: 'Cloud Bursting',
         description: 'Hybrid architecture with on-prem cluster and cloud bursting for cost optimization',
-        icon: FaNetworkWired,
+        icon: FaCloudUploadAlt,
         specs: [
             'On-prem + GCP/Azure/AWS',
             'Automatic workload distribution',
@@ -78,22 +123,22 @@ const useCases = [
     {
         title: 'Large Language Models',
         description: 'Train and fine-tune LLMs with distributed training across multiple GPUs',
-        icon: FaCode,
+        icon: FaLightbulb,
     },
     {
         title: 'Computer Vision',
         description: 'Image recognition, object detection, and video analytics at scale',
-        icon: FaRobot,
+        icon: FaCamera,
     },
     {
         title: 'Scientific Computing',
         description: 'Molecular dynamics, climate modeling, and research simulations',
-        icon: FaCog,
+        icon: FaFlask,
     },
     {
         title: 'Financial Modeling',
         description: 'Risk analysis, algorithmic trading, and portfolio optimization',
-        icon: FaChartLine,
+        icon: TbTrendingUp,
     },
 ]
 
@@ -104,7 +149,7 @@ const gpuHardware = [
         performance: '4 PFLOPS (FP8)',
         interconnect: 'NVLink 4.0 (900 GB/s)',
         useCase: 'Large language models, GPT training',
-        icon: SiNvidia,
+        icon: NvidiaLogo,
     },
     {
         model: 'NVIDIA A100',
@@ -112,7 +157,7 @@ const gpuHardware = [
         performance: '312 TFLOPS (FP16)',
         interconnect: 'NVLink 3.0 (600 GB/s)',
         useCase: 'General AI training & inference',
-        icon: SiNvidia,
+        icon: NvidiaLogo,
     },
     {
         model: 'NVIDIA L40S',
@@ -120,7 +165,7 @@ const gpuHardware = [
         performance: '362 TFLOPS (FP8)',
         interconnect: 'PCIe Gen4',
         useCase: 'AI inference, graphics rendering',
-        icon: SiNvidia,
+        icon: NvidiaLogo,
     },
 ]
 
@@ -188,12 +233,12 @@ const performanceBenchmarks = [
 ]
 
 const aiFrameworks = [
-    { name: 'PyTorch', icon: SiPytorch, description: 'Deep learning framework' },
-    { name: 'TensorFlow', icon: SiTensorflow, description: 'ML platform' },
-    { name: 'Kubernetes', icon: SiKubernetes, description: 'Container orchestration' },
-    { name: 'Docker', icon: FaDocker, description: 'Containerization' },
+    { name: 'PyTorch', icon: PyTorchLogo, description: 'Deep learning framework' },
+    { name: 'TensorFlow', icon: TensorFlowLogo, description: 'ML platform' },
+    { name: 'Kubernetes', icon: KubernetesLogo, description: 'Container orchestration' },
+    { name: 'Docker', icon: DockerLogo, description: 'Containerization' },
     { name: 'Ray', icon: FaRocket, description: 'Distributed computing' },
-    { name: 'MLflow', icon: FaChartLine, description: 'ML lifecycle' },
+    { name: 'MLflow', icon: MLflowLogo, description: 'ML lifecycle' },
 ]
 
 const pricingTiers = [
@@ -289,7 +334,7 @@ export default function AIInfrastructurePage() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 section-padding">
+            <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-24 pb-16 md:pt-32 md:pb-20">
                 <div className="container-custom">
                     <div className="max-w-4xl">
                         <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6">
@@ -316,7 +361,7 @@ export default function AIInfrastructurePage() {
             </section>
 
             {/* Offerings Section */}
-            <section id="offerings" className="section-padding bg-gray-50">
+            <section id="offerings" className="section-padding bg-gray-50 scroll-mt-20 scroll-mt-20">
                 <div className="container-custom">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
@@ -359,9 +404,9 @@ export default function AIInfrastructurePage() {
                                 <div className="mt-6">
                                     <Link
                                         href={`/services/ai-infrastructure/${offering.title === 'GPU Appliances & Clusters' ? 'gpu-clusters' :
-                                                offering.title === 'HPC & Supercomputing' ? 'hpc-supercomputing' :
-                                                    offering.title === 'ML Platform Engineering' ? 'mlops-platform' :
-                                                        'cloud-bursting'
+                                            offering.title === 'HPC & Supercomputing' ? 'hpc-supercomputing' :
+                                                offering.title === 'ML Platform Engineering' ? 'mlops-platform' :
+                                                    'cloud-bursting'
                                             }`}
                                         className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-sm"
                                     >
