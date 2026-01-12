@@ -51,7 +51,7 @@ const values = [
 
 const leadership = [
     {
-        name: 'Badusha Hussain',
+        name: 'Hussain',
         role: 'Chief Executive Officer',
         bio: 'Visionary leader with 15+ years in enterprise IT and digital transformation',
     },
