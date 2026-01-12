@@ -383,8 +383,12 @@ export default function SoftwarePage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {softwareServices.map((service, index) => (
-                            <div key={index} className="card-enterprise p-8">
-                                <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 mb-6">
+                            <Link
+                                key={index}
+                                href={service.link}
+                                className="card-enterprise p-8 group hover:shadow-2xl transition-all duration-300 block"
+                            >
+                                <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 mb-6 group-hover:scale-110 transition-transform">
                                     <div className="text-white">{service.icon}</div>
                                 </div>
                                 <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">
@@ -399,13 +403,10 @@ export default function SoftwarePage() {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link
-                                    href={service.link}
-                                    className="text-sm font-semibold text-primary-600 hover:text-primary-700 flex items-center mt-auto"
-                                >
+                                <span className="text-sm font-semibold text-primary-600 group-hover:text-primary-700 flex items-center mt-auto">
                                     Learn More →
-                                </Link>
-                            </div>
+                                </span>
+                            </Link>
                         ))}
                     </div>
                 </div>
