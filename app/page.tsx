@@ -221,9 +221,10 @@ export default function HomePage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) => (
-                            <div
+                            <Link
                                 key={index}
-                                className="group bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-900 hover:shadow-2xl transition-all duration-500 relative overflow-hidden"
+                                href={service.href}
+                                className="group bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-gray-900 hover:shadow-2xl transition-all duration-500 relative overflow-hidden block"
                             >
                                 {/* Decorative corner */}
                                 <div className="absolute top-0 right-0 w-20 h-20 bg-gray-100 rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -251,15 +252,12 @@ export default function HomePage() {
                                     <p className="text-gray-600 mb-4 leading-relaxed">
                                         {service.description}
                                     </p>
-                                    <Link
-                                        href={service.href}
-                                        className="inline-flex items-center text-gray-900 hover:text-gray-700 font-semibold group-hover:gap-2 transition-all duration-300"
-                                    >
+                                    <span className="inline-flex items-center text-gray-900 hover:text-gray-700 font-semibold group-hover:gap-2 transition-all duration-300">
                                         Learn more
                                         <FaArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
-                                    </Link>
+                                    </span>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
