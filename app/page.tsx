@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
+import { Globe as Globe3D } from './components/Globe'
 import { HiChartBar } from 'react-icons/hi2'
 import { FaTrophy, FaCheckCircle, FaTools, FaArrowRight } from 'react-icons/fa'
 import { MdCheckCircle } from 'react-icons/md'
@@ -157,22 +158,9 @@ export default function HomePage() {
                             </div>
                         </div>
 
-                        {/* Right Column - Trust Badges Card with Animation */}
-                        <div className="relative">
-                            <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-500">
-                                <h3 className="text-lg font-bold text-gray-900 mb-6">Enterprise Assurance</h3>
-                                <div className="space-y-4">
-                                    {trustBadges.map((badge, index) => (
-                                        <div key={index} className="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all duration-300 hover:scale-105">
-                                            <badge.icon className="w-6 h-6 text-green-600 flex-shrink-0" />
-                                            <span className="font-medium text-gray-900">{badge.label}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            {/* Decorative Animated Elements */}
-                            <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-100 rounded-full opacity-50 blur-2xl animate-pulse"></div>
-                            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-2xl animate-pulse animation-delay-1000"></div>
+                        {/* Right Column - Globe */}
+                        <div className="relative h-[600px] w-full flex items-center justify-center">
+                            <Globe3D className="scale-[1.8] -translate-y-12" />
                         </div>
                     </div>
                 </div>
