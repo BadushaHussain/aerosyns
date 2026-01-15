@@ -160,7 +160,7 @@ export default function HomePage() {
 
                         {/* Right Column - Globe */}
                         <div className="relative h-[600px] w-full flex items-center justify-center">
-                            <Globe3D className="scale-[1.8] -translate-y-12" />
+                            <Globe3D className="scale-[1.8] -translate-y-12 translate-x-10" />
                         </div>
                     </div>
                 </div>
