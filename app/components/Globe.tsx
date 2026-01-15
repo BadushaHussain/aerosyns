@@ -9,7 +9,7 @@ export function Globe({ className }: { className?: string }) {
     const pointerInteractionMovement = useRef(0)
 
     useEffect(() => {
-        let phi = 1.0
+        let phi = 1.5
         let width = 0
         const onResize = () => canvasRef.current && (width = canvasRef.current.offsetWidth)
         window.addEventListener('resize', onResize)
