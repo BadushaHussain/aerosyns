@@ -27,6 +27,7 @@ const navigation = {
         { name: 'Case Studies', href: '/case-studies' },
         { name: 'Compliance', href: '/company/compliance' },
         { name: 'Partners', href: '/company/partners' },
+        { name: 'India (Opening Soon)', href: '/company/india' },
     ],
     legal: [
         { name: 'Privacy Policy', href: '/privacy' },
