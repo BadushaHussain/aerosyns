@@ -30,9 +30,9 @@ export function Globe({ className }: { className?: string }) {
             opacity: 0.7,
             markers: [
                 // UAE (approx 23.4° N, 53.8° E)
-                { location: [23.4241, 53.8478], size: 0.08 },
-                // India (approx 20.6° N, 79.0° E)
-                { location: [20.5937, 78.9629], size: 0.08 },
+                { location: [23.4241, 53.8478], size: 0.07 },
+                // Kerala, India (approx 11.0° N, 76.2° E)
+                { location: [11.0, 76.2], size: 0.07 },
             ],
             onRender: (state) => {
                 // This prevents rotation while dragging

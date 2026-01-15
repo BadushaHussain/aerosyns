@@ -110,7 +110,7 @@ export default function Footer() {
                                     <div className="text-sm">
                                         <div className="font-semibold text-white mb-1">India (Coming Soon)</div>
                                         <Link href="/company/india" className="hover:text-white transition-colors">
-                                            Palakkad, Kerala
+                                            Palakkad & Calicut, Kerala
                                         </Link>
                                     </div>
                                 </div>
