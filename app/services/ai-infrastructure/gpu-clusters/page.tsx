@@ -1,8 +1,30 @@
 import { generateMetadata as genMeta } from '@/lib/seo'
 import Link from 'next/link'
+import Image from 'next/image'
 import { CheckCircleIcon, CpuChipIcon } from '@heroicons/react/24/solid'
-import { SiNvidia } from 'react-icons/si'
 import { FaServer, FaNetworkWired, FaSnowflake, FaRocket } from 'react-icons/fa'
+
+// Custom NVIDIA Logo Component
+const NvidiaLogo = ({ className }: { className?: string }) => {
+    // Extract width and height from Tailwind classes (w-8 = 32px, w-12 = 48px, etc.)
+    const sizeMap: Record<string, number> = { 'w-8': 32, 'h-8': 32, 'w-12': 48, 'h-12': 48 }
+    const classes = className?.split(' ') || []
+    const width = classes.find(c => c.startsWith('w-'))
+    const height = classes.find(c => c.startsWith('h-'))
+    const w = width ? sizeMap[width] || 32 : 32
+    const h = height ? sizeMap[height] || 32 : 32
+
+    return (
+        <Image
+            src="/nvidia-logo.png"
+            alt="NVIDIA"
+            width={w}
+            height={h}
+            className={className}
+            style={{ objectFit: 'contain' }}
+        />
+    )
+}
 
 export const metadata = genMeta({
     title: 'GPU Appliances & Clusters - AI Infrastructure',
@@ -183,7 +205,7 @@ export default function GPUClustersPage() {
                             ← Back to AI Infrastructure
                         </Link>
                         <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6">
-                            <SiNvidia className="w-5 h-5 text-primary-400 mr-2" />
+                            <NvidiaLogo className="w-5 h-5 mr-2" />
                             <span className="text-primary-400 text-sm font-semibold">GPU Clusters</span>
                         </div>
                         <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
@@ -221,7 +243,7 @@ export default function GPUClustersPage() {
                             <div key={index} className="card-enterprise p-8">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="text-primary-600">
-                                        <SiNvidia className="w-12 h-12" />
+                                        <NvidiaLogo className="w-12 h-12" />
                                     </div>
                                     <h3 className="text-2xl font-bold text-gray-900">{gpu.model}</h3>
                                 </div>

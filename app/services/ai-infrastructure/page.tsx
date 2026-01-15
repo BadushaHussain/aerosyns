@@ -373,11 +373,19 @@ export default function AIInfrastructurePage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {offerings.map((offering, index) => (
-                            <div key={index} className="card-enterprise p-8">
+                            <Link
+                                key={index}
+                                href={`/services/ai-infrastructure/${offering.title === 'GPU Appliances & Clusters' ? 'gpu-clusters' :
+                                    offering.title === 'HPC & Supercomputing' ? 'hpc-supercomputing' :
+                                        offering.title === 'ML Platform Engineering' ? 'mlops-platform' :
+                                            'cloud-bursting'
+                                    }`}
+                                className="card-enterprise p-8 block group hover:no-underline"
+                            >
                                 <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 mb-6">
                                     <offering.icon className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">
+                                <h3 className="text-2xl font-display font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                                     {offering.title}
                                 </h3>
                                 <p className="text-gray-600 mb-6">{offering.description}</p>
@@ -401,19 +409,10 @@ export default function AIInfrastructurePage() {
                                         </li>
                                     ))}
                                 </ul>
-                                <div className="mt-6">
-                                    <Link
-                                        href={`/services/ai-infrastructure/${offering.title === 'GPU Appliances & Clusters' ? 'gpu-clusters' :
-                                            offering.title === 'HPC & Supercomputing' ? 'hpc-supercomputing' :
-                                                offering.title === 'ML Platform Engineering' ? 'mlops-platform' :
-                                                    'cloud-bursting'
-                                            }`}
-                                        className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-sm"
-                                    >
-                                        Learn More →
-                                    </Link>
+                                <div className="mt-6 flex items-center text-primary-600 font-semibold text-sm group-hover:text-primary-700">
+                                    Learn More →
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -440,8 +439,8 @@ export default function AIInfrastructurePage() {
                                 ))}
                             </div>
                         </div>
-                        <div className="card-enterprise p-8 bg-gradient-to-br from-primary-50 to-secondary-50">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-6">Cluster Services</h3>
+                        <Link href="/contact?type=ai-cluster" className="card-enterprise p-8 bg-gradient-to-br from-primary-50 to-secondary-50 block group hover:no-underline">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-primary-600 transition-colors">Cluster Services</h3>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <svg className="w-6 h-6 text-primary-500 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -485,7 +484,10 @@ export default function AIInfrastructurePage() {
                                 <div className="text-3xl font-bold text-gray-900">Custom Quote</div>
                                 <div className="text-sm text-gray-600 mt-1">Based on workload requirements</div>
                             </div>
-                        </div>
+                            <div className="mt-6 flex items-center text-primary-600 font-semibold text-sm group-hover:text-primary-700">
+                                Learn More →
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -503,13 +505,16 @@ export default function AIInfrastructurePage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {useCases.map((useCase, index) => (
-                            <div key={index} className="card-enterprise p-6 text-center">
+                            <Link key={index} href="/contact" className="card-enterprise p-6 text-center block group hover:no-underline">
                                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
                                     <useCase.icon className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-lg font-bold text-gray-900 mb-2">{useCase.title}</h3>
-                                <p className="text-sm text-gray-600">{useCase.description}</p>
-                            </div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">{useCase.title}</h3>
+                                <p className="text-sm text-gray-600 mb-4">{useCase.description}</p>
+                                <div className="inline-flex items-center text-primary-600 font-semibold text-sm group-hover:text-primary-700">
+                                    Learn More →
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -569,12 +574,12 @@ export default function AIInfrastructurePage() {
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {gpuHardware.map((gpu, index) => (
-                            <div key={index} className="card-enterprise p-8">
+                            <Link key={index} href="/contact" className="card-enterprise p-8 block group hover:no-underline">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="text-primary-600">
                                         <gpu.icon className="w-12 h-12" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-gray-900">{gpu.model}</h3>
+                                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">{gpu.model}</h3>
                                 </div>
                                 <div className="space-y-3 mb-6">
                                     <div className="flex justify-between border-b border-gray-200 pb-2">
@@ -590,11 +595,14 @@ export default function AIInfrastructurePage() {
                                         <span className="text-sm font-semibold text-gray-900">{gpu.interconnect}</span>
                                     </div>
                                 </div>
-                                <div className="pt-4 border-t border-gray-200">
+                                <div className="pt-4 border-t border-gray-200 mb-4">
                                     <p className="text-xs text-gray-500 font-semibold mb-1">Best For:</p>
                                     <p className="text-sm text-gray-700">{gpu.useCase}</p>
                                 </div>
-                            </div>
+                                <div className="flex items-center text-primary-600 font-semibold text-sm group-hover:text-primary-700">
+                                    Learn More →
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -613,9 +621,9 @@ export default function AIInfrastructurePage() {
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
                         {mlOpsPlatform.map((platform, index) => (
-                            <div key={index} className="card-enterprise p-8">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6">{platform.category}</h3>
-                                <ul className="space-y-3">
+                            <Link key={index} href="/contact" className="card-enterprise p-8 block group hover:no-underline">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-primary-600 transition-colors">{platform.category}</h3>
+                                <ul className="space-y-3 mb-6">
                                     {platform.features.map((feature, idx) => (
                                         <li key={idx} className="flex items-start text-sm text-gray-600">
                                             <CheckCircleIcon className="w-5 h-5 text-primary-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -623,7 +631,10 @@ export default function AIInfrastructurePage() {
                                         </li>
                                     ))}
                                 </ul>
-                            </div>
+                                <div className="flex items-center text-primary-600 font-semibold text-sm group-hover:text-primary-700">
+                                    Learn More →
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -642,10 +653,10 @@ export default function AIInfrastructurePage() {
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {performanceBenchmarks.map((benchmark, index) => (
-                            <div key={index} className="card-enterprise p-8">
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">{benchmark.workload}</h3>
+                            <Link key={index} href="/contact" className="card-enterprise p-8 block group hover:no-underline">
+                                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">{benchmark.workload}</h3>
                                 <p className="text-sm text-gray-600 mb-6">{benchmark.model}</p>
-                                <div className="space-y-3">
+                                <div className="space-y-3 mb-6">
                                     <div className="flex justify-between border-b border-gray-200 pb-2">
                                         <span className="text-sm text-gray-600">Hardware:</span>
                                         <span className="text-sm font-semibold text-primary-600">{benchmark.hardware}</span>
@@ -659,7 +670,10 @@ export default function AIInfrastructurePage() {
                                         <span className="text-sm font-semibold text-primary-600">{benchmark.throughput}</span>
                                     </div>
                                 </div>
-                            </div>
+                                <div className="flex items-center text-primary-600 font-semibold text-sm group-hover:text-primary-700">
+                                    Learn More →
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -678,13 +692,16 @@ export default function AIInfrastructurePage() {
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                         {aiFrameworks.map((framework, index) => (
-                            <div key={index} className="card-enterprise p-6 text-center">
+                            <Link key={index} href="/contact" className="card-enterprise p-6 text-center block group hover:no-underline">
                                 <div className="text-primary-600 flex justify-center mb-3">
                                     <framework.icon className="w-12 h-12" />
                                 </div>
-                                <h3 className="text-sm font-bold text-gray-900 mb-1">{framework.name}</h3>
-                                <p className="text-xs text-gray-600">{framework.description}</p>
-                            </div>
+                                <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-primary-600 transition-colors">{framework.name}</h3>
+                                <p className="text-xs text-gray-600 mb-3">{framework.description}</p>
+                                <div className="flex items-center justify-center text-primary-600 font-semibold text-xs group-hover:text-primary-700">
+                                    Learn More →
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -703,9 +720,10 @@ export default function AIInfrastructurePage() {
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {pricingTiers.map((tier, index) => (
-                            <div
+                            <Link
                                 key={index}
-                                className={`card-enterprise p-8 relative ${tier.popular ? 'ring-2 ring-primary-500 shadow-2xl' : ''}`}
+                                href="/contact"
+                                className={`card-enterprise p-8 relative block group hover:no-underline ${tier.popular ? 'ring-2 ring-primary-500 shadow-2xl' : ''}`}
                             >
                                 {tier.popular && (
                                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -714,7 +732,7 @@ export default function AIInfrastructurePage() {
                                         </span>
                                     </div>
                                 )}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3">{tier.tier}</h3>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">{tier.tier}</h3>
                                 <div className="text-xl font-bold text-primary-600 mb-4">{tier.price}</div>
                                 <p className="text-sm text-gray-600 mb-6">{tier.description}</p>
                                 <ul className="space-y-2 mb-6">
@@ -725,11 +743,14 @@ export default function AIInfrastructurePage() {
                                         </li>
                                     ))}
                                 </ul>
-                                <div className="pt-4 border-t border-gray-200">
+                                <div className="pt-4 border-t border-gray-200 mb-4">
                                     <p className="text-xs text-gray-500 font-semibold mb-1">Best For:</p>
                                     <p className="text-sm text-gray-700">{tier.bestFor}</p>
                                 </div>
-                            </div>
+                                <div className="flex items-center text-primary-600 font-semibold text-sm group-hover:text-primary-700">
+                                    Learn More →
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -748,10 +769,10 @@ export default function AIInfrastructurePage() {
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {supportServices.map((service, index) => (
-                            <div key={index} className="card-enterprise p-8">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.service}</h3>
+                            <Link key={index} href="/contact" className="card-enterprise p-8 block group hover:no-underline">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">{service.service}</h3>
                                 <p className="text-gray-600 mb-6">{service.description}</p>
-                                <ul className="space-y-2">
+                                <ul className="space-y-2 mb-6">
                                     {service.includes.map((item, idx) => (
                                         <li key={idx} className="flex items-start text-sm text-gray-600">
                                             <CheckCircleIcon className="w-5 h-5 text-primary-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -759,7 +780,10 @@ export default function AIInfrastructurePage() {
                                         </li>
                                     ))}
                                 </ul>
-                            </div>
+                                <div className="flex items-center text-primary-600 font-semibold text-sm group-hover:text-primary-700">
+                                    Learn More →
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -778,8 +802,8 @@ export default function AIInfrastructurePage() {
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
                         {successStories.map((story, index) => (
-                            <div key={index} className="card-enterprise p-8">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{story.company}</h3>
+                            <Link key={index} href="/contact" className="card-enterprise p-8 block group hover:no-underline">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">{story.company}</h3>
                                 <div className="mb-4">
                                     <h4 className="font-semibold text-gray-900 mb-2">Challenge:</h4>
                                     <p className="text-sm text-gray-600">{story.challenge}</p>
@@ -788,7 +812,7 @@ export default function AIInfrastructurePage() {
                                     <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
                                     <p className="text-sm text-gray-600">{story.solution}</p>
                                 </div>
-                                <div>
+                                <div className="mb-6">
                                     <h4 className="font-semibold text-gray-900 mb-3">Results:</h4>
                                     <div className="grid grid-cols-2 gap-2">
                                         {story.results.map((result, idx) => (
@@ -799,7 +823,10 @@ export default function AIInfrastructurePage() {
                                         ))}
                                     </div>
                                 </div>
-                            </div>
+                                <div className="flex items-center text-primary-600 font-semibold text-sm group-hover:text-primary-700">
+                                    Learn More →
+                                </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
