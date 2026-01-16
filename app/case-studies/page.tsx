@@ -10,28 +10,49 @@ export const metadata = genMeta({
 
 const caseStudies = [
     {
-        title: 'Banking Sector - Core Banking Migration',
-        client: 'Major UAE Bank',
-        challenge: 'Migrate core banking system to private cloud with zero downtime',
-        solution: 'Phased migration with hybrid architecture and comprehensive testing',
-        results: ['Zero downtime migration', '40% cost reduction', '3x performance improvement'],
-        industry: 'Financial Services',
+        title: 'Engineering - Greenfields Infrastructure',
+        client: 'Penta Global Engineering LLC',
+        website: 'https://penta-global.com/',
+        challenge: 'Establishing complete IT infrastructure for new operations from the ground up',
+        solution: 'End-to-end infrastructure build from scratch, including cabling, networking, security, and server deployment',
+        results: ['Fully operational IT environment', 'Scalable network architecture', 'Secure and compliant infrastructure setup'],
+        industry: 'Engineering & Construction',
     },
     {
-        title: 'University - AI Research Infrastructure',
-        client: 'Leading Research University',
-        challenge: 'Build GPU cluster for AI/ML research with limited budget',
-        solution: 'Hybrid on-premise + cloud bursting architecture with A100 GPUs',
-        results: ['80-node GPU cluster', '50% cost savings vs cloud-only', 'Support for 200+ researchers'],
+        title: 'Education - Smart Campus Solution',
+        client: 'Al Rashid Al Saleh Private School',
+        website: 'https://alrashed-alsaleh.com/',
+        challenge: 'Modernizing legacy school infrastructure to support digital learning and administrative efficiency',
+        solution: 'Implemented a centralized schooling solution integrating connectivity, digital classrooms, and management systems',
+        results: ['Unified campus network', 'Enhanced digital learning experience', 'Streamlined administrative operations'],
         industry: 'Education',
     },
     {
-        title: 'Healthcare - HIPAA Compliant Infrastructure',
-        client: 'Hospital Group',
-        challenge: 'Build secure, compliant infrastructure for patient data',
-        solution: 'Private cloud with encryption, access controls, and audit logging',
-        results: ['HIPAA compliant', '99.99% uptime', 'Reduced IT costs by 35%'],
-        industry: 'Healthcare',
+        title: 'Retail Chain - Regional Connectivity',
+        client: 'Al Ershad Group (20 Branches across GCC)',
+        website: 'https://www.alershadgroup.com/',
+        challenge: 'Fragmented network across 20 branches limiting access to centralized ERP and Inventory systems',
+        solution: 'Enabled centralized secure connectivity across all branches to ensure seamless access to locally deployed applications',
+        results: ['100% network uptime across branches', 'Real-time inventory synchronization', 'Seamless ERP access for all staff'],
+        industry: 'Retail',
+    },
+    {
+        title: 'Real Estate - AI & Hybrid Cloud',
+        client: 'AQARY HOLDING',
+        website: 'https://aqaryholding.com/',
+        challenge: 'Modernizing legacy infrastructure to leverage AI insights and ensure scalability for growing portfolio',
+        solution: 'Implemented a robust AI & Hybrid Cloud solution enabling predictive analytics and secure, scalable data management',
+        results: ['Enhanced data-driven decision making', 'Secure hybrid cloud architecture', 'Operational efficiency optimization'],
+        industry: 'Real Estate & Investment',
+    },
+    {
+        title: 'Real Estate - Integrated IT Infrastructure',
+        client: 'FINE HOME REAL ESTATE',
+        website: 'https://finehomeint.com/',
+        challenge: 'Establishing a comprehensive, secure, and resilient IT foundation for real estate operations from the ground up',
+        solution: 'Complete infrastructure build including AD, Application Servers, DR Solution, NAS, Call Center, PBX, CCTV, Firewall & Wireless',
+        results: ['Robust multi-server environment', 'Business continuity via DR', 'Integrated security & communications'],
+        industry: 'Real Estate',
     },
 ]
 
@@ -62,7 +83,24 @@ export default function CaseStudiesPage() {
                                         {study.industry}
                                     </span>
                                 </div>
-                                <p className="text-lg text-gray-600 mb-6">{study.client}</p>
+                                <div className="mb-6">
+                                    <p className="text-lg text-gray-600 inline">
+                                        {study.client}
+                                    </p>
+                                    {study.website && (
+                                        <a
+                                            href={study.website}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="ml-3 inline-flex items-center text-primary-600 hover:text-primary-700 text-sm font-medium hover:underline"
+                                        >
+                                            Visit Website
+                                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                            </svg>
+                                        </a>
+                                    )}
+                                </div>
                                 <div className="grid md:grid-cols-3 gap-8">
                                     <div>
                                         <h3 className="text-lg font-bold text-gray-900 mb-2">Challenge</h3>

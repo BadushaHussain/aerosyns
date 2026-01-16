@@ -107,30 +107,76 @@ const architectureTech = [
     },
 ]
 
+import {
+    SiReact, SiNextdotjs, SiAngular, SiVuedotjs, SiTypescript,
+    SiDotnet, SiGo,
+    SiPostgresql, SiMongodb, SiRedis, SiElasticsearch,
+    SiTensorflow, SiPytorch, SiOpenai, SiScikitlearn, SiHuggingface,
+    SiDocker, SiKubernetes, SiTerraform, SiJenkins,
+    SiGooglecloud, SiServerless
+} from 'react-icons/si'
+import { FaJava, FaPython, FaNodeJs, FaAws, FaNetworkWired, FaSync, FaDatabase, FaWindows, FaBuilding, FaShieldAlt, FaRocket, FaCog, FaLandmark, FaCheckCircle } from 'react-icons/fa'
+
 const techStack = [
     {
         category: 'Frontend',
-        technologies: ['React', 'Next.js', 'Angular', 'Vue.js', 'TypeScript'],
+        technologies: [
+            { name: 'React', icon: <SiReact className="w-4 h-4" /> },
+            { name: 'Next.js', icon: <SiNextdotjs className="w-4 h-4" /> },
+            { name: 'Angular', icon: <SiAngular className="w-4 h-4" /> },
+            { name: 'Vue.js', icon: <SiVuedotjs className="w-4 h-4" /> },
+            { name: 'TypeScript', icon: <SiTypescript className="w-4 h-4" /> },
+        ],
     },
     {
         category: 'Backend',
-        technologies: ['Java', '.NET', 'Python', 'Node.js', 'Go'],
+        technologies: [
+            { name: 'Java', icon: <FaJava className="w-4 h-4" /> },
+            { name: '.NET', icon: <SiDotnet className="w-4 h-4" /> },
+            { name: 'Python', icon: <FaPython className="w-4 h-4" /> },
+            { name: 'Node.js', icon: <FaNodeJs className="w-4 h-4" /> },
+            { name: 'Go', icon: <SiGo className="w-4 h-4" /> },
+        ],
     },
     {
         category: 'Databases',
-        technologies: ['PostgreSQL', 'MongoDB', 'SQL Server', 'Redis', 'Elasticsearch'],
+        technologies: [
+            { name: 'PostgreSQL', icon: <SiPostgresql className="w-4 h-4" /> },
+            { name: 'MongoDB', icon: <SiMongodb className="w-4 h-4" /> },
+            { name: 'SQL Server', icon: <FaDatabase className="w-4 h-4" /> },
+            { name: 'Redis', icon: <SiRedis className="w-4 h-4" /> },
+            { name: 'Elasticsearch', icon: <SiElasticsearch className="w-4 h-4" /> },
+        ],
     },
     {
         category: 'AI/ML',
-        technologies: ['TensorFlow', 'PyTorch', 'OpenAI', 'Scikit-learn', 'Hugging Face'],
+        technologies: [
+            { name: 'TensorFlow', icon: <SiTensorflow className="w-4 h-4" /> },
+            { name: 'PyTorch', icon: <SiPytorch className="w-4 h-4" /> },
+            { name: 'OpenAI', icon: <SiOpenai className="w-4 h-4" /> },
+            { name: 'Scikit-learn', icon: <SiScikitlearn className="w-4 h-4" /> },
+            { name: 'Hugging Face', icon: <SiHuggingface className="w-4 h-4" /> },
+        ],
     },
     {
         category: 'DevOps',
-        technologies: ['Docker', 'Kubernetes', 'CI/CD', 'Terraform', 'Jenkins'],
+        technologies: [
+            { name: 'Docker', icon: <SiDocker className="w-4 h-4" /> },
+            { name: 'Kubernetes', icon: <SiKubernetes className="w-4 h-4" /> },
+            { name: 'CI/CD', icon: <FaSync className="w-4 h-4" /> },
+            { name: 'Terraform', icon: <SiTerraform className="w-4 h-4" /> },
+            { name: 'Jenkins', icon: <SiJenkins className="w-4 h-4" /> },
+        ],
     },
     {
         category: 'Cloud',
-        technologies: ['AWS', 'Azure', 'GCP', 'Serverless', 'Edge Computing'],
+        technologies: [
+            { name: 'AWS', icon: <FaAws className="w-4 h-4" /> },
+            { name: 'Azure', icon: <FaWindows className="w-4 h-4" /> },
+            { name: 'GCP', icon: <SiGooglecloud className="w-4 h-4" /> },
+            { name: 'Serverless', icon: <SiServerless className="w-4 h-4" /> },
+            { name: 'Edge Computing', icon: <FaNetworkWired className="w-4 h-4" /> },
+        ],
     },
 ]
 
@@ -157,37 +203,37 @@ const industries = [
     {
         name: 'Insurance & FinTech',
         description: 'Policy management, claims processing, underwriting automation',
-        icon: <BuildingOfficeIcon className="w-8 h-8" />,
+        icon: <FaBuilding className="w-8 h-8" />,
         link: '/services/software/industries/insurance-fintech',
     },
     {
         name: 'Healthcare',
         description: 'Patient management, EMR/EHR systems, telemedicine platforms',
-        icon: <ShieldCheckIcon className="w-8 h-8" />,
+        icon: <FaShieldAlt className="w-8 h-8" />,
         link: '/services/software/industries/healthcare',
     },
     {
         name: 'Logistics & Fleet Management',
         description: 'Route optimization, tracking systems, warehouse management',
-        icon: <RocketLaunchIcon className="w-8 h-8" />,
+        icon: <FaRocket className="w-8 h-8" />,
         link: '/services/software/industries/logistics',
     },
     {
         name: 'Manufacturing',
         description: 'Production planning, quality control, supply chain management',
-        icon: <CogIcon className="w-8 h-8" />,
+        icon: <FaCog className="w-8 h-8" />,
         link: '/services/software/industries/manufacturing',
     },
     {
         name: 'Government & Enterprises',
         description: 'Citizen services, compliance systems, workflow automation',
-        icon: <BuildingOfficeIcon className="w-8 h-8" />,
+        icon: <FaLandmark className="w-8 h-8" />,
         link: '/services/software/industries/government',
     },
     {
         name: 'HR & Compliance',
         description: 'HRMS, payroll, attendance, compliance tracking',
-        icon: <CheckCircleIcon className="w-8 h-8" />,
+        icon: <FaCheckCircle className="w-8 h-8" />,
         link: '/services/software/industries/hr-compliance',
     },
 ]
@@ -450,7 +496,8 @@ export default function SoftwarePage() {
                                                 key={idx}
                                                 className="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-sm font-medium"
                                             >
-                                                {tech}
+                                                <span className="mr-2">{tech.icon}</span>
+                                                {tech.name}
                                             </span>
                                         ))}
                                     </div>
