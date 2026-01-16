@@ -63,7 +63,7 @@ const leadership = [
     {
         name: 'Said Hussain',
         role: 'Director of Operations',
-        bio: 'Specialist in large-scale project delivery and operational excellence for enterprise clients.',
+        bio: 'Aviation and airport operations expert driving large-scale airport implementation and operational readiness.',
     },
 ]
 
