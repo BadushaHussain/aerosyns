@@ -1,6 +1,7 @@
 import { generateMetadata as genMeta } from '@/lib/seo'
 import Link from 'next/link'
 import { RocketLaunchIcon, BuildingOfficeIcon, CloudIcon, ShieldCheckIcon, CodeBracketIcon, BriefcaseIcon } from '@heroicons/react/24/solid'
+import { FaPlane, FaRobot, FaLaptopCode } from 'react-icons/fa'
 
 export const metadata = genMeta({
     title: 'Solutions - Enterprise IT & Digital Transformation',
@@ -11,13 +12,22 @@ export const metadata = genMeta({
 
 const solutions = [
     {
-        name: 'Digital Transformation',
-        tagline: 'Complete business & IT modernization',
-        description: 'End-to-end digital transformation from legacy systems to modern cloud-native architecture',
-        href: '/solutions/digital-transformation',
+        name: 'AI Research Infrastructure',
+        tagline: 'GPU clusters for AI/ML research',
+        description: 'High-performance computing infrastructure for AI research, training, and inference',
+        href: '/solutions/ai-research',
         icon: <RocketLaunchIcon className="w-8 h-8" />,
-        features: ['IT modernization', 'Process automation', 'Cloud adoption', 'Change management'],
-        color: 'from-blue-500 to-cyan-500',
+        features: ['GPU clusters', 'MLOps platform', 'Data pipelines', 'Research support'],
+        color: 'from-pink-500 to-red-500',
+    },
+    {
+        name: 'Airport IT Architecture',
+        tagline: 'Smart airport integration',
+        description: 'Comprehensive IT architecture for modern airports, from AODB to passenger processing and security',
+        href: '/solutions/airport',
+        icon: <FaPlane className="w-8 h-8" />,
+        features: ['AODB & FIDS', 'Passenger Processing', 'Baggage Handling', 'Airport Operations (AOCC)'],
+        color: 'from-sky-500 to-blue-600',
     },
     {
         name: 'Cloud Migration & Optimization',
@@ -29,31 +39,13 @@ const solutions = [
         color: 'from-cyan-500 to-blue-500',
     },
     {
-        name: 'Enterprise IT Transformation',
-        tagline: 'Complete IT infrastructure modernization',
-        description: 'End-to-end IT transformation from legacy systems to modern cloud-native infrastructure',
-        href: '/solutions/enterprise-it',
-        icon: <BuildingOfficeIcon className="w-8 h-8" />,
-        features: ['Infrastructure assessment', 'Cloud migration', 'Security hardening', 'Managed services'],
-        color: 'from-purple-500 to-pink-500',
-    },
-    {
-        name: 'AI Research Infrastructure',
-        tagline: 'GPU clusters for AI/ML research',
-        description: 'High-performance computing infrastructure for AI research, training, and inference',
-        href: '/solutions/ai-research',
-        icon: <RocketLaunchIcon className="w-8 h-8" />,
-        features: ['GPU clusters', 'MLOps platform', 'Data pipelines', 'Research support'],
-        color: 'from-pink-500 to-red-500',
-    },
-    {
-        name: 'Datacenter Build & Consolidation',
-        tagline: 'Modern datacenter infrastructure',
-        description: 'Design, build, and consolidate datacenters with Tier III/IV standards',
-        href: '/solutions/datacenter',
-        icon: <BuildingOfficeIcon className="w-8 h-8" />,
-        features: ['Datacenter design', 'Infrastructure build', 'Consolidation', 'Tier III/IV compliance'],
-        color: 'from-green-500 to-emerald-500',
+        name: 'Custom Software Development',
+        tagline: 'Enterprise-grade applications',
+        description: 'Scalable custom software solutions, mobile apps, and enterprise platforms tailored to your needs',
+        href: '/services/software',
+        icon: <FaLaptopCode className="w-8 h-8" />,
+        features: ['Custom Web/Mobile Apps', 'Enterprise Platforms', 'API Integration', 'Legacy Modernization'],
+        color: 'from-indigo-600 to-violet-600',
     },
     {
         name: 'Cybersecurity Transformation',
@@ -65,6 +57,15 @@ const solutions = [
         color: 'from-red-500 to-orange-500',
     },
     {
+        name: 'Datacenter Build & Consolidation',
+        tagline: 'Modern datacenter infrastructure',
+        description: 'Design, build, and consolidate datacenters with Tier III/IV standards',
+        href: '/solutions/datacenter',
+        icon: <BuildingOfficeIcon className="w-8 h-8" />,
+        features: ['Datacenter design', 'Infrastructure build', 'Consolidation', 'Tier III/IV compliance'],
+        color: 'from-green-500 to-emerald-500',
+    },
+    {
         name: 'DevOps & Automation',
         tagline: 'CI/CD and infrastructure as code',
         description: 'Implement DevOps practices with automation, CI/CD pipelines, and IaC',
@@ -74,6 +75,24 @@ const solutions = [
         color: 'from-orange-500 to-yellow-500',
     },
     {
+        name: 'Digital Transformation',
+        tagline: 'Complete business & IT modernization',
+        description: 'End-to-end digital transformation from legacy systems to modern cloud-native architecture',
+        href: '/solutions/digital-transformation',
+        icon: <RocketLaunchIcon className="w-8 h-8" />,
+        features: ['IT modernization', 'Process automation', 'Cloud adoption', 'Change management'],
+        color: 'from-blue-500 to-cyan-500',
+    },
+    {
+        name: 'Enterprise IT Transformation',
+        tagline: 'Complete IT infrastructure modernization',
+        description: 'End-to-end IT transformation from legacy systems to modern cloud-native infrastructure',
+        href: '/solutions/enterprise-it',
+        icon: <BuildingOfficeIcon className="w-8 h-8" />,
+        features: ['Infrastructure assessment', 'Cloud migration', 'Security hardening', 'Managed services'],
+        color: 'from-purple-500 to-pink-500',
+    },
+    {
         name: 'Industry-Specific Solutions',
         tagline: 'Tailored for your industry',
         description: 'Specialized solutions for banking, healthcare, education, and government sectors',
@@ -81,6 +100,15 @@ const solutions = [
         icon: <BriefcaseIcon className="w-8 h-8" />,
         features: ['Banking & finance', 'Healthcare', 'Education', 'Government'],
         color: 'from-indigo-500 to-purple-500',
+    },
+    {
+        name: 'Robotics & Assistive Tech',
+        tagline: 'Advanced robotics solutions',
+        description: 'Cutting-edge robotics for healthcare, rehabilitation, and industrial automation',
+        href: '/services/robotics',
+        icon: <FaRobot className="w-8 h-8" />,
+        features: ['Rehabilitation Robotics', 'Exoskeletons', 'Industrial Automation', 'Assistive Devices'],
+        color: 'from-emerald-500 to-teal-500',
     },
 ]
 
