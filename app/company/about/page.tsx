@@ -49,23 +49,7 @@ const values = [
     },
 ]
 
-const leadership = [
-    {
-        name: 'Badusha Hussain',
-        role: 'Founder & CEO',
-        bio: '15+ years of experience in enterprise IT leadership and strategic growth across MENA region.',
-    },
-    {
-        name: 'Sanoof Rafi',
-        role: 'Chief Technology Officer',
-        bio: 'Expert in cloud infrastructure and AI solutions with a background in systems architecture.',
-    },
-    {
-        name: 'Said Hussain',
-        role: 'Director of Operations',
-        bio: 'Aviation and airport operations expert driving large-scale airport implementation and operational readiness.',
-    },
-]
+
 
 const certifications = [
     { name: 'ISO 27001', desc: 'Information Security Management' },
@@ -202,31 +186,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Leadership Team */}
-            <section className="section-padding bg-white">
-                <div className="container-custom">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
-                            Leadership Team
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                            Experienced leaders driving innovation and excellence
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {leadership.map((leader, index) => (
-                            <div key={index} className="card-enterprise p-8 text-center">
-                                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 mx-auto mb-6 flex items-center justify-center">
-                                    <Users className="w-12 h-12 text-white" />
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">{leader.name}</h3>
-                                <p className="text-sm font-semibold text-primary-600 mb-3">{leader.role}</p>
-                                <p className="text-sm text-gray-600">{leader.bio}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* Methodology */}
             <section className="section-padding bg-gray-50">

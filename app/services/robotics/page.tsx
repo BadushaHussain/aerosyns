@@ -73,17 +73,17 @@ const targetUsers = [
     { group: 'Mobility Impairments', icon: FaWheelchair, link: '/services/robotics/for-mobility-impairments' },
     { group: 'Spinal Cord Injuries', icon: MdAccessible, link: '/services/robotics/for-spinal-injuries' },
     { group: 'Stroke Survivors', icon: MdHealthAndSafety, link: '/services/robotics/for-stroke-survivors' },
-    { group: 'Neuromuscular Disorders', icon: FaBrain, link: null },
-    { group: 'Amputees', icon: FaHandsHelping, link: null },
-    { group: 'Elderly with Physical Limitations', icon: MdElderly, link: null },
+    { group: 'Neuromuscular Disorders', icon: FaBrain, link: '/services/robotics/neuromuscular-disorders' },
+    { group: 'Amputees', icon: FaHandsHelping, link: '/services/robotics/amputees' },
+    { group: 'Elderly with Physical Limitations', icon: MdElderly, link: '/services/robotics/elderly-physical-limitations' },
 ]
 
 const usageEnvironments = [
     { name: 'Private Homes', description: 'Personalized home assistance', link: '/services/robotics/private-homes' },
     { name: 'Rehabilitation Centers', description: 'Therapy support & recovery', link: '/services/robotics/rehabilitation-centers' },
     { name: 'Hospitals', description: 'Patient mobility & care', link: '/services/robotics/healthcare-facilities' },
-    { name: 'Assisted Living', description: 'Independent living support', link: null },
-    { name: 'Long-term Care', description: 'Ongoing assistance & monitoring', link: null },
+    { name: 'Assisted Living', description: 'Independent living support', link: '/services/robotics/assisted-living' },
+    { name: 'Long-term Care', description: 'Ongoing assistance & monitoring', link: '/services/robotics/long-term-care' },
 ]
 
 const techHighlights = [
