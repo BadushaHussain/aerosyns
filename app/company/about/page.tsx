@@ -51,19 +51,19 @@ const values = [
 
 const leadership = [
     {
-        name: 'Hussain',
-        role: 'Chief Executive Officer',
-        bio: 'Visionary leader with 15+ years in enterprise IT and digital transformation',
+        name: 'Badusha Hussain',
+        role: 'Founder & CEO',
+        bio: '15+ years of experience in enterprise IT leadership and strategic growth across MENA region.',
     },
     {
-        name: 'Technical Leadership',
+        name: 'Sanoof Rafi',
         role: 'Chief Technology Officer',
-        bio: 'Expert in cloud architecture, AI/ML infrastructure, and cybersecurity',
+        bio: 'Expert in cloud infrastructure and AI solutions with a background in systems architecture.',
     },
     {
-        name: 'Operations Team',
-        role: 'VP of Operations',
-        bio: 'Ensuring 99.99% uptime with world-class managed services',
+        name: 'Said Hussain',
+        role: 'Director of Operations',
+        bio: 'Specialist in large-scale project delivery and operational excellence for enterprise clients.',
     },
 ]
 
