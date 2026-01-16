@@ -419,17 +419,17 @@ export default function MetricslogPage() {
                         {[
                             {
                                 title: 'Starter',
-                                price: 'AED 999',
+                                price: '$ 149',
                                 period: '/month',
                                 description: 'For small businesses (up to 50 employees)',
-                                features: ['Up to 50 employees', '2 devices', 'Basic reports', 'Email support', 'Cloud-based'],
+                                features: ['Single Admin Dashboard', 'Up to 50 employees', '2 devices', 'Advanced reports', 'Email support', 'On-premise'],
                             },
                             {
                                 title: 'Professional',
-                                price: 'AED 1,999',
+                                price: '$ 349',
                                 period: '/month',
                                 description: 'For growing companies (up to 200 employees)',
-                                features: ['Up to 200 employees', '5 devices', 'Advanced reports', 'Priority support', 'Mobile apps', 'API access'],
+                                features: ['Single Admin Dashboard', 'Up to 200 employees', '5 devices', 'Advanced reports', 'Email support', 'On-premise/Cloud'],
                                 popular: true,
                             },
                             {
@@ -437,7 +437,7 @@ export default function MetricslogPage() {
                                 price: 'Custom',
                                 period: '',
                                 description: 'For large organizations (200+ employees)',
-                                features: ['Unlimited employees', 'Unlimited devices', 'Custom integrations', 'Dedicated support', 'On-premise option', 'SLA guarantee'],
+                                features: ['Unlimited employees', 'Unlimited devices', 'Custom integrations', 'Dedicated support', 'On-premise / Cloud option', 'API access', 'SLA guarantee'],
                             },
                         ].map((plan, index) => (
                             <div

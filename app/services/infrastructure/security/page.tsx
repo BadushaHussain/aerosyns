@@ -21,11 +21,7 @@ const securityServices = [
     { service: 'Security Monitoring', description: '24/7 SOC and SIEM integration', deliverables: ['Log aggregation', 'Threat detection', 'Incident response', 'Compliance reporting'] },
 ]
 
-const pricingTiers = [
-    { tier: 'SMB Security', scope: 'Up to 100 users', price: 'Starting at $8,000', includes: ['Entry-level NGFW', 'Basic IPS', 'VPN (50 users)', 'Email support', '1-year license'] },
-    { tier: 'Enterprise Security', scope: '100-1000 users', price: 'Starting at $35,000', includes: ['Enterprise NGFW', 'Advanced IPS/IDS', 'NAC deployment', 'SIEM integration', '24/7 support', '3-year license'], popular: true },
-    { tier: 'Datacenter Security', scope: '1000+ users', price: 'Custom pricing', includes: ['High-performance NGFW', 'Full security stack', 'Redundant deployment', 'SOC services', 'Dedicated engineer', '5-year license'] },
-]
+
 
 export default function SecurityFirewallsPage() {
     return (
@@ -81,22 +77,7 @@ export default function SecurityFirewallsPage() {
                 </div>
             </section>
 
-            <section className="section-padding bg-gray-50">
-                <div className="container-custom">
-                    <div className="text-center mb-16"><h2 className="text-4xl font-display font-bold text-gray-900 mb-4">Pricing Packages</h2></div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {pricingTiers.map((tier, index) => (
-                            <div key={index} className={`card-enterprise p-8 relative ${tier.popular ? 'ring-2 ring-primary-500 shadow-2xl' : ''}`}>
-                                {tier.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><span className="inline-flex items-center px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-semibold">Most Popular</span></div>}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.tier}</h3>
-                                <p className="text-sm text-gray-600 mb-4">{tier.scope}</p>
-                                <div className="text-3xl font-bold text-primary-600 mb-6">{tier.price}</div>
-                                <ul className="space-y-2">{tier.includes.map((item, idx) => <li key={idx} className="flex items-start text-sm text-gray-600"><CheckCircleIcon className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0 mt-0.5" />{item}</li>)}</ul>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             <section className="section-padding bg-gradient-to-br from-primary-600 to-secondary-600">
                 <div className="container-custom text-center">

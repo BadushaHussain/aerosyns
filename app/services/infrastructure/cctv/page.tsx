@@ -24,11 +24,7 @@ const analyticsFeatures = [
     { feature: 'Loitering Detection', description: 'Alert on suspicious loitering behavior' },
 ]
 
-const pricingTiers = [
-    { tier: 'Small Business', scope: '8-16 cameras', price: 'Starting at $5,000', includes: ['4MP IP cameras', '8/16-ch NVR', '2TB storage', 'Basic installation', 'Mobile app', '1-year warranty'] },
-    { tier: 'Medium Enterprise', scope: '16-64 cameras', price: 'Starting at $20,000', includes: ['5MP IP cameras', '32/64-ch NVR', '8TB storage', 'Video analytics', 'Professional installation', 'Remote monitoring', '3-year warranty'], popular: true },
-    { tier: 'Large Campus', scope: '64+ cameras', price: 'Custom pricing', includes: ['4K cameras + PTZ', 'Enterprise NVR/VMS', '20TB+ storage', 'AI analytics', 'Redundant recording', 'Control room setup', '5-year warranty'] },
-]
+
 
 export default function CCTVPage() {
     return (
@@ -62,7 +58,7 @@ export default function CCTVPage() {
                                 <div className="mb-4"><span className="text-sm text-gray-600">Resolution:</span> <span className="text-primary-600 font-bold">{cam.resolution}</span></div>
                                 <div className="mb-4"><p className="text-xs text-gray-500 font-semibold mb-2">Features:</p><div className="flex flex-wrap gap-2">{cam.features.map((f, i) => <span key={i} className="px-2 py-1 bg-primary-100 text-primary-700 text-xs font-medium rounded">{f}</span>)}</div></div>
                                 <div className="mb-4"><p className="text-xs text-gray-500 font-semibold mb-1">Applications:</p><p className="text-sm text-gray-700">{cam.applications}</p></div>
-                                <div className="text-xl font-bold text-primary-600">{cam.price}</div>
+
                             </div>
                         ))}
                     </div>
@@ -84,22 +80,7 @@ export default function CCTVPage() {
                 </div>
             </section>
 
-            <section className="section-padding bg-gray-50">
-                <div className="container-custom">
-                    <div className="text-center mb-16"><h2 className="text-4xl font-display font-bold text-gray-900 mb-4">Pricing Packages</h2></div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {pricingTiers.map((tier, index) => (
-                            <div key={index} className={`card-enterprise p-8 relative ${tier.popular ? 'ring-2 ring-primary-500 shadow-2xl' : ''}`}>
-                                {tier.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><span className="inline-flex items-center px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-semibold">Most Popular</span></div>}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.tier}</h3>
-                                <p className="text-sm text-gray-600 mb-4">{tier.scope}</p>
-                                <div className="text-3xl font-bold text-primary-600 mb-6">{tier.price}</div>
-                                <ul className="space-y-2">{tier.includes.map((item, idx) => <li key={idx} className="flex items-start text-sm text-gray-600"><CheckCircleIcon className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0 mt-0.5" />{item}</li>)}</ul>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             <section className="section-padding bg-gradient-to-br from-primary-600 to-secondary-600">
                 <div className="container-custom text-center">

@@ -22,11 +22,7 @@ const infrastructureComponents = [
     { component: 'Fire Suppression', items: ['FM-200/Inergen', 'VESDA detection', 'Pre-action sprinklers', 'Manual suppression', 'Alarm systems'] },
 ]
 
-const pricingTiers = [
-    { tier: 'Small Datacenter', scope: '10-50 racks', price: 'Starting at $200,000', includes: ['Tier II design', 'Basic power/cooling', 'Standard racks', 'Basic monitoring', 'Installation'] },
-    { tier: 'Medium Datacenter', scope: '50-200 racks', price: 'Starting at $1,000,000', includes: ['Tier III design', 'Redundant power/cooling', 'Hot/cold aisle', 'BMS integration', 'Full commissioning', '3-year support'], popular: true },
-    { tier: 'Large Datacenter', scope: '200+ racks', price: 'Custom pricing', includes: ['Tier III/IV design', 'Full redundancy', 'Advanced cooling', 'Comprehensive BMS', 'Tier certification', 'White-glove support'] },
-]
+
 
 export default function DatacenterPage() {
     return (
@@ -81,22 +77,7 @@ export default function DatacenterPage() {
                 </div>
             </section>
 
-            <section className="section-padding bg-gray-50">
-                <div className="container-custom">
-                    <div className="text-center mb-16"><h2 className="text-4xl font-display font-bold text-gray-900 mb-4">Pricing Packages</h2></div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {pricingTiers.map((tier, index) => (
-                            <div key={index} className={`card-enterprise p-8 relative ${tier.popular ? 'ring-2 ring-primary-500 shadow-2xl' : ''}`}>
-                                {tier.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><span className="inline-flex items-center px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-semibold">Most Popular</span></div>}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.tier}</h3>
-                                <p className="text-sm text-gray-600 mb-4">{tier.scope}</p>
-                                <div className="text-3xl font-bold text-primary-600 mb-6">{tier.price}</div>
-                                <ul className="space-y-2">{tier.includes.map((item, idx) => <li key={idx} className="flex items-start text-sm text-gray-600"><CheckCircleIcon className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0 mt-0.5" />{item}</li>)}</ul>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             <section className="section-padding bg-gradient-to-br from-primary-600 to-secondary-600">
                 <div className="container-custom text-center">

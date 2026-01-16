@@ -161,48 +161,7 @@ const incidentResponse = [
     },
 ]
 
-const pricingTiers = [
-    {
-        tier: 'Essential',
-        price: 'Starting at $5,000/month',
-        features: [
-            'Basic SIEM monitoring',
-            'Endpoint protection (up to 100 devices)',
-            'Email security',
-            'Quarterly vulnerability scans',
-            'Business hours support',
-        ],
-        bestFor: 'Small businesses, startups',
-    },
-    {
-        tier: 'Professional',
-        price: 'Starting at $15,000/month',
-        features: [
-            'Advanced SIEM with correlation',
-            'Endpoint protection (up to 500 devices)',
-            'NGFW management',
-            'Monthly penetration testing',
-            'Incident response (8x5)',
-            'Compliance reporting',
-        ],
-        popular: true,
-        bestFor: 'Medium enterprises',
-    },
-    {
-        tier: 'Enterprise',
-        price: 'Custom pricing',
-        features: [
-            '24/7 managed SOC',
-            'Unlimited endpoint protection',
-            'Zero-trust architecture',
-            'Continuous pen testing',
-            'Dedicated security team',
-            'Incident response (24/7)',
-            'Compliance certification support',
-        ],
-        bestFor: 'Large enterprises, regulated industries',
-    },
-]
+
 
 const caseStudies = [
     {
@@ -524,49 +483,7 @@ export default function CybersecurityPage() {
                 </div>
             </section>
 
-            {/* Pricing Packages */}
-            <section className="section-padding bg-white">
-                <div className="container-custom">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
-                            Security Packages
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Flexible security tiers for every organization size
-                        </p>
-                    </div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {pricingTiers.map((tier, index) => (
-                            <div
-                                key={index}
-                                className={`card-enterprise p-8 relative flex flex-col ${tier.popular ? 'ring-2 ring-primary-500 shadow-2xl scale-105' : ''}`}
-                            >
-                                {tier.popular && (
-                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                                        <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-semibold">
-                                            Most Popular
-                                        </span>
-                                    </div>
-                                )}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.tier}</h3>
-                                <div className="text-xl font-bold text-primary-600 mb-6">{tier.price}</div>
-                                <ul className="space-y-3 mb-8 flex-1">
-                                    {tier.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-start text-sm text-gray-600">
-                                            <CheckCircleIcon className="w-5 h-5 text-primary-500 mr-2 flex-shrink-0 mt-0.5" />
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-                                <div className="pt-4 border-t border-gray-200">
-                                    <p className="text-xs text-gray-500 font-semibold mb-1">Best For:</p>
-                                    <p className="text-sm text-gray-700">{tier.bestFor}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* Case Studies */}
             <section className="section-padding bg-gray-50">

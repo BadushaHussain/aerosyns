@@ -220,51 +220,7 @@ const projectExamples = [
     },
 ]
 
-const pricingTiers = [
-    {
-        tier: 'SMB Package',
-        price: 'Starting at $15,000',
-        scope: 'Small office (up to 50 drops)',
-        includes: [
-            'Cat6 cabling installation',
-            'Basic network switches',
-            'Wi-Fi access points',
-            'Testing & certification',
-            '1-year warranty',
-        ],
-        bestFor: 'Small businesses, startups',
-    },
-    {
-        tier: 'Enterprise Package',
-        price: 'Starting at $75,000',
-        scope: 'Medium office (up to 500 drops)',
-        includes: [
-            'Cat6A cabling with fiber backbone',
-            'Enterprise switches & routers',
-            'Managed Wi-Fi system',
-            'CCTV & access control',
-            'Full testing & documentation',
-            '3-year warranty & support',
-        ],
-        popular: true,
-        bestFor: 'Growing enterprises, multi-floor offices',
-    },
-    {
-        tier: 'Datacenter Package',
-        price: 'Custom pricing',
-        scope: 'Datacenter (50+ racks)',
-        includes: [
-            'MPO/MTP fiber infrastructure',
-            'Redundant power & cooling',
-            'Hot/cold aisle containment',
-            'BMS & environmental monitoring',
-            'Tier certification support',
-            'Comprehensive testing & commissioning',
-            '5-year warranty & SLA',
-        ],
-        bestFor: 'Datacenters, colocation facilities',
-    },
-]
+
 
 export default function InfrastructurePage() {
     return (
@@ -339,11 +295,11 @@ export default function InfrastructurePage() {
                                 <div className="mt-6">
                                     <Link
                                         href={`/services/infrastructure/${service.title === 'Structured Cabling' ? 'structured-cabling' :
-                                                service.title === 'Network Infrastructure' ? 'network' :
-                                                    service.title === 'Security & Firewalls' ? 'security' :
-                                                        service.title === 'CCTV & Surveillance' ? 'cctv' :
-                                                            service.title === 'Unified Communications' ? 'unified-communications' :
-                                                                'datacenter'
+                                            service.title === 'Network Infrastructure' ? 'network' :
+                                                service.title === 'Security & Firewalls' ? 'security' :
+                                                    service.title === 'CCTV & Surveillance' ? 'cctv' :
+                                                        service.title === 'Unified Communications' ? 'unified-communications' :
+                                                            'datacenter'
                                             }`}
                                         className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-sm"
                                     >
@@ -610,50 +566,7 @@ export default function InfrastructurePage() {
                 </div>
             </section>
 
-            {/* Pricing Tiers */}
-            <section className="section-padding bg-white">
-                <div className="container-custom">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
-                            Pricing Packages
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Flexible infrastructure solutions for every scale
-                        </p>
-                    </div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {pricingTiers.map((tier, index) => (
-                            <div
-                                key={index}
-                                className={`card-enterprise p-8 relative ${tier.popular ? 'ring-2 ring-primary-500 shadow-2xl' : ''}`}
-                            >
-                                {tier.popular && (
-                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                                        <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-semibold">
-                                            Most Popular
-                                        </span>
-                                    </div>
-                                )}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.tier}</h3>
-                                <div className="text-xl font-bold text-primary-600 mb-2">{tier.price}</div>
-                                <p className="text-sm text-gray-600 mb-6">{tier.scope}</p>
-                                <ul className="space-y-2 mb-6">
-                                    {tier.includes.map((item, idx) => (
-                                        <li key={idx} className="flex items-start text-sm text-gray-600">
-                                            <CheckCircleIcon className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0 mt-0.5" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                                <div className="pt-4 border-t border-gray-200">
-                                    <p className="text-xs text-gray-500 font-semibold mb-1">Best For:</p>
-                                    <p className="text-sm text-gray-700">{tier.bestFor}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* CTA Section */}
             <section className="section-padding bg-gradient-to-br from-primary-600 to-secondary-600">

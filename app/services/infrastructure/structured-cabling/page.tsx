@@ -151,53 +151,7 @@ const certificationLevels = [
     },
 ]
 
-const pricingTiers = [
-    {
-        tier: 'Small Office',
-        scope: 'Up to 50 drops',
-        price: 'Starting at $5,000',
-        includes: [
-            'Cat6 UTP cabling',
-            'Basic patch panels',
-            'Cable management',
-            'Testing & verification',
-            'Basic documentation',
-            '1-year warranty',
-        ],
-        pricePerDrop: '$100-150/drop',
-    },
-    {
-        tier: 'Medium Enterprise',
-        scope: '50-500 drops',
-        price: 'Starting at $35,000',
-        includes: [
-            'Cat6A UTP/STP cabling',
-            'Enterprise patch panels',
-            'Fiber backbone (if needed)',
-            'Full Fluke certification',
-            'Comprehensive documentation',
-            'As-built CAD drawings',
-            '15-year warranty',
-        ],
-        pricePerDrop: '$70-120/drop',
-        popular: true,
-    },
-    {
-        tier: 'Large Campus/Datacenter',
-        scope: '500+ drops',
-        price: 'Custom pricing',
-        includes: [
-            'Cat6A/Cat7 + fiber infrastructure',
-            'MPO/MTP trunk cabling',
-            'Redundant pathways',
-            'Complete OTDR testing',
-            'Full documentation package',
-            'Training & handover',
-            '25-year warranty',
-        ],
-        pricePerDrop: '$50-100/drop',
-    },
-]
+
 
 export default function StructuredCablingPage() {
     return (
@@ -417,46 +371,7 @@ export default function StructuredCablingPage() {
             </section>
 
             {/* Pricing */}
-            <section className="section-padding bg-gray-50">
-                <div className="container-custom">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
-                            Pricing & Packages
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Transparent pricing for every project size
-                        </p>
-                    </div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {pricingTiers.map((tier, index) => (
-                            <div
-                                key={index}
-                                className={`card-enterprise p-8 relative ${tier.popular ? 'ring-2 ring-primary-500 shadow-2xl' : ''}`}
-                            >
-                                {tier.popular && (
-                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                                        <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-semibold">
-                                            Most Popular
-                                        </span>
-                                    </div>
-                                )}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.tier}</h3>
-                                <p className="text-sm text-gray-600 mb-4">{tier.scope}</p>
-                                <div className="text-3xl font-bold text-primary-600 mb-2">{tier.price}</div>
-                                <p className="text-sm text-gray-600 mb-6">{tier.pricePerDrop}</p>
-                                <ul className="space-y-2">
-                                    {tier.includes.map((item, idx) => (
-                                        <li key={idx} className="flex items-start text-sm text-gray-600">
-                                            <CheckCircleIcon className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0 mt-0.5" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* CTA */}
             <section className="section-padding bg-gradient-to-br from-primary-600 to-secondary-600">

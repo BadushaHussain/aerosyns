@@ -70,27 +70,7 @@ const networkServices = [
     },
 ]
 
-const pricingTiers = [
-    {
-        tier: 'Small Office',
-        scope: 'Up to 50 users',
-        price: 'Starting at $15,000',
-        includes: ['2x access switches (24-port PoE)', '3-5 wireless APs', 'Basic firewall', 'Configuration & setup', '1-year warranty'],
-    },
-    {
-        tier: 'Medium Enterprise',
-        scope: '50-500 users',
-        price: 'Starting at $75,000',
-        includes: ['Core + access switches', '10-30 wireless APs', 'Enterprise firewall', 'SD-WAN setup', 'Wireless controller', 'Full configuration', '3-year warranty & support'],
-        popular: true,
-    },
-    {
-        tier: 'Large Campus',
-        scope: '500+ users',
-        price: 'Custom pricing',
-        includes: ['Redundant core switches', 'Full access layer', '50+ wireless APs', 'Advanced SD-WAN', 'Network management platform', 'Comprehensive support', '5-year warranty'],
-    },
-]
+
 
 export default function NetworkInfrastructurePage() {
     return (
@@ -171,31 +151,7 @@ export default function NetworkInfrastructurePage() {
                 </div>
             </section>
 
-            <section className="section-padding bg-gray-50">
-                <div className="container-custom">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">Pricing Packages</h2>
-                    </div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {pricingTiers.map((tier, index) => (
-                            <div key={index} className={`card-enterprise p-8 relative ${tier.popular ? 'ring-2 ring-primary-500 shadow-2xl' : ''}`}>
-                                {tier.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><span className="inline-flex items-center px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-semibold">Most Popular</span></div>}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.tier}</h3>
-                                <p className="text-sm text-gray-600 mb-4">{tier.scope}</p>
-                                <div className="text-3xl font-bold text-primary-600 mb-6">{tier.price}</div>
-                                <ul className="space-y-2">
-                                    {tier.includes.map((item, idx) => (
-                                        <li key={idx} className="flex items-start text-sm text-gray-600">
-                                            <CheckCircleIcon className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0 mt-0.5" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             <section className="section-padding bg-gradient-to-br from-primary-600 to-secondary-600">
                 <div className="container-custom text-center">

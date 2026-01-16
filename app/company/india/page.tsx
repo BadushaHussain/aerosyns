@@ -92,9 +92,9 @@ export default function IndiaExpansionPage() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2">Cost-Efficient, High-Quality Engineering</h3>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2">Center of Engineering Excellence</h3>
                                     <p className="text-gray-600 leading-relaxed">
-                                        Delivering premium software solutions with optimized operational costs without compromising on quality or performance.
+                                        Building a world-class R&D facility focused on advanced AI, cloud infrastructure, and next-generation enterprise solutions.
                                     </p>
                                 </div>
                             </div>
@@ -106,9 +106,9 @@ export default function IndiaExpansionPage() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2">Time-Zone Advantage</h3>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2">Strategic Global Delivery</h3>
                                     <p className="text-gray-600 leading-relaxed">
-                                        Strategic 24/7 global delivery capabilities, ensuring seamless support and rapid turnaround times for our international clients.
+                                        Strategically positioned to provide seamless round-the-clock support and high-velocity delivery for international enterprise clients.
                                     </p>
                                 </div>
                             </div>
