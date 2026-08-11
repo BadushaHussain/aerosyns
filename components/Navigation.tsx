@@ -17,6 +17,7 @@ import {
     WrenchScrewdriverIcon,
     CodeBracketIcon,
     UserCircleIcon,
+    CurrencyDollarIcon,
 } from '@heroicons/react/24/solid'
 import { FaPlane, FaRobot } from 'react-icons/fa'
 
@@ -38,6 +39,12 @@ const services = [
         description: 'Multi-cloud, hybrid work, and core banking solutions',
         href: '/services/cloud',
         icon: CloudIcon,
+    },
+    {
+        name: 'Cloud Subscription & Licensing',
+        description: 'FinOps, CSP seat harvesting, SAM & vendor audit defense',
+        href: '/services/cloud-licensing',
+        icon: CurrencyDollarIcon,
     },
     {
         name: 'Cybersecurity',

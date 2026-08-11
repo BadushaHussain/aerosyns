@@ -32,6 +32,18 @@ const cloudServices = [
         ],
     },
     {
+        icon: <FaDollarSign className="w-8 h-8" />,
+        title: 'Cloud Subscription & Licensing',
+        description: 'Enterprise FinOps, CSP seat harvesting, SAM & vendor audit defense',
+        href: '/services/cloud-licensing',
+        features: [
+            'Microsoft CSP & EA to CSP transition',
+            'Azure RIs & AWS Savings Plans optimization',
+            'Automated 7-day seat harvesting',
+            'Oracle & VMware vendor audit defense',
+        ],
+    },
+    {
         icon: <GlobeAltIcon className="w-8 h-8" />,
         title: 'Hybrid Work Enablement',
         description: 'Secure remote access, VDI, and device management for distributed teams',

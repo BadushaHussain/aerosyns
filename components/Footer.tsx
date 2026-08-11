@@ -10,6 +10,7 @@ const navigation = {
     services: [
         { name: 'AI Infrastructure', href: '/services/ai-infrastructure' },
         { name: 'Cloud & Hybrid IT', href: '/services/cloud' },
+        { name: 'Cloud Subscription & Licensing', href: '/services/cloud-licensing' },
         { name: 'Cybersecurity', href: '/services/cybersecurity' },
         { name: 'Infrastructure & Cabling', href: '/services/infrastructure' },
         { name: 'Managed Services', href: '/services/managed-services' },

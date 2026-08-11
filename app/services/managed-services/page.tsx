@@ -278,6 +278,18 @@ export default function ManagedServicesPage() {
                             </div>
                         ))}
                     </div>
+                    <div className="mt-12 text-center">
+                        <p className="text-gray-600 mb-4 font-medium">Looking for enterprise software license optimization, Microsoft CSP seat harvesting, or cloud FinOps?</p>
+                        <Link
+                            href="/services/cloud-licensing"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors shadow-md"
+                        >
+                            Explore Cloud Subscription & Licensing Management
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </Link>
+                    </div>
                 </div>
             </section>
 
