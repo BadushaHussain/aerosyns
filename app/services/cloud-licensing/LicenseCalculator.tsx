@@ -1,28 +1,28 @@
 'use client'
 
 import { useState } from 'react'
-import { FaCalculator, FaCheckCircle, FaArrowRight } from 'react-icons/fa'
+import { FaCalculator, FaCheckCircle, FaArrowRight, FaUserMinus, FaPercent } from 'react-icons/fa'
 
 interface VendorOption {
     id: string
     name: string
-    avgWastePct: number
+    baseWastePct: number
     icon: string
 }
 
 const vendors: VendorOption[] = [
-    { id: 'email', name: 'Business Email & Workspace', avgWastePct: 30, icon: '✉️' },
-    { id: 'm365', name: 'Microsoft 365 / Azure', avgWastePct: 32, icon: '🟦' },
-    { id: 'aws', name: 'AWS Cloud & Savings Plans', avgWastePct: 28, icon: '🟧' },
-    { id: 'oracle', name: 'Oracle DB & Cloud', avgWastePct: 35, icon: '🔴' },
-    { id: 'vmware', name: 'VMware VCF & Broadcom', avgWastePct: 40, icon: '🟩' },
-    { id: 'cisco', name: 'Cisco & Security EA', avgWastePct: 25, icon: '🔷' },
+    { id: 'email', name: 'Business Email & Workspace', baseWastePct: 22, icon: '✉️' },
+    { id: 'm365', name: 'Microsoft 365 / Azure', baseWastePct: 28, icon: '🟦' },
+    { id: 'aws', name: 'AWS Cloud & Savings Plans', baseWastePct: 25, icon: '🟧' },
+    { id: 'oracle', name: 'Oracle DB & Cloud', baseWastePct: 32, icon: '🔴' },
+    { id: 'vmware', name: 'VMware VCF & Broadcom', baseWastePct: 35, icon: '🟩' },
+    { id: 'cisco', name: 'Cisco & Security EA', baseWastePct: 20, icon: '🔷' },
 ]
 
 export default function LicenseCalculator() {
     const [monthlySpend, setMonthlySpend] = useState<number>(50000)
-    const [selectedVendors, setSelectedVendors] = useState<string[]>(['m365', 'aws'])
     const [userSeats, setUserSeats] = useState<number>(250)
+    const [selectedVendors, setSelectedVendors] = useState<string[]>(['email', 'm365', 'aws'])
 
     const toggleVendor = (id: string) => {
         if (selectedVendors.includes(id)) {
@@ -34,14 +34,29 @@ export default function LicenseCalculator() {
         }
     }
 
-    // Calculation logic
-    const selectedVendorObjs = vendors.filter(v => selectedVendors.includes(v.id))
-    const avgWaste = selectedVendorObjs.reduce((acc, curr) => acc + curr.avgWastePct, 0) / (selectedVendorObjs.length || 1)
-    
+    // Mathematical FinOps Calculation Engine
     const annualSpend = monthlySpend * 12
-    const estimatedAnnualWaste = Math.round(annualSpend * (avgWaste / 100))
-    const estimatedAerosynsSavings = Math.round(estimatedAnnualWaste * 0.85) // 85% waste recovery
-    const netROI = Math.round((estimatedAerosynsSavings / (annualSpend * 0.08 || 1)) * 100)
+    const selectedVendorObjs = vendors.filter(v => selectedVendors.includes(v.id))
+    
+    // Average base waste percentage across selected vendors
+    const avgVendorWastePct = selectedVendorObjs.reduce((acc, curr) => acc + curr.baseWastePct, 0) / (selectedVendorObjs.length || 1)
+    
+    // 1. Idle & Unallocated Seat Harvesting (typically 12% - 16% of user seats are unassigned/former staff)
+    const estimatedIdleSeats = Math.max(1, Math.round(userSeats * 0.14))
+    const monthlyCostPerSeat = userSeats > 0 ? (monthlySpend * 0.40) / userSeats : 0 // ~40% of spend is user-based licenses
+    const annualSeatWaste = Math.round(estimatedIdleSeats * monthlyCostPerSeat * 12)
+
+    // 2. Cloud Infrastructure & Un-reserved Capacity Waste (from remaining ~60% IaaS/PaaS spend)
+    const infrastructureSpend = annualSpend * 0.60
+    const annualInfraWaste = Math.round(infrastructureSpend * (avgVendorWastePct / 100))
+
+    // 3. Total Annual Licensing & Cloud Waste
+    const totalAnnualWaste = Math.min(annualSpend * 0.45, annualSeatWaste + annualInfraWaste)
+    const wastePercentage = Number(((totalAnnualWaste / annualSpend) * 100).toFixed(1))
+
+    // 4. Guaranteed Recoverable Annual Savings (Aerosyns recovers ~80% of identified waste)
+    const recoverableAnnualSavings = Math.round(totalAnnualWaste * 0.80)
+    const netSpendSavingsPct = Number(((recoverableAnnualSavings / annualSpend) * 100).toFixed(1))
 
     return (
         <div className="bg-gradient-to-br from-gray-900 via-slate-900 to-gray-950 rounded-3xl p-6 sm:p-10 border border-primary-500/20 shadow-2xl text-white">
@@ -49,18 +64,18 @@ export default function LicenseCalculator() {
                 <div>
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-xs font-semibold uppercase tracking-wider mb-2">
                         <FaCalculator className="w-3.5 h-3.5 text-primary-400" />
-                        Interactive Estimator
+                        FinOps Mathematical Estimator
                     </div>
                     <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
                         Cloud License Savings & FinOps Calculator
                     </h3>
                     <p className="text-gray-400 text-sm mt-1">
-                        Estimate your organization's annual software licensing waste & recoverable savings in AED.
+                        Calculate exact seat harvesting waste and recoverable cloud spend in AED.
                     </p>
                 </div>
                 <div className="text-right hidden sm:block">
-                    <span className="text-xs text-gray-400 block">Avg Recovery Rate</span>
-                    <span className="text-xl font-bold text-emerald-400">up to 38.5%</span>
+                    <span className="text-xs text-gray-400 block">Est. Budget Reduction</span>
+                    <span className="text-xl font-bold text-emerald-400">{netSpendSavingsPct}% Overall</span>
                 </div>
             </div>
 
@@ -97,7 +112,7 @@ export default function LicenseCalculator() {
                     <div>
                         <div className="flex justify-between items-center mb-2">
                             <label className="text-sm font-medium text-gray-200">
-                                Active User Seats / Licenses
+                                Total Active User Seats / Licenses
                             </label>
                             <span className="text-lg font-bold text-secondary-400">
                                 {userSeats.toLocaleString()} seats
@@ -149,25 +164,38 @@ export default function LicenseCalculator() {
 
                 {/* Outputs & Summary Box */}
                 <div className="lg:col-span-5 flex flex-col justify-between bg-gray-800/40 rounded-2xl p-6 border border-gray-700/50">
-                    <div className="space-y-5">
+                    <div className="space-y-4">
                         <h4 className="text-xs uppercase font-bold text-gray-400 tracking-wider">
-                            Estimated Savings Impact
+                            FinOps Audit Estimate Summary
                         </h4>
 
-                        <div className="bg-gray-900/80 rounded-xl p-4 border border-gray-800">
-                            <span className="text-xs text-gray-400 block">Annual Cloud & SaaS Spend</span>
-                            <span className="text-xl font-bold text-gray-200">
-                                AED {annualSpend.toLocaleString()}
-                            </span>
+                        <div className="bg-gray-900/80 rounded-xl p-3.5 border border-gray-800 flex items-center justify-between">
+                            <div>
+                                <span className="text-xs text-gray-400 block">Annual IT & Cloud Spend</span>
+                                <span className="text-lg font-bold text-gray-200">
+                                    AED {annualSpend.toLocaleString()}
+                                </span>
+                            </div>
+                            <div className="text-right">
+                                <span className="text-[11px] text-gray-400 block">Est. Idle Seats</span>
+                                <span className="text-sm font-semibold text-amber-400 flex items-center gap-1">
+                                    <FaUserMinus className="w-3 h-3" /> ~{estimatedIdleSeats} seats
+                                </span>
+                            </div>
                         </div>
 
                         <div className="bg-rose-950/20 rounded-xl p-4 border border-rose-900/40">
-                            <span className="text-xs text-rose-300 block">Est. Annual Licensing Waste</span>
-                            <span className="text-2xl font-extrabold text-rose-400">
-                                ~AED {estimatedAnnualWaste.toLocaleString()}
+                            <div className="flex justify-between items-center">
+                                <span className="text-xs text-rose-300">Est. Total Annual Waste</span>
+                                <span className="text-xs px-2 py-0.5 bg-rose-500/20 text-rose-300 rounded font-mono">
+                                    {wastePercentage}% Waste
+                                </span>
+                            </div>
+                            <span className="text-2xl font-extrabold text-rose-400 mt-1 block">
+                                ~AED {totalAnnualWaste.toLocaleString()}
                             </span>
-                            <span className="text-[11px] text-rose-300/70 block mt-0.5">
-                                Unallocated seats, over-provisioning & un-reserved VM capacity
+                            <span className="text-[11px] text-rose-300/70 block mt-1">
+                                Comprising ~AED {annualSeatWaste.toLocaleString()} from unassigned seats & ~AED {annualInfraWaste.toLocaleString()} from un-reserved cloud instances.
                             </span>
                         </div>
 
@@ -177,15 +205,15 @@ export default function LicenseCalculator() {
                                     Recoverable Annual Savings
                                 </span>
                                 <span className="text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-300 rounded font-mono">
-                                    FinOps Guaranteed
+                                    {netSpendSavingsPct}% Net Cut
                                 </span>
                             </div>
-                            <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400 mt-1 block">
-                                AED {estimatedAerosynsSavings.toLocaleString()}
+                            <span className="text-3xl font-extrabold text-emerald-400 mt-1 block">
+                                AED {recoverableAnnualSavings.toLocaleString()} / yr
                             </span>
-                            <div className="flex items-center gap-1.5 text-xs text-emerald-300/80 mt-1">
+                            <div className="flex items-center gap-1.5 text-xs text-emerald-300/80 mt-1.5 pt-1.5 border-t border-emerald-500/20">
                                 <FaCheckCircle className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-                                <span>Est. ROI: ~{netROI}% return on licensing audit</span>
+                                <span>Direct contractual savings via Aerosyns CSP & FinOps</span>
                             </div>
                         </div>
                     </div>
