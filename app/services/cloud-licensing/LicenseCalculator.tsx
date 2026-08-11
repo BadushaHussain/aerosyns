@@ -20,7 +20,7 @@ const vendors: VendorOption[] = [
 ]
 
 export default function LicenseCalculator() {
-    const [monthlySpend, setMonthlySpend] = useState<number>(25000)
+    const [monthlySpend, setMonthlySpend] = useState<number>(50000)
     const [selectedVendors, setSelectedVendors] = useState<string[]>(['m365', 'aws'])
     const [userSeats, setUserSeats] = useState<number>(250)
 
@@ -55,7 +55,7 @@ export default function LicenseCalculator() {
                         Cloud License Savings & FinOps Calculator
                     </h3>
                     <p className="text-gray-400 text-sm mt-1">
-                        Estimate your organization's annual software licensing waste & recoverable savings.
+                        Estimate your organization's annual software licensing waste & recoverable savings in AED.
                     </p>
                 </div>
                 <div className="text-right hidden sm:block">
@@ -71,25 +71,25 @@ export default function LicenseCalculator() {
                     <div>
                         <div className="flex justify-between items-center mb-2">
                             <label className="text-sm font-medium text-gray-200">
-                                Estimated Monthly Cloud & SaaS Spend (USD)
+                                Estimated Monthly Cloud & SaaS Spend (AED)
                             </label>
                             <span className="text-lg font-bold text-primary-400">
-                                ${monthlySpend.toLocaleString()} / mo
+                                AED {monthlySpend.toLocaleString()} / mo
                             </span>
                         </div>
                         <input
                             type="range"
-                            min="5000"
-                            max="250000"
-                            step="5000"
+                            min="10000"
+                            max="1000000"
+                            step="10000"
                             value={monthlySpend}
                             onChange={(e) => setMonthlySpend(Number(e.target.value))}
                             className="w-full h-2.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-primary-500"
                         />
                         <div className="flex justify-between text-xs text-gray-500 mt-1">
-                            <span>$5,000</span>
-                            <span>$100,000</span>
-                            <span>$250,000+</span>
+                            <span>AED 10,000</span>
+                            <span>AED 500,000</span>
+                            <span>AED 1,000,000+</span>
                         </div>
                     </div>
 
@@ -157,14 +157,14 @@ export default function LicenseCalculator() {
                         <div className="bg-gray-900/80 rounded-xl p-4 border border-gray-800">
                             <span className="text-xs text-gray-400 block">Annual Cloud & SaaS Spend</span>
                             <span className="text-xl font-bold text-gray-200">
-                                ${annualSpend.toLocaleString()}
+                                AED {annualSpend.toLocaleString()}
                             </span>
                         </div>
 
                         <div className="bg-rose-950/20 rounded-xl p-4 border border-rose-900/40">
                             <span className="text-xs text-rose-300 block">Est. Annual Licensing Waste</span>
                             <span className="text-2xl font-extrabold text-rose-400">
-                                ~${estimatedAnnualWaste.toLocaleString()}
+                                ~AED {estimatedAnnualWaste.toLocaleString()}
                             </span>
                             <span className="text-[11px] text-rose-300/70 block mt-0.5">
                                 Unallocated seats, over-provisioning & un-reserved VM capacity
@@ -181,7 +181,7 @@ export default function LicenseCalculator() {
                                 </span>
                             </div>
                             <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400 mt-1 block">
-                                ${estimatedAerosynsSavings.toLocaleString()}
+                                AED {estimatedAerosynsSavings.toLocaleString()}
                             </span>
                             <div className="flex items-center gap-1.5 text-xs text-emerald-300/80 mt-1">
                                 <FaCheckCircle className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
