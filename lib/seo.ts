@@ -34,6 +34,14 @@ export function generateMetadata(config: SEOConfig): Metadata {
         creator: 'Aerosyns',
         publisher: 'Aerosyns',
         robots: noindex ? 'noindex, nofollow' : 'index, follow',
+        icons: {
+            icon: [
+                { url: '/favicon.svg', type: 'image/svg+xml' },
+                { url: '/aerosyns-icon.svg', type: 'image/svg+xml' },
+            ],
+            shortcut: '/favicon.svg',
+            apple: '/aerosyns-icon.svg',
+        },
         alternates: {
             canonical: canonical || baseUrl,
         },
