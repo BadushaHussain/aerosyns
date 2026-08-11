@@ -22,13 +22,11 @@ const vendors: VendorOption[] = [
 export default function LicenseCalculator() {
     const [monthlySpend, setMonthlySpend] = useState<number>(50000)
     const [userSeats, setUserSeats] = useState<number>(250)
-    const [selectedVendors, setSelectedVendors] = useState<string[]>(['email', 'm365', 'aws'])
+    const [selectedVendors, setSelectedVendors] = useState<string[]>([])
 
     const toggleVendor = (id: string) => {
         if (selectedVendors.includes(id)) {
-            if (selectedVendors.length > 1) {
-                setSelectedVendors(selectedVendors.filter(v => v !== id))
-            }
+            setSelectedVendors(selectedVendors.filter(v => v !== id))
         } else {
             setSelectedVendors([...selectedVendors, id])
         }
@@ -37,9 +35,12 @@ export default function LicenseCalculator() {
     // Mathematical FinOps Calculation Engine
     const annualSpend = monthlySpend * 12
     const selectedVendorObjs = vendors.filter(v => selectedVendors.includes(v.id))
+    const hasSelectedVendors = selectedVendorObjs.length > 0
     
     // Average base waste percentage across selected vendors
-    const avgVendorWastePct = selectedVendorObjs.reduce((acc, curr) => acc + curr.baseWastePct, 0) / (selectedVendorObjs.length || 1)
+    const avgVendorWastePct = hasSelectedVendors
+        ? selectedVendorObjs.reduce((acc, curr) => acc + curr.baseWastePct, 0) / selectedVendorObjs.length
+        : 0
     
     // 1. Idle & Unallocated Seat Harvesting (typically 12% - 16% of user seats are unassigned/former staff)
     const estimatedIdleSeats = Math.max(1, Math.round(userSeats * 0.14))
@@ -48,7 +49,7 @@ export default function LicenseCalculator() {
 
     // 2. Cloud Infrastructure & Un-reserved Capacity Waste (from remaining ~60% IaaS/PaaS spend)
     const infrastructureSpend = annualSpend * 0.60
-    const annualInfraWaste = Math.round(infrastructureSpend * (avgVendorWastePct / 100))
+    const annualInfraWaste = hasSelectedVendors ? Math.round(infrastructureSpend * (avgVendorWastePct / 100)) : 0
 
     // 3. Total Annual Licensing & Cloud Waste
     const totalAnnualWaste = Math.min(annualSpend * 0.45, annualSeatWaste + annualInfraWaste)
@@ -136,9 +137,14 @@ export default function LicenseCalculator() {
 
                     {/* Vendor Selection */}
                     <div>
-                        <label className="text-sm font-medium text-gray-200 block mb-3">
-                            Select Vendor Ecosystems to Optimize
-                        </label>
+                        <div className="flex justify-between items-center mb-3">
+                            <label className="text-sm font-medium text-gray-200 block">
+                                Select Vendor Ecosystems to Optimize
+                            </label>
+                            <span className="text-xs font-mono text-gray-400">
+                                {selectedVendors.length > 0 ? `${selectedVendors.length} selected` : 'None selected (Click to add)'}
+                            </span>
+                        </div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                             {vendors.map((vendor) => {
                                 const isSelected = selectedVendors.includes(vendor.id)
