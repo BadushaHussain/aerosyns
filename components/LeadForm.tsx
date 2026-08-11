@@ -56,7 +56,7 @@ export default function LeadForm() {
                     <input
                         type="text"
                         id="firstName"
-                        placeholder="John"
+                        placeholder="First Name"
                         {...register('firstName', { required: 'First name is required' })}
                         className={inputStyle}
                     />
@@ -72,7 +72,7 @@ export default function LeadForm() {
                     <input
                         type="text"
                         id="lastName"
-                        placeholder="Doe"
+                        placeholder="Last Name"
                         {...register('lastName', { required: 'Last name is required' })}
                         className={inputStyle}
                     />
@@ -90,7 +90,7 @@ export default function LeadForm() {
                     <input
                         type="email"
                         id="email"
-                        placeholder="john@company.com"
+                        placeholder="Email"
                         {...register('email', {
                             required: 'Email is required',
                             pattern: {
@@ -112,7 +112,7 @@ export default function LeadForm() {
                     <input
                         type="tel"
                         id="phone"
-                        placeholder="+971 50 123 4567"
+                        placeholder="Phone"
                         {...register('phone', { required: 'Phone is required' })}
                         className={inputStyle}
                     />
@@ -130,7 +130,7 @@ export default function LeadForm() {
                     <input
                         type="text"
                         id="company"
-                        placeholder="Company Name"
+                        placeholder="Company"
                         {...register('company', { required: 'Company is required' })}
                         className={inputStyle}
                     />
@@ -229,5 +229,4 @@ export default function LeadForm() {
             </button>
         </form>
     )
-}
 }
