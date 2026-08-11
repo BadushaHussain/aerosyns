@@ -5,31 +5,16 @@ import {
     CloudIcon,
     ShieldCheckIcon,
     ArrowPathIcon,
-    CheckCircleIcon,
     CurrencyDollarIcon,
     ChartBarIcon,
-    BuildingOfficeIcon,
     SparklesIcon,
     DocumentCheckIcon,
-    CpuChipIcon,
     ArrowRightIcon,
-    UserGroupIcon,
-    ServerIcon
 } from '@heroicons/react/24/solid'
 import {
-    FaMicrosoft,
-    FaAws,
-    FaOracle,
     FaShieldAlt,
-    FaChartLine,
-    FaSyncAlt,
-    FaHandshake,
-    FaFileContract,
-    FaSlidersH,
     FaQuestionCircle,
     FaCheck,
-    FaArrowRight,
-    FaBuilding
 } from 'react-icons/fa'
 import LicenseCalculator from './LicenseCalculator'
 import M365PlansMatrix from './M365PlansMatrix'
