@@ -109,7 +109,7 @@ export default function Footer() {
                                 <div className="flex items-start text-gray-400">
                                     <MapPinIcon className="h-5 w-5 mr-3 text-primary-500 mt-0.5 flex-shrink-0" />
                                     <div className="text-sm">
-                                        <div className="font-semibold text-white mb-1">India Office</div>
+                                        <div className="font-semibold text-white mb-1">India Office (Aerosyns Private Limited)</div>
                                         <Link href="/company/india" className="hover:text-white transition-colors">
                                             36/51/4 Ground Floor, Green Arcade, Othungod, Thirunellayi, Palakkad, Kerala 678006, India
                                         </Link>

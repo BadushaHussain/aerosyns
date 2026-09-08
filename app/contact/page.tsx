@@ -70,7 +70,7 @@ export default function ContactPage() {
                                             </div>
                                         </div>
                                         <div className="ml-4">
-                                            <h4 className="text-lg font-semibold text-gray-900">India Office</h4>
+                                            <h4 className="text-lg font-semibold text-gray-900">India Office (Aerosyns Private Limited)</h4>
                                             <p className="text-gray-600">36/51/4 Ground Floor, Green Arcade, Othungod, Thirunellayi, Palakkad, Kerala 678006, India</p>
                                         </div>
                                     </div>
