@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy | AEROSYNS',
-    description: 'Privacy Policy for AEROSYNS - Learn how we collect, use, and protect your personal information.',
+    title: 'Privacy Policy | AEROSYNS PRIVATE LIMITED',
+    description: 'Privacy Policy for AEROSYNS PRIVATE LIMITED - Learn how we collect, use, and protect your personal information.',
 }
 
 export default function PrivacyPolicyPage() {
@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
                         <section className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
                             <p className="text-gray-700 mb-4">
-                                AEROSYNS ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                                AEROSYNS PRIVATE LIMITED ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
                             </p>
                         </section>
 
@@ -144,9 +144,9 @@ export default function PrivacyPolicyPage() {
                                 If you have questions about this Privacy Policy or our data practices, please contact us:
                             </p>
                             <div className="bg-gray-50 p-6 rounded-lg">
-                                <p className="text-gray-700 mb-2"><strong>AEROSYNS</strong></p>
-                                <p className="text-gray-700 mb-2"><strong>Headquarters:</strong> Abu Dhabi, UAE</p>
-                                <p className="text-gray-700 mb-2">Phone: +971 556725264</p>
+                                <p className="text-gray-700 mb-2"><strong>AEROSYNS PRIVATE LIMITED</strong></p>
+                                <p className="text-gray-700 mb-2"><strong>Headquarters (UAE):</strong> Abu Dhabi, UAE (Phone: +971 556725264)</p>
+                                <p className="text-gray-700 mb-2"><strong>India Registered Office:</strong> 36/51/4 Ground Floor, Green Arcade, Othungod, Thirunellayi, Palakkad, Kerala 678006, India (Phone: +91 9895529203)</p>
                                 <p className="text-gray-700 mb-2">General: info@aerosyns.com</p>
                                 <p className="text-gray-700">Sales: sales@aerosyns.com</p>
                             </div>

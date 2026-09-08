@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Terms of Service | AEROSYNS',
-    description: 'Terms of Service for AEROSYNS - Review the terms and conditions for using our services.',
+    title: 'Terms of Service | AEROSYNS PRIVATE LIMITED',
+    description: 'Terms of Service for AEROSYNS PRIVATE LIMITED - Review the terms and conditions for using our services.',
 }
 
 export default function TermsOfServicePage() {
@@ -21,14 +21,14 @@ export default function TermsOfServicePage() {
                         <section className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
                             <p className="text-gray-700 mb-4">
-                                By accessing or using AEROSYNS services ("Services"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use our Services.
+                                By accessing or using AEROSYNS PRIVATE LIMITED services ("Services"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use our Services.
                             </p>
                         </section>
 
                         <section className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Description of Services</h2>
                             <p className="text-gray-700 mb-4">
-                                AEROSYNS provides enterprise IT solutions including:
+                                AEROSYNS PRIVATE LIMITED provides enterprise IT solutions including:
                             </p>
                             <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
                                 <li>Cloud infrastructure and managed services</li>
@@ -78,7 +78,7 @@ export default function TermsOfServicePage() {
 
                             <h3 className="text-xl font-semibold text-gray-900 mb-3">5.1 Our IP Rights</h3>
                             <p className="text-gray-700 mb-4">
-                                All content, software, and materials provided through our Services are owned by AEROSYNS or our licensors and protected by intellectual property laws.
+                                All content, software, and materials provided through our Services are owned by AEROSYNS PRIVATE LIMITED or our licensors and protected by intellectual property laws.
                             </p>
 
                             <h3 className="text-xl font-semibold text-gray-900 mb-3">5.2 Your Content</h3>
@@ -137,14 +137,14 @@ export default function TermsOfServicePage() {
                         <section className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Limitation of Liability</h2>
                             <p className="text-gray-700 mb-4">
-                                TO THE MAXIMUM EXTENT PERMITTED BY LAW, AEROSYNS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES.
+                                TO THE MAXIMUM EXTENT PERMITTED BY LAW, AEROSYNS PRIVATE LIMITED SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES.
                             </p>
                         </section>
 
                         <section className="mb-12">
                             <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Indemnification</h2>
                             <p className="text-gray-700 mb-4">
-                                You agree to indemnify and hold AEROSYNS harmless from any claims, damages, or expenses arising from your use of our Services or violation of these Terms.
+                                You agree to indemnify and hold AEROSYNS PRIVATE LIMITED harmless from any claims, damages, or expenses arising from your use of our Services or violation of these Terms.
                             </p>
                         </section>
 
@@ -187,9 +187,9 @@ export default function TermsOfServicePage() {
                                 For questions about these Terms, please contact us:
                             </p>
                             <div className="bg-gray-50 p-6 rounded-lg">
-                                <p className="text-gray-700 mb-2"><strong>AEROSYNS</strong></p>
-                                <p className="text-gray-700 mb-2"><strong>Headquarters:</strong> Abu Dhabi, UAE</p>
-                                <p className="text-gray-700 mb-2">Phone: +971 556725264</p>
+                                <p className="text-gray-700 mb-2"><strong>AEROSYNS PRIVATE LIMITED</strong></p>
+                                <p className="text-gray-700 mb-2"><strong>Headquarters (UAE):</strong> Abu Dhabi, UAE (Phone: +971 556725264)</p>
+                                <p className="text-gray-700 mb-2"><strong>India Registered Office:</strong> 36/51/4 Ground Floor, Green Arcade, Othungod, Thirunellayi, Palakkad, Kerala 678006, India (Phone: +91 9895529203)</p>
                                 <p className="text-gray-700 mb-2">General: info@aerosyns.com</p>
                                 <p className="text-gray-700">Sales: sales@aerosyns.com</p>
                             </div>

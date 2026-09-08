@@ -98,7 +98,7 @@ export default function Footer() {
                             Delivering 99.99% uptime with sovereign cloud options across UAE and MENA.
                         </p>
                         <div className="space-y-4">
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="flex items-start text-gray-400">
                                     <MapPinIcon className="h-5 w-5 mr-3 text-primary-500 mt-0.5 flex-shrink-0" />
                                     <div className="text-sm">
@@ -109,16 +109,19 @@ export default function Footer() {
                                 <div className="flex items-start text-gray-400">
                                     <MapPinIcon className="h-5 w-5 mr-3 text-primary-500 mt-0.5 flex-shrink-0" />
                                     <div className="text-sm">
-                                        <div className="font-semibold text-white mb-1">India (Coming Soon)</div>
+                                        <div className="font-semibold text-white mb-1">India Office</div>
                                         <Link href="/company/india" className="hover:text-white transition-colors">
-                                            Palakkad & Calicut, Kerala
+                                            36/51/4 Ground Floor, Green Arcade, Othungod, Thirunellayi, Palakkad, Kerala 678006, India
                                         </Link>
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex items-center text-gray-400">
-                                <PhoneIcon className="h-5 w-5 mr-3 text-primary-500 flex-shrink-0" />
-                                <span className="text-sm">+971 556725264</span>
+                            <div className="flex items-start text-gray-400">
+                                <PhoneIcon className="h-5 w-5 mr-3 text-primary-500 mt-0.5 flex-shrink-0" />
+                                <div className="text-sm space-y-1">
+                                    <div><span className="font-semibold text-white">UAE:</span> +971 556725264</div>
+                                    <div><span className="font-semibold text-white">India:</span> +91 9895529203</div>
+                                </div>
                             </div>
                             <div className="flex items-start text-gray-400">
                                 <EnvelopeIcon className="h-5 w-5 mr-3 text-primary-500 mt-0.5 flex-shrink-0" />
@@ -196,7 +199,7 @@ export default function Footer() {
                 <div className="mt-12 pt-8 border-t border-gray-800">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p className="text-sm text-gray-400">
-                            &copy; {new Date().getFullYear()} Aerosyns. All rights reserved.
+                            &copy; {new Date().getFullYear()} Aerosyns Private Limited. All rights reserved.
                         </p>
                         <div className="flex space-x-6 mt-4 md:mt-0">
                             {navigation.social.map((item) => (

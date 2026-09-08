@@ -30,9 +30,9 @@ export function generateMetadata(config: SEOConfig): Metadata {
         title: fullTitle,
         description,
         keywords: keywords.join(', '),
-        authors: [{ name: 'Aerosyns' }],
-        creator: 'Aerosyns',
-        publisher: 'Aerosyns',
+        authors: [{ name: 'Aerosyns Private Limited' }],
+        creator: 'Aerosyns Private Limited',
+        publisher: 'Aerosyns Private Limited',
         robots: noindex ? 'noindex, nofollow' : 'index, follow',
         icons: {
             icon: [

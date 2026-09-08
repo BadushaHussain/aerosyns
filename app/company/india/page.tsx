@@ -236,6 +236,30 @@ export default function IndiaExpansionPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Registered Office Details */}
+            <section className="py-16 bg-gray-50 border-t border-gray-200">
+                <div className="container-custom">
+                    <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div>
+                            <span className="text-xs uppercase tracking-wider font-semibold text-blue-600">Registered Office in India</span>
+                            <h3 className="text-2xl font-bold text-gray-900 mt-1 mb-2">Aerosyns Private Limited</h3>
+                            <p className="text-gray-600 flex items-start justify-center md:justify-start gap-2">
+                                <FaMapMarkerAlt className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
+                                <span>36/51/4 Ground Floor, Green Arcade, Othungod, Thirunellayi, Palakkad, Kerala 678006, India</span>
+                            </p>
+                        </div>
+                        <div className="flex-shrink-0 text-center md:text-right border-t md:border-t-0 md:border-l border-gray-100 pt-4 md:pt-0 md:pl-8">
+                            <span className="text-xs uppercase tracking-wider font-semibold text-gray-500">Contact Number</span>
+                            <p className="text-xl font-bold text-gray-900 mt-1">
+                                <a href="tel:+919895529203" className="hover:text-blue-600 transition-colors">
+                                    +91 9895529203
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }
